@@ -1,0 +1,50 @@
+// DARK Custom style
+
+
+.dark .section,
+.section.dark {
+    background-color: darken(@theme-color, 10%);
+}
+
+.dark #top-bar,
+#top-bar.dark {
+    background-color: darken(@theme-color, 10%);
+}
+
+.dark .top-links li:hover {
+    background-color: @theme-color;
+}
+
+.dark .top-links ul ul,
+.dark .top-links ul div.top-link-section {
+    background: @theme-color;
+}
+
+.dark .top-links ul ul li:hover {
+    background-color: lighten(@theme-color, 5%);
+}
+
+.dark #header.sticky-header:not(.transparent-header) #header-wrap:not(.not-dark),
+.dark #header.sticky-header.transparent-header #header-wrap:not(.not-dark),
+.dark #header.transparent-header.floating-header .container,
+.dark #header.transparent-header.floating-header.sticky-header .container,
+#header.dark.sticky-header:not(.transparent-header) #header-wrap:not(.not-dark),
+#header.dark.sticky-header.transparent-header #header-wrap:not(.not-dark),
+#header.dark.transparent-header.floating-header .container,
+#header.dark.transparent-header.floating-header.sticky-header .container {
+    background-color: @theme-color;
+}
+
+.dark #header:not(.transparent-header),
+#header.dark:not(.transparent-header) {
+    background-color: @theme-color;
+}
+
+.dark #primary-menu:not(.not-dark) ul ul,
+.dark #primary-menu:not(.not-dark) ul li .mega-menu-content,
+#primary-menu.dark ul ul,
+#primary-menu.dark ul li .mega-menu-content {
+    background-color: @theme-color;
+    border-color: lighten(@theme-color, 5%);
+    border-top-color: darken(@theme-color, 5%);
+}

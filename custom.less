@@ -1,0 +1,64 @@
+// out: custom.css, compress: true, strictMath: false
+
+@import "style.less";
+@import "less/dark.less";
+@import "dark-custom.less";
+
+@screen-sm-min : 768px;
+@screen-md-min : 992px;
+@screen-lg-min : 1200px;
+
+@theme-color: #1f429a;
+@dark-bg-color: desaturate(@theme-color, 20%); 
+@dark-bg-color-darker: darken(@theme-color, 10%); 
+
+@summer-color : hsl(30, 80%, 50%);
+
+.theme-color, .sell{
+    color: @theme-color;
+}
+.sell-light {
+    background-color: lighten(@theme-color, 55%);
+}
+.sell-lighter {
+    background-color: lighten(@theme-color, 60%);
+}
+
+.summer {
+    color: @summer-color;
+}
+
+.summer-light {
+    background-color: lighten(@summer-color, 35%);
+}
+.summer-lighter {
+    background-color: lighten(@summer-color, 40%);
+}
+
+
+.text-xs-left { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: @screen-sm-min) {
+  .text-sm-left { text-align: left; }
+  .text-sm-right { text-align: right; }
+  .text-sm-center { text-align: center; }
+  .text-sm-justify { text-align: justify; }
+}
+
+@media (min-width: @screen-md-min) {
+  .text-md-left { text-align: left; }
+  .text-md-right { text-align: right; }
+  .text-md-center { text-align: center; }
+  .text-md-justify { text-align: justify; }
+}
+
+@media (min-width: @screen-lg-min) {
+  .text-lg-left { text-align: left; }
+  .text-lg-right { text-align: right; }
+  .text-lg-center { text-align: center; }
+  .text-lg-justify { text-align: justify; }
+}
+
