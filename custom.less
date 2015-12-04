@@ -8,7 +8,7 @@
 @screen-md-min : 992px;
 @screen-lg-min : 1200px;
 
-@theme-color: #1f429a;
+@theme-color: #0f204a;
 @dark-bg-color: desaturate(@theme-color, 20%); 
 @dark-bg-color-darker: darken(@theme-color, 10%); 
 
@@ -18,10 +18,10 @@
     color: @theme-color;
 }
 .sell-light {
-    background-color: lighten(@theme-color, 55%);
+    background-color: lighten(@theme-color, 65%);
 }
 .sell-lighter {
-    background-color: lighten(@theme-color, 60%);
+    background-color: lighten(@theme-color, 75%);
 }
 
 .summer {
@@ -60,5 +60,39 @@
   .text-lg-right { text-align: right; }
   .text-lg-center { text-align: center; }
   .text-lg-justify { text-align: justify; }
+}
+
+
+.divider {
+    &.divider-dark {
+        color: @theme-color;
+        &:after,
+        &:before
+        {
+            content: '';
+            border-top: 1px solid @theme-color;
+        }
+        &.divider-border {
+
+            i {
+                border: 1px solid @theme-color;
+            }
+        }
+    }
+    &.divider-darker {
+        color: lighten(@theme-color, 45%);
+        &:after,
+        &:before
+        {
+            content: '';
+            border-top: 1px solid lighten(@theme-color, 45%);
+        }
+        &.divider-border {
+
+            i {
+                border: 1px solid lighten(@theme-color, 45%);
+            }
+        }
+    }
 }
 
