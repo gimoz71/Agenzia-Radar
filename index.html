@@ -7,7 +7,7 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic|Kaushan+Script" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="css/animate.css" type="text/css" />
@@ -45,44 +45,13 @@
         
         <!-- Top Bar
         ============================================= -->
-        <div id="top-bar" class="dark">
+        <div id="top-bar" class="dark parallax sell-light">
 
             <div class="container clearfix">
 
-                <div class="col_half nobottommargin">
+                
 
-                    <!-- Top Links
-                    ============================================= -->
-                    <div class="top-links">
-                        <ul>
-                            <li><a href="#">Meteo Webcam</a></li>
-                            <li><a href="#">Dove siamo</a></li>
-<!--
-                            <li><a href="login-register.html">Login</a>
-                                <div class="top-link-section">
-                                    <form id="top-login" role="form">
-                                        <div class="input-group" id="top-login-username">
-                                            <span class="input-group-addon"><i class="icon-user"></i></span>
-                                            <input type="email" class="form-control" placeholder="Email address" required="">
-                                        </div>
-                                        <div class="input-group" id="top-login-password">
-                                            <span class="input-group-addon"><i class="icon-key"></i></span>
-                                            <input type="password" class="form-control" placeholder="Password" required="">
-                                        </div>
-                                        <label class="checkbox">
-                                            <input type="checkbox" value="remember-me"> Remember me
-                                        </label>
-                                        <button class="btn btn-danger btn-block" type="submit">Sign in</button>
-                                    </form>
-                                </div>
-                            </li>
--->
-                        </ul>
-                    </div><!-- .top-links end -->
-
-                </div>
-
-                <div class="col_half fright col_last nobottommargin">
+                <div class="col_half fleft nobottommargin">
 
                     <!-- Top Social
                     ============================================= -->
@@ -91,27 +60,45 @@
                             <li><a href="#" class="si-facebook"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
                             <li><a href="#" class="si-twitter"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
                             <li><a href="#" class="si-youtube"><span class="ts-icon"><i class="icon-youtube"></i></span><span class="ts-text">YouTube</span></a></li>
-                            <li><a href="tel:+91.11.85412542" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
+                            <li><a href="tel:+39.0586.752596" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+39.0586.752596</span></a></li>
                             <li><a href="mailto:info@agenziaradar.it" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@agenziaradar.it</span></a></li>
                         </ul>
                     </div><!-- #top-social end -->
 
                 </div>
+                
+                <div class="col_half fright col_last nobottommargin">
 
+                    <!-- Top Links
+                    ============================================= -->
+                    <div class="top-links">
+                        <ul>
+                            <li><span style="padding: 0 15px;">Scegli la tua lingua</span></li>
+                            <li class="lang-switcher"><a href="#"><img src="images/icons/flags/italian.png" alt="French"></a>
+                                <ul style="border: solid 1px rgba(255,255,255,.15)">
+                                    <li><a href="#"><img src="images/icons/flags/german.png" alt="Deutsch">Deutsch</a></li>
+                                    <li><a href="#"><img src="images/icons/flags/french.png" alt="Italiano">français</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div><!-- .top-links end -->
+
+                </div>
             </div>
 
         </div><!-- #top-bar end -->
         
 		<!-- Header
 		============================================= -->
-        <header id="header" class="dark sticky-style-2">
+        <header id="header" class="dark sticky-style-2 parallax" data-stellar-background-ratio="0.5">
             
             <div class="container clearfix">
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="divcenter">
-                    <a href="index.html" class="standard-logo" data-dark-logo="images/custom/logo_radar.png"><img class="divcenter" src="images/custom/logo_radar.png" alt="Canvas Logo"></a>
-                    <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img class="divcenter" src="images/logo@2x.png" alt="Canvas Logo"></a>
+                    <a href="index.html" class="standard-logo" data-dark-logo="images/custom/logo_radar.png"><img class="divcenter" src="images/custom/logo_radar.png" alt="Radar Logo"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="images/custom/logo_radar@2x.png"><img class="divcenter" src="images/custom/logo_radar@2x.png" alt="Radar Logo"></a>
                 </div><!-- #logo end -->
             </div>
             
@@ -124,17 +111,23 @@
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
                         <ul>
                             <li><a href="index.html"><div><i class="icon-home2"></i>Home page</div></a></li>
-                            <li class="current"><a href="#"><div>L'Agenzia</div></a></li>
-                            <li><a href="#"><div>I Servizi</div></a></li>
-                            <li><a href="#"><div>Immobili in Vendita</div></a></li>
-                            <li><a href="#"><div>Affitti <i class="icon-chevron-down"></i></div></a>
+                            <li><a href="#"><div>L'Agenzia <i class="icon-chevron-down"></i></div></a>
                                 <ul>
-                                    <li><a href="index-wedding.html"><div>Vacanze Settimanali</div></a></li>
-                                    <li><a href="index-restaurant.html"><div>Affitto case vacanze</div></a></li>
+                                    <li><a href="#"><div>I Servizi</div></a></li>
+                                    <li><a href="#"><div>Dove siamo</i></div></a>
                                 </ul>
                             </li>
-                            <li><a href="#"><div>Castiglioncello</div></a></li>
+                            
+                            <li><a href="#"><div>Castiglioncello</i></div></a>
                             <li><a href="#"><div>I dintorni</div></a></li>
+                            <li><a href="#"><div>Vendita</div></a></li>
+                            <li><a href="#"><div>Affitti <i class="icon-chevron-down"></i></div></a>
+                                <ul>
+                                    <li><a href="#"><div>Vacanze Settimanali</div></a></li>
+                                    <li><a href="#"><div>Affitto case vacanze</div></a></li>
+                                </ul>
+                            <li><a href="#"><div>Meteo Webcam</div></a></li>
+                            <li><a href="#"><div>Blog</div></a></li>
                             <li><a href="#"><div>Contatti</div></a></li>
                         </ul>
                     </div>
@@ -144,23 +137,26 @@
 
 		</header><!-- #header end -->
 
-		<section id="slider" class="slider-parallax swiper_wrapper clearfix">
+        <section id="slider" class="slider-parallax swiper_wrapper clearfix" data-class-sm="" data-class-xs="hidden" style="border-bottom: solid 1px rgba(255,255,255,.25)">
+            <div class="center dark" style="color: #fff; position: absolute; top: 10px; z-index: 100; width: 100%;">
+                <h1 style="font-family: 'Kaushan Script';text-shadow: 2px 2px rgba(0,0,0,.5); font-size: 40px">Costa degli Etruschi Toscana</h1>
+            </div>
 
 			<div class="swiper-container swiper-parent">
-				<div class="swiper-wrapper">
+                <div class="swiper-wrapper">
 					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-1.jpg');">
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-center">
-								<h2 data-caption-animate="fadeInUp">Prenota ora la tua vacanza!</h2>
-                                <p data-caption-animate="fadeInUp" data-caption-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
+                                <h2 data-caption-animate="fadeInUp" style="text-shadow: 2px 2px rgba(0,0,0,.5) !important;">Prenota ora la tua vacanza!</h2>
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200" style="text-shadow: 1px 1px rgba(0,0,0,1) !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
 							</div>
 						</div>
 					</div>
 					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-2.jpg'); background-position: center center;">
 						<div class="container clearfix">
 							<div class="slider-caption">
-								<h2 data-caption-animate="fadeInUp">Immobili a Castiglioncello</h2>
-                                <p data-caption-animate="fadeInUp" data-caption-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
+                                <h2 data-caption-animate="fadeInUp" style="text-shadow: 2px 2px rgba(0,0,0,.5) !important;">Immobili a Castiglioncello</h2>
+                                <p data-caption-animate="fadeInUp" data-caption-delay="200" style="text-shadow: 1px 1px rgba(0,0,0,1) !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
 							</div>
 						</div>
 					</div>
@@ -248,144 +244,20 @@
 		<!-- Content
 		============================================= -->
 		<section id="content">
-            <div class="content-wrap nopadding topmargin-sm">
-                <div class="container clearfix nobottommargin nopadding">
-                    <div class="col_one_third">
-                        <div class="panel panel-default divcenter rounded sell-lighter">
-                            <div class="fancy-title center nomargin" style="padding: 5px 20px;">
-                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Offerte Last Minute</h4>
-                            </div>
-
-                            <div class="divider divider-border divider-darker divider-center nomargin">
-                                <i class="icon-arrow-down2"></i>
-                            </div>
-                            <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
-                                
-                                <div class="col_half">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col_half col_last">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-                                <div class="col_half">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col_half col_last">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col_half">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col_half col_last">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-                                <div class="col_half">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="col_half col_last">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3>€ 250.000</h3>
-                                        </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
-                                    </div>
-                                </div>
-                                <button class="button button-blue button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
+            <div class="content-wrap nopadding " style="padding-top: 30px !important;">
+<!--
+                <div class="promo parallax promo-dark promo-full bottommargin" style="padding: 30px 0 !important; margin-top: 10px;background-image: url('images/custom/bg_meteo.jpg');" data-stellar-background-ratio="0.5" data-class-xs="hidden">
+                    <div class="container clearfix">
+                        <h3>WEBCAM METEO <span>CASTIGLIONCELLO</span></h3>
+                        <a href="#" class="button button-3d button-blue button-xlarge button-rounded">Guarda ora</a>
                     </div>
+                </div>
+-->
+                <div class="container clearfix nobottommargin nopadding">
+                    
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded sell-lighter">
-                            <div class="fancy-title center nomargin" style="padding: 5px 20px;">
+                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
                                 <h4 class="sell" style="background: transparent"><i class="icon-home2"></i> Immobili in vendita</h4>
                             </div>
 
@@ -432,7 +304,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -447,7 +319,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -462,7 +334,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -477,7 +349,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
                                 <div class="col_half">
@@ -491,7 +363,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -506,7 +378,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
                                 <button class="button button-blue  button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
@@ -514,10 +386,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col_one_third col_last">
+                    <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
-                            <div class="fancy-title center nomargin" style="padding: 5px 20px;">
-                                <h4 class="dark" style="background: transparent">Immobili in locazione Estate 2016</h4>
+                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
+                                <h4 class="dark" style="background: transparent">Prenota la tua vacanza ESTATE 2016</h4>
                             </div>
 
                             <div class="divider divider-border divider-center nomargin">
@@ -563,7 +435,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -578,7 +450,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -593,7 +465,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -608,7 +480,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
                                 <div class="col_half">
@@ -622,7 +494,7 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
 
@@ -637,10 +509,143 @@
                                         <div class="entry-title">
                                             <h3>€ 250.000</h3>
                                         </div>
-                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">Vai ai dettagli <i class="icon-chevron-right"></i></button>
+                                        <button class="button button-amber btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
                                     </div>
                                 </div>
                                 <button class="button button-amber button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_one_third col_last">
+                        <div class="panel panel-default divcenter rounded sell-lighter">
+                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
+                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Altre Offerte &amp; Last Minute</h4>
+                            </div>
+
+                            <div class="divider divider-border divider-darker divider-center nomargin">
+                                <i class="icon-arrow-down2"></i>
+                            </div>
+                            <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
+
+                                <div class="col_half">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col_half">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="col_half">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col_half">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="col_half col_last">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="#" class="thumbnail"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>Castiglioncello appartamento al piano terra con giardino -50 metri dal mare.</p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3>€ 250.000</h3>
+                                        </div>
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <button class="button button-blue button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
                                 <div class="clear"></div>
                             </div>
                         </div>
@@ -650,7 +655,7 @@
                 <div class="section nomargin notoppadding clearfix">
                     <div class="container clearfix">
                         <div class="fancy-title title-center title-dotted-border topmargin">
-                            <h3>Ultime News</h3>
+                            <h3>Ultime dal Blog</h3>
                         </div>
 
                         <div id="oc-posts" class="owl-carousel posts-carousel">
@@ -833,7 +838,7 @@
                         </div>
                         <div class="divider divider-center "><i class="icon-chevron-down"></i></div>
                         <div class="col_full center nomargin text-lg-right text-md-right text-sm-right  text-xs-center">
-                            <button class="button button-blue button-rounded nomargin" rel="2" id="next" name="dati" value="next">Vai alla sezione delle news <i class="icon-arrow-right2"></i></button>
+                            <button class="button button-blue button-rounded nomargin" rel="2" id="next" name="dati" value="next">Vai al blog <i class="icon-arrow-right2"></i></button>
                         </div>
                     </div>
                     <script type="text/javascript">
@@ -867,7 +872,7 @@
 
         <!-- Footer
         ============================================= -->
-        <footer id="footer" class="dark" style="background: url('images/footer-bg.jpg') repeat; background-size: cover;">
+        <footer id="footer" class="dark">
 
             <div class="container">
 
@@ -879,7 +884,7 @@
 
                         <div class="widget clearfix">
 
-                            <img src="images/footer-widget-logo.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+                            <img src="images/custom/footer-logo.png" alt="Radar logo" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
 
                             <p><strong>Agenzia Radar Immobiliare</strong> - Via Aurelia, 548 - 57016 Castiglioncello (LI)<br>Tel. +39.0586.752596 - Fax +39.0586.759935 - Email: <a href="info@agenziaradar.it">info@agenziaradar.it</a><br>P.iva 01169600499</p>
 
@@ -1003,7 +1008,7 @@
                                 <i class="icon-youtube"></i>
                                 <i class="icon-youtube"></i>
                             </a>
-
+                            
                         </div>
                     </div>
 

@@ -8,20 +8,24 @@
 @screen-md-min : 992px;
 @screen-lg-min : 1200px;
 
-@theme-color: #0f204a;
+@theme-color: #18367e;
 @dark-bg-color: desaturate(@theme-color, 20%); 
 @dark-bg-color-darker: darken(@theme-color, 10%); 
 
-@summer-color : hsl(30, 80%, 50%);
+@summer-color : #e68019;
 
+
+#content {
+    background-color: @theme-color;
+}
 .theme-color, .sell{
     color: @theme-color;
 }
 .sell-light {
-    background-color: lighten(@theme-color, 65%);
+    background-color: lighten(@theme-color, 50%);
 }
 .sell-lighter {
-    background-color: lighten(@theme-color, 75%);
+    background-color: lighten(@theme-color, 65%);
 }
 
 .summer {
@@ -96,3 +100,11 @@
     }
 }
 
+.lang-switcher img {
+    position: relative;
+    top: -1px;
+}
+
+.lang-switcher ul { width: 140px !important; }
+
+.lang-switcher ul img { margin-right: 8px; }
