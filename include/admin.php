@@ -1,0 +1,9 @@
+<?php
+$modifica=array(
+	immobili=>'nome_immobile',
+	zone=>'nome_zona',
+	province=>'nome_provincia',
+	informazioni=>'titolo_informazione',
+	pagine=>'titolo_pagina_ita'
+);
+?>
