@@ -1,0 +1,13 @@
+<?PHP
+/**************************************************************************************************
+
+| BNC Scripts
+| http://bncscripts.com
+| WARNING: This file is protected by copyright law. To reverse engineer or decode this file is strictly prohibited.
+| Copyright (c) BNC Scripts. All rights reserved.
+
+|**************************************************************************************************/
+
+
+eval(gzinflate(base64_decode('DdRHEqPYAkTRrfSsq4IBCCeIP8J775l04IT3TrzVf60h857qyoY/NWinz5Ad1Z882ysS/6+sirms/vzLh9FrOx2Fsc+QxNJYK7Qe+WYNFxtPXSVBeqYUnGNeF8X6MKCF94He1XJ+36pFQyoyRohYw1Aommcsvl80le82hxeHkZa9XrSCI/BaJXYN7+1uRxkub89g9jD2U4dL9DJMtBfuKMWCiRLUcpeZi7vp90rRJHd7p/WYFZuz101mqAtGWOznIjKn9nSGDOwsxmaDTeduiFiEqNHNV8fYE3JCNAcBjAPsEQD1HsbzSw7WUncJ11bgXlOW2XlSvRNWKdLmQF1TDcNr3Ryr6l1cM1vzaHGxZOraS2h3kPdXrG/GPRexlykB4gvgTVeOS/N8EuHSRmmvhLNrAdAFyPXkMnCF5M08Xb+AxkvTLfuzSy8w3hp+cbwxxcg+5bh0IeUURhFXk22teRkI6AVk1l1C5NamQo4UVKMHU0qIuK68Ed4/QsVst8he2HmROPKVhNSmOy8ja1seGF+bKQoTB5tcj5VVZuzZuV7yMDIjkdLwodUEUaolj2gVMgf3Dd2gIKfryYNZwwzjqq3XycfRmnf+SHuKo96wAw3IkZEhDkTnfU4hZ4sG8u1CL80TZc4cVsFYrwyPzoag83hl5jtF+1WEPr0FBYvdMxuldpjYjKqmo+z4NWe4V8qWx5n3MxPG06EIgh9A8q5POA+Tn6SQgAaxuRUbcslLJxDrSIH289Rj71RfcJMkUJMiyhxZHI+ch2HRWVZflo538T5LxHuvNB+sZJgEUIHnjNK6AvV5lB6TY+wd3n0CkgRPryJWpO3m7tEXpbHygn7xjXnXV2MPRIHo6S7kM89lHVWJbCB8Bc7Iv8LBU7CzuXXxDII887VzCWqPCfNZTog3rxmGLTkkfEdQqkEXye8AjpJdk6u5IctWPAtDqR9eMwppTZBcJcrioTfEyg2JrUDRU0i71yTMEU91Bp/iJXq4X4vKXj2moke8nRA0MXy6uTKx37cLAmpmWmv2XjuQzTWbadnpvtsjwVmpQm17Av4iruRoN8Tec08097CP2y4v8JPMllNwZ9/U0WExeGclKrWY5No75Oz2DMYRIMbSymqy5JVDi5e5ez/D2QBSE17Onvq89dPrkZsVPJXy1aEXeYbSPOTMRAia8bp5sPBjptMloudu5TvnXPAvtj2JAnll61OHMm+Ugy/ijSuTVmwv+y0cJsWN7eYvCjBqklZiv2fyFj86+nI2foX5fJB6+MEdFlJxGKYYEdu4xlQqLBEHhr2BjL3BpXmPy8z4m31QKfUas+ezKJN+lqxJlzGwrmuhhnoVBjjqzkKYi6G82bcRI+1WlJH0NET9gfwvWEMpH1Cih9ErtfdA2cCSoZ7s68T+9cUKlK/nJZ2C1R/hMUFJZghKW4xAQ4VBOrmafyM7631r3tX1/BU00M0J8tV1WbPrj2Dn5cMYI/9luPnYIIuSnbAOSDYoreBYODDfDYlgP9n8hozZpNqyVmsWFx9ssMV8oH3bAK56XbAVU3OMdul9NNnKADfOahLgMMMaWbh4ctySAw2FJWp5BW1vgWa49NaBX3fSgLp4ppCOOcVlFrFj6dvoNUl2MKNpDFbNPLV0k2hL7PrS16VgSdcqgHj1rSGvgxxxrptpDzXiX/yZcR0/VbNRPKoF2m9d4WXjeHVIlEjfwAs0isdcBpUKBgnM9aHuryT49OcqD31Km8uU5x/YH4Oe5G7nPmWPIyXCuYkr6h0TYJjVwBpjE3oYEhAk/TiyRWjEd57QxgnQ22MVKfG8osoH7xr6oWIYRdkbP30eLoCFQfN/F6sigE9S2TD6a0E3uDVWm2TI6U6MQSVXQfSlqA4wudBGW/lO9WKYWbh169AbP4nltHoPt8bQGjCovU0kXrSE6Hty3kIOJx0DWB3qH/n40tbls7ckkuIq56t7/jTRxzIT/7e7OklMq2iTwKnqdRUaHfHwdVBvV95AD7n4gx9HzCUSE/SoOdiF9nAP6xmGVUYaVZXHJVon0aOqPBwF3s8Ic7GtX+CoJEG53ECw+2u62Ew8RlYPJp9Ne1G0HiX5tckR4itxrzTz1VvIaYszd35oSDTyALf1KAM1zUohGdOd8MLuGydueS9NbzobrXmbGYOC/IZ8hrRmIb0JEY432TQC/li7Gn1891MijelK8MyJh2oPWrou3YHcQEgRwCUDRHvsh78Jw38CXAkCceu4RMPLD0ZD0GVPAIbhy4D//fv37//++T8='))); 
+?>

@@ -11,7 +11,7 @@ if(isset($_GET))
 		$lg='?'.$lg;
 }
     //define('TOTALPATH','http://');
-    define('TOTALPATH','http://www.agenziaradar.it/newp/');
+    define('TOTALPATH','http://localhost/agenziaradar/newp/');
     define('TOTALPATHREMOTE','http://www.agenziaradar.it/');
 	define('INCLUDEPATH','include/');
 	define('CLASSPATH','include/classi/');
@@ -29,5 +29,6 @@ if(isset($_GET))
    include(INCLUDEPATH.'cd.php');
    include(FUNCTIONPATH.'utilita.php');
    include(CLASSPATH.'box.class.php');
+   include(CLASSPATH.'bncscripts_rss.php');
    $box=new box($desPrezzo);
    ?>
