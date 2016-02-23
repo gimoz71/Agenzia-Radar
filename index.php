@@ -155,7 +155,7 @@ $keywords=KEY_INDEX;
                     
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded sell-lighter">
-                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
+                            <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
                                 <h4 class="sell" style="background: transparent"><i class="icon-home2"></i> Immobili in vendita</h4>
                             </div>
 
@@ -200,8 +200,8 @@ $keywords=KEY_INDEX;
                                                     <option value="700001-100000000"><?=OLTRE?> 700.000 &euro;</option>
                                                 </select>
                                             </div>
-                                            <div class="col_full nobottommargin text-lg-right text-md-right text-sm-right  text-xs-center">
-                                            <button class="button button-blue btn-block button-small button-rounded nomargin" type="submit" name="cerca" value="<?php echo CERCA;?>"><?php echo CERCA;?> <i class="icon-arrow-right2"></i></button>
+                                            <div class="text-lg-right text-md-right text-sm-right text-xs-center">
+                                                <button class="button button-blue btn-block button-small button-rounded nomargin" type="submit" name="cerca" value="<?php echo CERCA;?>"><?php echo CERCA;?> <i class="icon-arrow-right2"></i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -210,7 +210,7 @@ $keywords=KEY_INDEX;
                                     $box->immobiliHome('immobili', $_SESSION['lan']);
                                 ?>
                                 <form action="" class="nomargin">
-                                    <button class="button button-blue  button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
+                                    <button class="button button-blue  button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
                                 </form>
                                 <div class="clear"></div>
                             </div>
@@ -218,7 +218,7 @@ $keywords=KEY_INDEX;
                     </div>
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
-                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
+                            <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
                                 <h4 class="dark" style="background: transparent">Prenota la tua vacanza ESTATE 2016</h4>
                             </div>
 
@@ -228,40 +228,40 @@ $keywords=KEY_INDEX;
                             <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
                                 <div class="panel panel-default divcenter rounded " style="background: rgba(255,255,255,.8)">
                                     <div class="panel-body rounded" style="padding: 20px;">
+                                        <form class="nomargin">
+                                            <div class="col_full">
+                                                <select id="register-form-category" name="register-form-category" class="form-control required">
+                                                    <option value="">Posti letto</option>
+                                                    <option value="sassofono">1</option>
+                                                    <option value="piano">2</option>
+                                                    <option value="batteria">3</option>
+                                                </select>
+                                            </div>
+                                            <div class="line" style="margin: 42px 0 41px 0"></div>
+                                            <div class="col_full">
+                                                <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" />
+                                            </div>
+                                            <div class="col_full">
+                                                <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" />
+                                            </div>
 
-                                        <div class="col_full">
-                                            <select id="register-form-category" name="register-form-category" class="form-control required">
-                                                <option value="">Posti letto</option>
-                                                <option value="sassofono">1</option>
-                                                <option value="piano">2</option>
-                                                <option value="batteria">3</option>
-                                            </select>
-                                        </div>
-                                        <div class="col_half">
-                                            <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" />
-                                        </div>
-                                        <div class="col_half  col_last">
-                                            <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" />
-                                        </div>
-
-                                        <div class="col_full nobottommargin text-lg-right text-md-right text-sm-right  text-xs-center">
-                                            <button class="button btn-block button-amber button-small button-rounded nomargin" rel="2" id="next" name="dati" value="next">Ricerca online <i class="icon-arrow-right2"></i></button>
-                                        </div>
-
+                                            <div class="text-lg-right text-md-right text-sm-right  text-xs-center">
+                                                <button class="button btn-block button-amber button-small button-rounded nomargin" rel="2" id="next" name="dati" value="next">Ricerca online <i class="icon-arrow-right2"></i></button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <?php 
-                	$box->immobiliHome('vacanze', $_SESSION['lan']);
-                	?>
-                                
-                                <button class="button button-amber button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
+                                    $box->immobiliHome('vacanze', $_SESSION['lan']);
+                                ?>
+                                <button class="button button-amber button-rounded btn-block button-small nomargin">Sltre proposte <i class="icon-arrow-right2"></i></button>
                                 <div class="clear"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col_one_third col_last">
                         <div class="panel panel-default divcenter rounded sell-lighter">
-                            <div class="fancy-title center nomargin" style="padding: 5px 15px;">
+                            <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
                                 <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Altre Offerte &amp; Last Minute</h4>
                             </div>
 
@@ -269,11 +269,10 @@ $keywords=KEY_INDEX;
                                 <i class="icon-arrow-down2"></i>
                             </div>
                             <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
-                              <?php 
-                	$box->immobiliHome('last_minute', $_SESSION['lan']);
-                	?>
-                                
-                                <button class="button button-blue button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
+                                <?php 
+                                    $box->immobiliHome('last_minute', $_SESSION['lan']);
+                                ?>
+                                <button class="button button-blue button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
                                 <div class="clear"></div>
                             </div>
                         </div>

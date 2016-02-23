@@ -117,12 +117,12 @@ function costruisciPathLan($cosa,$immo,$lan)
     	    if(($j%2)==0)
     	        $ultimo=' col_last';
         ?>
-<div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
+        <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
             <div class="ipost center clearfix">
                 <div class="entry-image nomargin">
-                    <a href="<?php echo $url;?>" class="thumbnail"><img class="image_fade" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></a>
+                    <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('images/custom/placeholder1.jpg') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
                 </div>
-                <div class="entry-content">
+                <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
                     <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
                 </div>
                 <div class="entry-title">
