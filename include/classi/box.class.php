@@ -108,18 +108,33 @@ function costruisciPathLan($cosa,$immo,$lan)
     	{
     		$classeDe=' dettagli_alt';
     	}
+    	$j=1;
     	while($immo=mysql_fetch_array($immobili))
     	{
     	    $url=$this->costruisciPath($cosa, $immo,$lan);
     	    $titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]).' ';
+    	    $ultimo='';
+    	    if(($j%2)==0)
+    	        $ultimo=' col_last';
     		?>
-    	<div class="item"> 
-    		<a href="<?php echo $url;?>" class="cornice_foto" style="background-image: url(<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>);"><img src="<?php echo IMAGESPATH;?>cornice_foto.png" width="150" height="116" alt="thumb" /></a>
-            <h3><a href="<?php echo $url;?>" title=""><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> <?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '<br /><strong>&euro; '.number_format($immo['prezzo'],0,',','.').'</strong>';}?></a></h3>
-            <p></p>
-            <a class="details <?php echo $classeDe?>" href="<?php echo $url;?>" title="<?php echo DETTAGLI;?>" ><?php echo DETTAGLI;?></a>
-       </div>
-    		<?php 
+    	<div class="col_half <?php echo $ultimo;?>">
+                                    <div class="ipost center clearfix">
+                                        <div class="entry-image nomargin">
+                                            <a href="<?php echo $url;?>" class="thumbnail"><img class="image_fade" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></a>
+                                        </div>
+                                        <div class="entry-content">
+                                            <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
+                                        </div>
+                                        <form action="<?php echo $url;?>">
+                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                                        </form>
+                                    </div>
+                                </div>	
+    			<?php 
+    		$j++;
     	}
     	
     }
