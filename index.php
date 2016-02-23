@@ -254,7 +254,7 @@ $keywords=KEY_INDEX;
                                 <?php 
                                     $box->immobiliHome('vacanze', $_SESSION['lan']);
                                 ?>
-                                <button class="button button-amber button-rounded btn-block button-small nomargin">Sltre proposte <i class="icon-arrow-right2"></i></button>
+                                <button class="button button-amber button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
                                 <div class="clear"></div>
                             </div>
                         </div>
