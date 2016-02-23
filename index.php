@@ -131,7 +131,7 @@ $keywords=KEY_INDEX;
 		<!-- Content
 		============================================= -->
 		<section id="content">
-            <div class="content-wrap nopadding " style="padding-top: 30px !important;">
+            <div class="content-wrap nopadding">
                <div class="section nomargin " style="padding: 40px 0 ; background: url('images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
                     <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
@@ -151,8 +151,7 @@ $keywords=KEY_INDEX;
                         </div>
                     </div>
                 </div>
-                <div class="container clearfix nobottommargin nopadding">
-                    
+                <div class="container clearfix nobottommargin nopadding" style="padding-top: 30px !important;">
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded sell-lighter">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
