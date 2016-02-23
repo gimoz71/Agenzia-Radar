@@ -116,25 +116,25 @@ function costruisciPathLan($cosa,$immo,$lan)
     	    $ultimo='';
     	    if(($j%2)==0)
     	        $ultimo=' col_last';
-    		?>
-    	<div class="col_half <?php echo $ultimo;?>">
-                                    <div class="ipost center clearfix">
-                                        <div class="entry-image nomargin">
-                                            <a href="<?php echo $url;?>" class="thumbnail"><img class="image_fade" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></a>
-                                        </div>
-                                        <div class="entry-content">
-                                            <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
-                                        </div>
-                                        <form action="<?php echo $url;?>">
-                                        <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
-                                        </form>
-                                    </div>
-                                </div>	
-    			<?php 
-    		$j++;
+        ?>
+<div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
+            <div class="ipost center clearfix">
+                <div class="entry-image nomargin">
+                    <a href="<?php echo $url;?>" class="thumbnail"><img class="image_fade" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></a>
+                </div>
+                <div class="entry-content">
+                    <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
+                </div>
+                <div class="entry-title">
+                    <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
+                </div>
+                <form action="<?php echo $url;?>" class="nomargin">
+                <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                </form>
+            </div>
+        </div>	
+            <?php 
+        $j++;
     	}
     	
     }
@@ -803,8 +803,8 @@ function elencoImmobiliVacanze($tipo,$lan,$getor=false)
 					<td style="border: 1px solid #cccccc;<?=$sfondo?>" align="left"><?=$r['ordine']?></td>
 					<td style="border: 1px solid #cccccc;<?=$sfondo?>" align="left"><?=$r['prezzo']?></td>
 					<td style="border: 1px solid #cccccc;<?=$sfondo?>" align="left"><?=$r['cognome_proprietario']?></td>
-					<td style="border: 1px solid #cccccc;<?=$sfondo?>" align="center"><form action="modifica.php?cosa=immobili&id=<?php echo $r['id_immobili']?>" method="post"><input type="submit" value="Modifica" name="modifica" /></form></td>
-					<td style="border: 1px solid #cccccc;<?=$sfondo?>" align="center"><form action="<?php echo FUNCTIONPATH?>modifica.php?cosa=immobili&id=<?php echo $r['id_immobili']?>&nome=nome_immobile_it" method="post" onsubmit="return confirm('Si vuole procedere con la cancellazione di questo oggetto?');"><input type="submit" name="cancella" value="Cancella" /></form></td>
+                        <td style="border: 1px solid #cccccc;<?=$sfondo?>" align="center"><form action="modifica.php?cosa=immobili&id=<?php echo $r['id_immobili']?>" method="post" class="nomargin"><input type="submit" value="Modifica" name="modifica" /></form></td>
+                        <td style="border: 1px solid #cccccc;<?=$sfondo?>" align="center"><form action="<?php echo FUNCTIONPATH?>modifica.php?cosa=immobili&id=<?php echo $r['id_immobili']?>&nome=nome_immobile_it" method="post" onsubmit="return confirm('Si vuole procedere con la cancellazione di questo oggetto?');" class="nomargin"><input type="submit" name="cancella" value="Cancella" /></form></td>
 					</tr>
 					<?php
 			  }

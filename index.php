@@ -20,7 +20,7 @@ $keywords=KEY_INDEX;
         
 		<?php include INCLUDEPATH.'menu.php';?>
 
-        <section id="slider" class="slider-parallax swiper_wrapper clearfix" data-class-sm="" data-class-xs="hidden" style="border-bottom: solid 1px rgba(255,255,255,.25)">
+        <section id="slider" class="slider-parallax swiper_wrapper clearfix" style="border-bottom: solid 1px rgba(255,255,255,.25)" data-class-lg="nothidden" data-class-md="nothidden" data-class-sm="nothidden" data-class-xs="hidden" data-class-xxs="hidden">
             <div class="center dark" style="color: #fff; position: absolute; top: 10px; z-index: 100; width: 100%;">
                 <h1 style="font-family: 'Kaushan Script';text-shadow: 2px 2px rgba(0,0,0,.5); font-size: 40px">Costa degli Etruschi Toscana</h1>
             </div>
@@ -132,19 +132,19 @@ $keywords=KEY_INDEX;
 		============================================= -->
 		<section id="content">
             <div class="content-wrap nopadding " style="padding-top: 30px !important;">
-               <div class="section nomargin " style="padding: 40px 0 ; background: url('images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="not-hidden" data-class-xs="not-hidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
+               <div class="section nomargin " style="padding: 40px 0 ; background: url('images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
                     <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
-                        <form action="vendite.php"
-                           <button class="button button-blue button-3d btn-block button-rounded nomargin">Immobili in vendita <i class=""></i></button>
-                         </form>  
+                            <form action="vendite.php" class="nomargin">
+                                <button class="button button-blue button-3d btn-block button-rounded nomargin">Immobili in vendita</button>
+                            </form>  
                             <div class="divider" style="margin: 10px 0"></div>
-                            <form action="#">
-                            <button class="button button-blue button-3d btn-block button-rounded nomargin">Vacanze Estate 2016 <i class=""></i></button>
+                            <form action="#" class="nomargin">
+                                <button class="button button-blue button-3d btn-block button-rounded nomargin">Vacanze Estate 2016</button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
-                            <form action="#">
-                            <button class="button button-blue button-3d btn-block button-rounded nomargin">Altre Offerte <i class=""></i></button>
+                            <form action="#" class="nomargin">
+                                <button class="button button-blue button-3d btn-block button-rounded nomargin">Altre Offerte</i></button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
                             <a href="tel:+390586752596"><button class="button button-blue button-3d btn-block button-rounded nomargin"><i class="icon-call"></i> Chiama ora </button></a>
@@ -165,54 +165,52 @@ $keywords=KEY_INDEX;
                             <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
                                 <div class="panel panel-default divcenter rounded " style="background: rgba(255,255,255,.8)">
                                     <div class="panel-body rounded" style="padding: 20px;">
-                                         <form action="<?=TOTALPATH?>immobili.php" method="get">
-                                         <div class="col_full">
-                                            <input  type="text" name="rif" size="4"  class="form-control required" placeholder="Rif." />
+                                        <form action="<?=TOTALPATH?>immobili.php" method="get" class="nomargin">
+                                            <div class="col_full">
+                                                <input  type="text" name="rif" size="4"  class="form-control required" placeholder="Rif." />
+                                                </div>
+                                            <div class="col_full">
+                                                <select id="register-form-category" name="categoria"  class="form-control required">
+                                                    <option  value=""> <?=CATEGORIA_IMMO?> </option>
+                                                    <option value="residenziale" <?php if($_GET['categoria']=='residenziale') echo ' selected="selected" ';?>><?=RIC_RESIDENZIALE?></option>
+                                                    <option value="commerciale" <?php if($_GET['categoria']=='commerciale') echo ' selected="selected" ';?>><?=RIC_COMMERCIALE?></option>
+                                                    <option value="industriale" <?php if($_GET['categoria']=='industriale') echo ' selected="selected" ';?>><?=RIC_CAPANNONI?></option>
+                                                    <option value="posto_barca" <?php if($_GET['categoria']=='posto_barca') echo ' selected="selected" ';?>><?=RIC_BARCA?></option>
+                                                </select>
                                             </div>
-                                        <div class="col_full">
-                                            <select id="register-form-category" name="categoria"  class="form-control required">
-                                                <option  value=""> <?=CATEGORIA_IMMO?> </option>
-                                        		<option value="residenziale" <?php if($_GET['categoria']=='residenziale') echo ' selected="selected" ';?>><?=RIC_RESIDENZIALE?></option>
-                                        		<option value="commerciale" <?php if($_GET['categoria']=='commerciale') echo ' selected="selected" ';?>><?=RIC_COMMERCIALE?></option>
-                                        		<option value="industriale" <?php if($_GET['categoria']=='industriale') echo ' selected="selected" ';?>><?=RIC_CAPANNONI?></option>
-                                        		<option value="posto_barca" <?php if($_GET['categoria']=='posto_barca') echo ' selected="selected" ';?>><?=RIC_BARCA?></option>
-                                            </select>
-                                        </div>
-                                        <div class="col_full">
-                                        <select name="localita"  class="form-control required">
-                                        	<option  value=""><?=LOCALITA;?></option>
-                                        	<?php
-                                        	$zone=mysql_query("select distinct l.id_localita, localita from localita l,immobili i where i.id_localita=l.id_localita and i.pubblicato=1");
-                                        	while ($z=mysql_fetch_assoc($zone))
-                                        	{?>
-                                        	<option value="<?=$z['id_localita']?>" <?php if($_GET['localita']==$z['id_localita']) echo ' selected="selected" ';?> ><?=$z['localita']?></option>
-                                        		<?php
-                                        	}
-                                        	?>
-                                          </select>
-                                          </div>
-                                          <div class="col_full">
-                                        	<select name="prezzo"  class="form-control required">
-                                        		<option  value=""> <?=PREZZO?> </option>
-                                        		<option value="0-250000"><?=FINO?> 250.000 &euro;</option>
-                                        		<option value="250001-350000">250.000 - 350.000 &euro;</option>
-                                        		<option value="350001-700000">350.000 - 700.000 &euro;</option>
-                                        		<option value="700001-100000000"><?=OLTRE?> 700.000 &euro;</option>
-                                        	</select>
-                                        	</div>
-                                        	<div class="col_full nobottommargin text-lg-right text-md-right text-sm-right  text-xs-center">
-                                        	<button class="button button-blue btn-block button-small button-rounded nomargin" type="submit" name="cerca" value="<?php echo CERCA;?>"><?php echo CERCA;?> <i class="icon-arrow-right2"></i></button>
-                                        	</div>
-                                        	</form>
-                                        
-
+                                            <div class="col_full">
+                                                <select name="localita"  class="form-control required">
+                                                <option  value=""><?=LOCALITA;?></option>
+                                                <?php
+                                                $zone=mysql_query("select distinct l.id_localita, localita from localita l,immobili i where i.id_localita=l.id_localita and i.pubblicato=1");
+                                                while ($z=mysql_fetch_assoc($zone))
+                                                {?>
+                                                <option value="<?=$z['id_localita']?>" <?php if($_GET['localita']==$z['id_localita']) echo ' selected="selected" ';?> ><?=$z['localita']?></option>
+                                                <?php
+                                                }
+                                                ?>
+                                              </select>
+                                            </div>
+                                            <div class="col_full">
+                                                <select name="prezzo"  class="form-control required">
+                                                    <option  value=""> <?=PREZZO?> </option>
+                                                    <option value="0-250000"><?=FINO?> 250.000 &euro;</option>
+                                                    <option value="250001-350000">250.000 - 350.000 &euro;</option>
+                                                    <option value="350001-700000">350.000 - 700.000 &euro;</option>
+                                                    <option value="700001-100000000"><?=OLTRE?> 700.000 &euro;</option>
+                                                </select>
+                                            </div>
+                                            <div class="col_full nobottommargin text-lg-right text-md-right text-sm-right  text-xs-center">
+                                            <button class="button button-blue btn-block button-small button-rounded nomargin" type="submit" name="cerca" value="<?php echo CERCA;?>"><?php echo CERCA;?> <i class="icon-arrow-right2"></i></button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-<?php 
-                	$box->immobiliHome('immobili', $_SESSION['lan']);
-                	?>
-                               <form action="">
-                                <button class="button button-blue  button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
+                                <?php 
+                                    $box->immobiliHome('immobili', $_SESSION['lan']);
+                                ?>
+                                <form action="" class="nomargin">
+                                    <button class="button button-blue  button-rounded btn-block button-small nomargin">Vedi le altre proposte <i class="icon-arrow-right2"></i></button>
                                 </form>
                                 <div class="clear"></div>
                             </div>
