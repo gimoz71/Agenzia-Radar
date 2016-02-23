@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/magnific-popup.css" type="text/css" />
 
     <!-- Da scambiare in rilascio finale con la versione CSS compilata -->
-    <link rel="stylesheet" href="custom.less" type="text/less" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+    <!--    <link rel="stylesheet" href="custom.less" type="text/less" />-->
     <!-- ============================================================= -->
 
-    <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lt IE 9]>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/plugins.js"></script>
 
     <!-- Compila sul client i file LESS. Da commentare (o eliminare del tutto) in rilascio finale con la versione CSS compilata -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+<!--    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
 
 	<!-- Document Title
 	============================================= -->
