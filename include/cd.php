@@ -5,10 +5,10 @@ $pswd='pschiara';
 $url='gloryacht.com';
 $db='glory1_';
 */
-$log='Sql815747';
-$pswd='x5p8n2194u';
-$url='62.149.150.179';
-$db='Sql815747_1';
+$log='root';
+$pswd='l0v3cr4ft';
+$url='localhost';
+$db='radar';
 
 /*
 $log='root';
