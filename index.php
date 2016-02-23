@@ -151,7 +151,7 @@ $keywords=KEY_INDEX;
                         </div>
                     </div>
                 </div>
-                <div class="container clearfix nobottommargin nopadding" style="padding-top: 30px !important;">
+                <div class="container clearfix nobottommargin nopadding"  data-class-xxs="hidden" data-class-xs="hidden" data-class-sm="nothidden" data-class-md="nothidden" data-class-lg="nothidden" style="padding-top: 30px !important;">
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded sell-lighter">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
