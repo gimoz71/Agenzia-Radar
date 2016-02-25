@@ -206,7 +206,6 @@ $keywords=KEY_INDEX;
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
                                 <h4 class="dark" style="background: transparent">Prenota la tua vacanza ESTATE 2016</h4>
                             </div>
-
                             <div class="divider divider-border divider-center nomargin">
                                 <i class="icon-arrow-down2"></i>
                             </div>
@@ -224,10 +223,14 @@ $keywords=KEY_INDEX;
                                             </div>
                                             
                                             <div class="col_full">
-                                                <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" />
+                                                <div class="input-group date">
+                                                    <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" /><span class="input-group-addon"><i class="icon-th"></i></span>
+                                                </div>
                                             </div>
                                             <div class="col_full">
-                                                <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" />
+                                                <div class="input-group date">
+                                                    <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" /><span class="input-group-addon"><i class="icon-th"></i></span>
+                                                </div>
                                             </div>
                                              <div class="line" style="margin: 42px 0 41px 0"></div>
                                             <div class="text-lg-right text-md-right text-sm-right  text-xs-center">
@@ -272,6 +275,9 @@ $keywords=KEY_INDEX;
 		</section><!-- #content end -->
 
        <?php include(INCLUDEPATH.'footer.php');?>
-
+        <script>
+            $('.input-group.date').datepicker({
+            });
+        </script>
 </body>
 </html>

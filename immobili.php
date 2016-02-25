@@ -58,10 +58,10 @@ $menu['immobili']='class="selezionato"';
                                                 <input type="text" class="form-control" placeholder="Rif." name="rif">&nbsp;
                                                 <select name="categoria"  class="form-control required">
                                                     <option  value=""> <?=CATEGORIA_IMMO?> </option>
-		<option value="residenziale" <?php if($_GET['categoria']=='residenziale') echo ' selected="selected" ';?>><?=RIC_RESIDENZIALE?></option>
-		<option value="commerciale" <?php if($_GET['categoria']=='commerciale') echo ' selected="selected" ';?>><?=RIC_COMMERCIALE?></option>
-		<option value="industriale" <?php if($_GET['categoria']=='industriale') echo ' selected="selected" ';?>><?=RIC_CAPANNONI?></option>
-		<option value="posto_barca" <?php if($_GET['categoria']=='posto_barca') echo ' selected="selected" ';?>><?=RIC_BARCA?></option>
+                                                    <option value="residenziale" <?php if($_GET['categoria']=='residenziale') echo ' selected="selected" ';?>><?=RIC_RESIDENZIALE?></option>
+                                                    <option value="commerciale" <?php if($_GET['categoria']=='commerciale') echo ' selected="selected" ';?>><?=RIC_COMMERCIALE?></option>
+                                                    <option value="industriale" <?php if($_GET['categoria']=='industriale') echo ' selected="selected" ';?>><?=RIC_CAPANNONI?></option>
+                                                    <option value="posto_barca" <?php if($_GET['categoria']=='posto_barca') echo ' selected="selected" ';?>><?=RIC_BARCA?></option>
                                                 </select>&nbsp;
                                                 <select name="localita"  class="form-control required">
                                                     <option  value=""><?=LOCALITA;?></option>
@@ -90,9 +90,9 @@ $menu['immobili']='class="selezionato"';
 
                             <div class="line"></div>
                            
-                      <?php 
-                              $box->elencoImmobili('immobili',$_SESSION['lan'],$get);
-                              ?>
+                            <?php 
+                                $box->elencoImmobili('immobili',$_SESSION['lan'],$get);
+                            ?>
                            
                         </div>
                     </div>

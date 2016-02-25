@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/animate.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/bootstrap-datepicker3.css" type="text/css" />
 
     <!-- Da scambiare in rilascio finale con la versione CSS compilata -->
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>/custom.css" type="text/css" />
@@ -22,6 +23,7 @@
     <!-- External JavaScripts
     ============================================= -->
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo TOTALPATH;?>js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/plugins.js"></script>
 
     <!-- Compila sul client i file LESS. Da commentare (o eliminare del tutto) in rilascio finale con la versione CSS compilata -->
