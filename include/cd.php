@@ -12,7 +12,7 @@ $db='Sql815747_1';
 */
 
 $log='root';
-$pswd='root';
+$pswd='l0v3cr4ft';
 $url='localhost';
 $db='radar';
 

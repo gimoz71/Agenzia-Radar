@@ -11,8 +11,8 @@ if(isset($_GET))
 		$lg='?'.$lg;
 }
     //define('TOTALPATH','http://');
-    define('TOTALPATH','http://localhost/agenziaradar/newp/');
-    define('TOTALPATHREMOTE','http://www.agenziaradar.it/');
+    define('TOTALPATH','http://local.radar.it/');
+    define('TOTALPATHREMOTE','http://local.radar.it/');
 	define('INCLUDEPATH','include/');
 	define('CLASSPATH','include/classi/');
 	define('FUNCTIONPATH','include/funzioni/');
