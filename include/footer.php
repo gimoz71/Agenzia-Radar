@@ -16,10 +16,10 @@
                 <div class="widget clearfix">
 
                     <div class="col_two_fifth" data-class-lg="tleft" data-class-md="tleft" data-class-sm="tleft" data-class-xs="center" data-class-xxs="center">
-                        <img src="images/custom/footer-logo.png" alt="Radar logo">
+                        <img src="<?php echo IMAGESPATH?>/custom/footer-logo.png" alt="Radar logo">
                     </div>
                     <div class="col_three_fifth col_last" data-class-lg="tleft" data-class-md="tleft" data-class-sm="tleft" data-class-xs="center" data-class-xxs="center">
-                        <p><strong>Agenzia Radar Immobiliare</strong> - Via Aurelia, 548 - 57016 Castiglioncello (LI)<br>Tel. +39.0586.752596 - Fax +39.0586.759935 - Email: <a href="info@agenziaradar.it">info@agenziaradar.it</a><br>P.iva 01169600499</p>
+                        <p><strong>Agenzia Radar Immobiliare</strong> <br> Via Aurelia, 548 - 57016 Castiglioncello (LI)<br>Tel. +39.0586.752596 - Fax +39.0586.759935 <br> Email: <a href="info@agenziaradar.it">info@agenziaradar.it</a><br>P.iva 01169600499</p>
                     </div>
                     
                     <div class="line" style="margin: 30px 0;"></div>
@@ -71,10 +71,10 @@
                 <div class="widget clearfix" style="margin-bottom: -20px;">
                     <div class="row">
                         <div class="col-md-6 bottommargin-sm">
-                            <img src="images/custom/fiaip.jpg">
+                            <img src="<?php echo IMAGESPATH?>/custom/fiaip.jpg">
                         </div>
                         <div class="col-md-6 bottommargin-sm">
-                            <img src="images/custom/bandiera-blu.png">
+                            <img src="<?php echo IMAGESPATH?>/custom/bandiera-blu.png">
                         </div>
                     </div>
                 </div>
@@ -131,16 +131,3 @@
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
-
-
-
-
-<div align="center">
-    <!-- Inizio Codice Shinystat -->
-    <script type="text/javascript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=cogiorgio"> </script>
-    <noscript>
-        <a href="http://www.shinystat.com/it" target="_top">
-        <img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=cogiorgio" alt="Contatore siti" border="0"></a>
-    </noscript>
-    <!-- Fine Codice Shinystat -->
-</div>

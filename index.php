@@ -27,26 +27,12 @@ $keywords=KEY_INDEX;
 
 			<div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-1.jpg');">
-<!--
-						<div class="container clearfix">
-							<div class="slider-caption slider-caption-center">
-                                <h2 data-caption-animate="fadeInUp" style="text-shadow: 2px 2px rgba(0,0,0,.5) !important;">Prenota ora la tua vacanza!</h2>
-                                <p data-caption-animate="fadeInUp" data-caption-delay="200" style="text-shadow: 1px 1px rgba(0,0,0,1) !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
-							</div>
-						</div>
--->
-					</div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-2.jpg'); background-position: center center;">
-<!--
-						<div class="container clearfix">
-							<div class="slider-caption">
-                                <h2 data-caption-animate="fadeInUp" style="text-shadow: 2px 2px rgba(0,0,0,.5) !important;">Immobili a Castiglioncello</h2>
-                                <p data-caption-animate="fadeInUp" data-caption-delay="200" style="text-shadow: 1px 1px rgba(0,0,0,1) !important;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus tempor ex placerat convallis. In quam dui, pulvinar sit amet fermentum non, semper at felis</p>
-							</div>
-						</div>
--->
-					</div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-1.jpg');"></div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-2.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-3.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-4.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-5.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-6.jpg'); background-position: center center;"></div>
 				</div>
 				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
 				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
@@ -133,7 +119,7 @@ $keywords=KEY_INDEX;
 		<section id="content">
             <div class="content-wrap nopadding">
                <div class="section nomargin " style="padding: 40px 0 ; background: url('images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
-                    <div class="container clearfix nopadding">
+                   <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
                             <form action="vendite.php" class="nomargin">
                                 <button class="button button-blue button-3d btn-block button-rounded nomargin">Immobili in vendita</button>
@@ -236,14 +222,14 @@ $keywords=KEY_INDEX;
                                                     <option value="batteria">3</option>
                                                 </select>
                                             </div>
-                                            <div class="line" style="margin: 42px 0 41px 0"></div>
+                                            
                                             <div class="col_full">
                                                 <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" />
                                             </div>
                                             <div class="col_full">
                                                 <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" />
                                             </div>
-
+                                             <div class="line" style="margin: 42px 0 41px 0"></div>
                                             <div class="text-lg-right text-md-right text-sm-right  text-xs-center">
                                                 <button class="button btn-block button-amber button-small button-rounded nomargin" rel="2" id="next" name="dati" value="next">Ricerca online <i class="icon-arrow-right2"></i></button>
                                             </div>
@@ -261,7 +247,7 @@ $keywords=KEY_INDEX;
                     <div class="col_one_third col_last">
                         <div class="panel panel-default divcenter rounded sell-lighter">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
-                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Altre Offerte &amp; Last Minute</h4>
+                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Altre Offerte</h4>
                             </div>
 
                             <div class="divider divider-border divider-darker divider-center nomargin">

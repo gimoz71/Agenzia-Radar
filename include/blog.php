@@ -17,9 +17,9 @@
                         <div class="fslider" data-arrows="false" data-lightbox="gallery">
                             <div class="flexslider">
                                 <div class="slider-wrap">
-                                    <div class="slide"><a href="images/custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
-                                    <div class="slide"><a href="images/custom/placeholder2.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/custom/placeholder2.jpg" alt="Standard Post with Gallery"></a></div>
-                                    <div class="slide"><a href="images/custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
+                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
+                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder2.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder2.jpg" alt="Standard Post with Gallery"></a></div>
+                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
                                 </div>
                             </div>
                         </div>

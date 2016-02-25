@@ -14,8 +14,8 @@ if($_SESSION['lan']!='it')
                 <!-- Logo
                 ============================================= -->
                 <div id="logo" class="divcenter">
-                    <a href="index.html" class="standard-logo" data-dark-logo="images/custom/logo_radar.png"><img class="divcenter" src="images/custom/logo_radar.png" alt="Radar Logo"></a>
-                    <a href="index.html" class="retina-logo" data-dark-logo="images/custom/logo_radar@2x.png"><img class="divcenter" src="images/custom/logo_radar@2x.png" alt="Radar Logo"></a>
+                    <a href="index.html" class="standard-logo" data-dark-logo="<?php echo TOTALPATH;?>images/custom/logo_radar.png"><img class="divcenter" src="<?php echo TOTALPATH;?>images/custom/logo_radar.png" alt="Radar Logo"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="<?php echo TOTALPATH;?>images/custom/logo_radar@2x.png"><img class="divcenter" src="<?php echo TOTALPATH;?>images/custom/logo_radar@2x.png" alt="Radar Logo"></a>
                 </div><!-- #logo end -->
             </div>
             

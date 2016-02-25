@@ -137,7 +137,7 @@ function trunc_text($testo,$num,$url)
   $parole=explode(' ',strip_tags(stripslashes($testo)));
   if(count($parole)<=$num)
   {
-    return $testo." <a class=\"segue\" href=\"".$url."\"><img src=\"".TOTALPATH."images/arrow.gif\" alt=\"Leggi\" style=\"border: none;\"/></a>";
+    return $testo." ...";
   }
   else
   {
@@ -146,7 +146,7 @@ function trunc_text($testo,$num,$url)
     {
       $risultato.=$parole[$i].' ';
     }
-    $risultato.=" <a class=\"segue\" href=\"".$url."\">... <img src=\"".TOTALPATH."images/arrow.gif\" alt=\"Leggi\" style=\"border: none;\"/></a>";
+    $risultato.=" ... ";
     return $risultato;
   }
 }
@@ -466,13 +466,11 @@ function visPrezzo($prezzo,$vis,$descrizione,$lista)
 }
 function costruisciPath($cosa,$immo,$lan)
     {
-    	$lan2=$lan;
-    	if($lan=='ru')
-    		$lan2='en';
+        $lan2=$lan;
     	$pathImmo=TOTALPATH.$lan2.'/'.$cosa.'-'.$immo['categoria_immobile'].'-'.stripslashes(str_replace(' ','_',$immo['localita']));
     	if(isset($immo['nome_tipo_'.$lan2]) && $immo['nome_tipo_'.$lan2]!='')
     		$pathImmo.='-'.strtolower(decodificaTitolo($immo['nome_tipo_'.$lan2]));
-    	$pathImmo.='-'.$desPrezzo[$immo['contratto']].'/'.$immo['id_immobili'].'_'.decodificaTitolo($immo['nome_immobile_'.$lan2]).'.html';
+    	$pathImmo.='-'.$immo['contratto'].'/'.$immo['id_immobili'].'_'.decodificaTitolo($immo['nome_immobile_'.$lan2]).'.html';
     	return $pathImmo;
     }
 function costruisciPath_old($cosa,$immo,$lan)
@@ -558,20 +556,23 @@ function creaBriciole($cosa,$im,$pagina,$lan,$res=false)
     	'affitto'=>AFFITTO,
         'vendita'=>VENDITA
     ); 
-	$briciole= '<a href="'.LANFOLDER.$pagina.'" title="'.LISTA.' '.$nomiTipi[$cosa].'" class="grassetto"> '.LISTA.' '.$nomiTipi[$cosa].'</a> > ';
+    $briciole='
+                <ol class="breadcrumb">';
+	$briciole.= '<li><a href="'.LANFOLDER.$pagina.'" title="'.LISTA.' '.$nomiTipi[$cosa].'" class="grassetto"> '.LISTA.' '.$nomiTipi[$cosa].'</a></li> ';
 	if($im['residence']==0 && $cosa=='residence')
 	{
-		$briciole.='<a href="'.costruisciPath($cosa, $res, $lan).'" title="'.stripslashes($res['nome_immobile_'.$lan]).'"  class="grassetto">'.stripslashes($res['nome_immobile_'.$lan]).'</a> > ';
+		$briciole.='<li><a href="'.costruisciPath($cosa, $res, $lan).'" title="'.stripslashes($res['nome_immobile_'.$lan]).'"  class="grassetto">'.stripslashes($res['nome_immobile_'.$lan]).'</a></li> ';
 	}
     
 	if($im['residence']==1)
 	{
-		$briciole.=stripslashes($im['localita']).' '.stripslashes($im['nome_immobile_'.$lan]);
+		$briciole.='<li>'.stripslashes($im['nome_immobile_'.$lan]).'</li>';
 	}
 	else 
 	{
-	    $briciole.=stripslashes($im['localita']).' '.$contratti[$im['contratto']].' '.stripslashes(strtolower($im['nome_tipo_'.$lan])).' '.stripslashes($im['nome_immobile_'.$lan]);
+	    $briciole.='<li>'.$contratti[$im['contratto']].' '.stripslashes(strtolower($im['nome_tipo_'.$lan])).' '.stripslashes($im['nome_immobile_'.$lan]).'</li>';
 	}
-    return $briciole;
+    $briciole.='</ol>';
+	return $briciole;
 }
 ?>

@@ -14,7 +14,7 @@ $desCategorie=array(
 		'residenziale'=>'residenziale',
         'commerciale'=>'commerciale',
         'posto_barca'=>'posto barca',
-        'indeustriale'=>'industriale'
+        'industriale'=>'industriale'
 );
 $caratteristicheImmobili=array(
     'contratto'=>'Contratto',

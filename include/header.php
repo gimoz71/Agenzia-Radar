@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/magnific-popup.css" type="text/css" />
 
     <!-- Da scambiare in rilascio finale con la versione CSS compilata -->
-    <link rel="stylesheet" href="custom.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>/custom.css" type="text/css" />
     <!--    <link rel="stylesheet" href="custom.less" type="text/less" />-->
     <!-- ============================================================= -->
 
