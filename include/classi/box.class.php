@@ -16,7 +16,7 @@ class box{
         $this->desPrezzo=$desPrezzo;
     }
 
-function costruisciPathLan($cosa,$immo,$lan)
+    function costruisciPathLan($cosa,$immo,$lan)
     {
     	$lan2=$lan;
     	if($lan=='ru')
@@ -114,23 +114,24 @@ function costruisciPathLan($cosa,$immo,$lan)
     	    $ultimo='';
     	    if(($j%2)==0)
     	        $ultimo=' col_last';
-        ?>
-        <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
-            <div class="ipost center clearfix">
-                <div class="entry-image nomargin">
-                    <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
+            ?>
+            
+            <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
+                <div class="ipost center clearfix">
+                    <div class="entry-image nomargin">
+                        <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
+                    </div>
+                    <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
+                        <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
+                    </div>
+                    <div class="entry-title">
+                        <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
+                    </div>
+                    <form action="<?php echo $url;?>" class="nomargin">
+                    <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                    </form>
                 </div>
-                <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
-                    <p><?php echo stripslashes($immo['localita']);?> <?php if($cosa!='residence'){ echo stripslashes(strtolower($immo['nome_tipo_'.$lan]));} ?> <?php echo stripslashes($immo['nome_immobile_'.$lan]);?> </p>
-                </div>
-                <div class="entry-title">
-                    <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
-                </div>
-                <form action="<?php echo $url;?>" class="nomargin">
-                <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
-                </form>
-            </div>
-        </div>	
+            </div>	
             <?php 
         $j++;
     	}
@@ -310,7 +311,7 @@ function costruisciPathLan($cosa,$immo,$lan)
 	        	?>
 	        	<div class="entry clearfix">
                     <div class="entry-image">
-                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>thbn/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
                     </div>
                     <div class="entry-c">
                         <div class="entry-title">
@@ -339,26 +340,26 @@ function costruisciPathLan($cosa,$immo,$lan)
 		}
     }
 
-function ottData($data)
-{
-	$data=explode('-',$data);
-	$data=$data[2].$data[1].$data[0];
-	return $data;
-}
-function disponibile($alloggio)
-{
-	
-	$disponibile=$alloggio['@attributes']['Code'];
-	foreach ($alloggio['Day'] as $day)
-	{
-		if(trim($day['Availability'])!='A')
-		{
-			$disponibile=false;
-			break;
-		}
-	}
-	return $disponibile;
-}
+    function ottData($data)
+    {
+    	$data=explode('-',$data);
+    	$data=$data[2].$data[1].$data[0];
+    	return $data;
+    }
+    function disponibile($alloggio)
+    {
+    	
+    	$disponibile=$alloggio['@attributes']['Code'];
+    	foreach ($alloggio['Day'] as $day)
+    	{
+    		if(trim($day['Availability'])!='A')
+    		{
+    			$disponibile=false;
+    			break;
+    		}
+    	}
+    	return $disponibile;
+    }
     function elencoBookingOnline($post, $lan,$getor=false)
     {
 		$_POST = ($post) ? $post : $_POST;
@@ -493,17 +494,23 @@ function disponibile($alloggio)
 			        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
 			        	}
 			        	?>
-			        	<div class="item_large"> <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="foto_principale cornice_foto" class="cornice_foto" style="background-image: url(<?php echo TOTALPATH;?>images/thbn/<?php echo $immo['foto_g_immobile'];?>);"><img src="<?php echo IMAGESPATH;?>cornice_foto.png" width="150" height="116" alt="thumb" /></a>
-			            <div class="testo">
-			            <h3><a href="<?php echo $url;?>?CdR=<?php echo $codici[$immo['id_immobili']]?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><?php if($immo['id_residence']>0){ echo $this->nomeResidence($immo['id_immobili']);}?><?php echo $titolo;?> </a></h3>
-			            <p>
-							<strong><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></strong>
-						</p>
-			            <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url.'?CdR='.$codici[$immo['id_immobili']]);?></p>
-			            <a class="details <?php echo $classeDe;?>" href="<?php echo $url;?>?CdR=<?php echo $codici[$immo['id_immobili']]?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><?php echo DETTAGLI;?></a>
-			            </div>
-			            <div style="clear:both"></div>
-			            </div>
+    			        	<div class="entry clearfix">
+                    <div class="entry-image">
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" ><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                    </div>
+                    <div class="entry-c">
+                        <div class="entry-title">
+                            <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a></h2>
+                            <h4><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></h4>
+                        </div>
+                        <div class="entry-content">
+                            <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+                            <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+			        	
 			        	<?php
 			     	}
 			     }
@@ -522,8 +529,9 @@ function disponibile($alloggio)
 		{
 			print '<div class="item_large"> '.NOIMMO.'</div>';
 		}	
-}
-function elencoImmobiliVacanze($tipo,$lan,$getor=false)
+    }
+    
+    function elencoImmobiliVacanze($tipo,$lan,$getor=false)
     {
        
     
@@ -591,7 +599,7 @@ function elencoImmobiliVacanze($tipo,$lan,$getor=false)
 		$tot=mysql_num_rows($totImm);
 		$query=$query.' '.$ordine.$limit;
 		//print $query;
-		$immobili=mysql_query($query)or die(mysql_error());
+		$immobili= mysql_query($query)or die(mysql_error());
 		if(mysql_num_rows($immobili)==0)
 		{
 			print '<div class="item_large"> '.NOIMMO.'</div>';
@@ -616,14 +624,18 @@ function elencoImmobiliVacanze($tipo,$lan,$getor=false)
 	        	}
 	        	
 	        	?>
-	        	<div class="item_large"> <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="foto_principale cornice_foto" class="cornice_foto" style="background-image: url(<?php echo TOTALPATH;?>images/thbn/<?php echo $immo['foto_g_immobile'];?>);"><img src="<?php echo IMAGESPATH;?>cornice_foto.png" width="150" height="116" alt="thumb" /></a>
-	                	   <div class="testo">
-	                        <h3><a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><?php echo $titolo;?> </a></h3>
-	                        <p>
-							 <strong><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></strong>
-							</p>
-	                        <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
-	                        <table class="tab_periodi elencoRis">
+	        	<div class="entry clearfix">
+                    <div class="entry-image">
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" ><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                    </div>
+                    <div class="entry-c">
+                        <div class="entry-title">
+                            <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a></h2>
+                            <h4><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></h4>
+                        </div>
+                        <div class="entry-content">
+                            <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+                         <table class="tab_periodi elencoRis">
 	                        <tr>
 	                        <th><?php echo MAGGIO?></th>
 	                        <th><?php echo GIUGNO?></th>
@@ -664,11 +676,13 @@ function elencoImmobiliVacanze($tipo,$lan,$getor=false)
 	                        ?>
 	                        </tr>
 	                        </table>
-	                        <div style="clear:both"></div>
-	                        <a class="details <?php echo $classeDe;?>" href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><?php echo DETTAGLI;?></a>
-	                       </div>
-	                        <div style="clear:both"></div>
-	                    </div>
+	                           <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+                       
+                        </div>
+                    </div>
+                </div>
+	        	
+	        	
 	        	<?php
 	        }
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
@@ -890,7 +904,7 @@ function elencoNews($tipo,$lan,$getor=false)
         {
         if(is_file(PATHROOT.'images/big/'.$im['foto'.$i.'_immobile']))
         {
-            $foto.="\n".'<div class="oc-item"><a href="'.REMOTEIMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'" data-lightbox="gallery-item" class="thumbnail" title="'.$titolo.'" "><img src="'.REMOTEIMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].'" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a></div>';
+            $foto.="\n".'<div class="oc-item"><a href="'.REMOTEIMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'"  class="thumbnail elencoImmagini" title="'.$titolo.'" "><img src="'.REMOTEIMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].'" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a></div>';
         }
         }
                 if($foto!='')
@@ -948,80 +962,14 @@ function elencoNews($tipo,$lan,$getor=false)
          <?php 
      }          
                 
-              
-    
-    function boxImmobile($tipo,$lan,$id,$im,$car=false,$res=false,$cdr='')
-    {   
-    	$titolo=stripslashes($im['localita']).' '.$$im['contratto'].' '.stripslashes($im['nome_tipo_'.$_SESSION['lan']]).' '.stripslashes($im['nome_immobile_'.$_SESSION['lan']]);
-    	$url=TOTALPATH.'scheda.php?id='.$im['id_immobili'].'&lan='.$_SESSION['lan'];
-        //$url=TOTALPATH.'immobili/'.$_SESSION['lan'].'/'.str_replace('\&','',str_replace(' ','-',$im['nome_tipo_'.$_SESSION['lan']])).'/'.$im['id_immobili'].'_'.str_replace('\.','',str_replace(' ','-',$im['nome_immobile'])).'.html';
-    	?>
-    	<div class="col_three_fifth nobottommargin">
-                                        <!-- Entry Image
-                                        ============================================= -->
-			   	<?php
-				if(is_file(PATHROOT.'images/big/'.$im['foto_g_immobile']))
-				{
-					list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
-				?>
-				 <div class="entry-image" data-lightbox="gallery">
-                    <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
-                 </div><!-- .entry-image end -->
-				
-			    <?php
-				}
-				elseif($im['id_residence']>0 && is_file(PATHROOT.'images/big/'.$res['foto_g_immobile']))
-				{
-				?>
-				<div class="entry-image" data-lightbox="gallery">
-                    <a href=""<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
-                 </div><!-- .entry-image end -->
-						    
-			    <?php				
-				}
-				?>
-				</div>
-                <div class="col_two_fifth col_last nobottommargin">
-            
-				<?php 
-				if($car!==false)
-				{
-			    ?>		   
-			    <div class="fancy-title title-left title-dotted-border">
-            <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
-            </div>
-			   <table class="table table-striped">
-        <tbody>
-				<?php 
-				foreach ($car as $k=>$v)
-				{
-					if($im[$k]!=0 && $im[$k]!='')
-					{
-						$valore=$im[$k];
-						if($k=='prezzo')
-						{
-							$valore=visPrezzo($im[$k], $im['prezzo_visibile'], $im['descrizione_prezzo'], $this->desPrezzo);
-						}
-				?>
-                	<tr><td><strong><?php echo $v;?></strong></td><td><?php echo stripslashes($valore);?></td></tr>
-                <?php
-					} 
-				}
-                ?>
-               </tbody>
-                </table> 
-                
-                <?php 
-				}
-				?>
-				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
-				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
-                </div>
-				<?php 
-				if($tipo=='residence' && $im['id_residence']>0 ) 
-			    {
-			        $residence=mysql_fetch_assoc(mysql_query("
-								select 
+   
+    function boxResidence($tipo,$lan,$id,$im,$car=false,$res=false,$cdr='')
+        {
+            if($tipo=='residence' && $im['id_residence']>0 )
+            {
+                print 'pippo';
+                $residence=mysql_fetch_assoc(mysql_query("
+								select
 									*
 								from
 									immobili i,
@@ -1031,17 +979,15 @@ function elencoNews($tipo,$lan,$getor=false)
 								    i.id_tipi=t.id_tipi and
 								    i.id_localita=l.id_localita and
 								    id_immobili=".$im['id_residence']));
-			        $url_res=$this->costruisciPath('residence',$residence, $lan);
-			    	?>
-			    <div class="bottone_residence_<?php echo $_SESSION['lan']?>">
-                <a href="<?php echo $url_res;?>" title="<?php echo RESIDENCE;?>" ></a>
-                </div>
-			    	<?php 
-			    } ?>
-				<div class="caratteristiche_2 clear">
-				<h3  style="margin: 0px 0px 15px 0px;"><?php echo DESCRIZIONE;?></h3>
-				<?=stripslashes($im['descrizione_'.$lan])?>
-				<br />
+                $url_res=$this->costruisciPath('residence',$residence, $lan);
+                ?>
+            			    <div class="bottone_residence_<?php echo $_SESSION['lan']?>">
+                            <a href="<?php echo $url_res;?>" title="<?php echo RESIDENCE;?>" ></a>
+                            </div>
+            			    	<?php 
+            			    	
+            			    } ?>
+            				
 				<div class="periodi">
 				<?php 
 				if($tipo=='case_vacanza' && $cdr=='')
@@ -1050,6 +996,7 @@ function elencoNews($tipo,$lan,$getor=false)
 			        ?>
 			    <h3  style="margin: 0px 0px 15px 0px;"><?php echo LISTINO;?></h3>    
 			    <table class="tab_periodi">
+			    <tbody>
 	                        <tr>
 	                        <th><?php echo MAGGIO; if($im['testo_maggio']!=''){echo '*'; $notaMese[]=array('label'=>MAGGIO,'testo'=>stripslashes($im['testo_maggio']));}?></th>
 	                        <th><?php echo GIUGNO; if($im['testo_giugno']!=''){echo '*'; $notaMese[]=array('label'=>GIUGNO,'testo'=>stripslashes($im['testo_giugno']));}?></th>
@@ -1114,6 +1061,7 @@ function elencoNews($tipo,$lan,$getor=false)
 	                        <tr>
 	                        <?php echo $prezzo;?>
 	                        </tr>
+	                        </tbody>
 	                        </table>
 	                   <div style="float: left;width: 450px;margin: 7px 0px 0px 10px;">
 	                   <?php 
@@ -1184,8 +1132,10 @@ function elencoNews($tipo,$lan,$getor=false)
 			    {
 			    	$appartamenti=mysql_query("select * from immobili i, tipi t where i.id_tipi=t.id_tipi and id_residence=".$im['id_immobili'].' order by ordine');
 				?>
-					<hr class="divisorio clear"/>
-					<h3><?php echo APPARTAMENTI;?></h3>
+					<div class="fancy-title title-left title-dotted-border">
+         <h3><?php echo APPARTAMENTI;?></h3>
+        </div>
+					
 					<ul class="elenco_radar">
 					<?php 
 				   while($app=mysql_fetch_assoc($appartamenti))
@@ -1230,9 +1180,81 @@ function elencoNews($tipo,$lan,$getor=false)
 				<div class="caratteristiche_2 clear"><?php echo stripslashes($im['googlemap']);?></div>
 				<?php 
 				}
-				?>
-				<?php
+				
 				}
+            			           
+        }                   
+    
+    function boxImmobile($tipo,$lan,$id,$im,$car=false,$res=false,$cdr='')
+    {   
+    	$titolo=stripslashes($im['localita']).' '.$$im['contratto'].' '.stripslashes($im['nome_tipo_'.$_SESSION['lan']]).' '.stripslashes($im['nome_immobile_'.$_SESSION['lan']]);
+    	$url=TOTALPATH.'scheda.php?id='.$im['id_immobili'].'&lan='.$_SESSION['lan'];
+        //$url=TOTALPATH.'immobili/'.$_SESSION['lan'].'/'.str_replace('\&','',str_replace(' ','-',$im['nome_tipo_'.$_SESSION['lan']])).'/'.$im['id_immobili'].'_'.str_replace('\.','',str_replace(' ','-',$im['nome_immobile'])).'.html';
+    	?>
+    	<div class="col_three_fifth nobottommargin">
+                                        <!-- Entry Image
+                                        ============================================= -->
+			   	<?php
+				if(is_file(PATHROOT.'images/big/'.$im['foto_g_immobile']))
+				{
+					list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
+				?>
+				 <div class="entry-image" data-lightbox="gallery">
+                    <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                 </div><!-- .entry-image end -->
+				
+			    <?php
+				}
+				elseif($im['id_residence']>0 && is_file(PATHROOT.'images/big/'.$res['foto_g_immobile']))
+				{
+				?>
+				<div class="entry-image" data-lightbox="gallery">
+                    <a href=""<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                 </div><!-- .entry-image end -->
+						    
+			    <?php				
+				}
+				?>
+				</div>
+                <div class="col_two_fifth col_last nobottommargin">
+            
+				<?php 
+				if($car!==false)
+				{
+			    ?>		   
+			    <div class="fancy-title title-left title-dotted-border">
+            <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
+            </div>
+			   <table class="table table-striped">
+        <tbody>
+				<?php 
+				foreach ($car as $k=>$v)
+				{
+					if($im[$k]!=0 && $im[$k]!='')
+					{
+						$valore=$im[$k];
+						if($k=='prezzo')
+						{
+							$valore=visPrezzo($im[$k], $im['prezzo_visibile'], $im['descrizione_prezzo'], $this->desPrezzo);
+						}
+				?>
+                	<tr><td><strong><?php echo $v;?></strong></td><td><?php echo stripslashes($valore);?></td></tr>
+                <?php
+					} 
+				}
+                ?>
+               </tbody>
+                </table> 
+                
+                <?php 
+				}
+				?>
+				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
+				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+                </div>
+				
+				<?php 
+				
     }
     function boxPagine($tot,$pag,$get,$num,$nomePag)
     {

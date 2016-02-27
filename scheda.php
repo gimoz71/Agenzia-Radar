@@ -62,7 +62,15 @@ $titoloIt=$box->costruisciPathLan($cosa, $immobile, 'it');
 <html dir="ltr" lang="en-US">
 <head>
 <?php include(INCLUDEPATH.'header.php');?>
-
+<script type="text/javascript">
+$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+	
+	$(".elencoImmagini").colorbox({rel:'group4', slideshow:true});
+	$(".iframe").colorbox({iframe:true, width:"700px", height:"400px"});
+	
+});
+</script>
 </head>
 
 <body class="stretched">
@@ -97,12 +105,15 @@ $titoloIt=$box->costruisciPathLan($cosa, $immobile, 'it');
                                     <?php $box->boxImmobile($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);?>
                                     <div class="col_full nomargin">
                                     <?php $box->boxFoto($_SESSION['lan'], $immobile)?>
-                                     <?php $box->boxDescrizione($_SESSION['lan'], $immobile)?>
+                                     <?php $box->boxDescrizione($_SESSION['lan'], $immobile);
+                                     $box->boxResidence($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);
+                                     
+                                     ?>
                                         
                                         
                                     </div>
                                 </div>
-                                 <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+                                 <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $immobile['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>

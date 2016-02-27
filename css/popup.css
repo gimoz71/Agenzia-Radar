@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+body,html{
+	margin:0px;
+	padding:0px;
+	background-color: #ffffff !important;
+	color: #333333;
+	font-family: Arial,sans-serif;
+	font-size: 12px;	
+}
+.bordoRosso{border: 1px solid red;}
+#form_info{
+	margin: 50px 0px;
+}
+.link_home{
+	padding: 1px 5px 1px 16px;
+	border: none;
+	color: #ffffff;
+	background-color:#e2001a;
+	font-size: 12px;
+	text-decoration:none;
+    width: 232px;
+    text-align: center;
+	}
+.foto{
+	padding-right: 25px;
+}		
+
+
+#corpo{
+	background-color: #ffffff !important;
+    width: 650px;
+    margin: 0px auto;
+}
+#corpo2{
+	background-color: #ffffff !important;
+    margin: 0px auto;
+    text-align: center;
+}
+#contenuti{
+	margin: 0px auto;
+	width: 640px;
+	height: 420px;
+}
+.fleft{float: left;}
+.clear:{clear: both}
+.fright{float: right;}
+h1{font-size: 14px;}
+#tagliando_foto{
+width: 128px;
+margin: 20px 40px 20px 20px;
+}
+th{text-align: left;}
+.radio{
+	width: 10px;
+}
+a{color: #333333;}

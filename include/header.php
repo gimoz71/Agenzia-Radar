@@ -23,9 +23,10 @@
     <!-- External JavaScripts
     ============================================= -->
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo TOTALPATH;?>js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/plugins.js"></script>
-
+    <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.colorbox-min.js"></script>
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/colorbox.css" type="text/css" />
+     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/bb.css" type="text/css" />
     <!-- Compila sul client i file LESS. Da commentare (o eliminare del tutto) in rilascio finale con la versione CSS compilata -->
 <!--    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
 
@@ -49,7 +50,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <!--FACEBOOK ---->
 
-
+	
 
 
 <!--GOOGLE ---->

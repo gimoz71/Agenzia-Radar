@@ -8,6 +8,57 @@ $keywords=KEY_INDEX;
 <html dir="ltr" lang="en-US">
 <head>
 <?php include(INCLUDEPATH.'header.php');?>
+<script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>js/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>js/jquery-ui.structure.min.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo TOTALPATH;?>js/jquery-ui.theme.min.css" type="text/css" />    
+<script type="text/javascript" >
+$(function() {
+	
+  $( "#from" ).datepicker({
+	  numberOfMonths: 1,
+      showButtonPanel: false,
+      dateFormat: 'dd-mm-yy',
+		monthNames: [
+				'<?php echo GENNAIO ?>',
+				'<?php echo FEBBRAIO ?>',
+				'<?php echo MARZO ?>',
+				'<?php echo APRILE ?>',
+				'<?php echo MAGGIO ?>',
+				'<?php echo GIUGNO ?>',
+				'<?php echo LUGLIO ?>',
+				'<?php echo AGOSTO ?>',
+				'<?php echo SETTEMBRE ?>',
+				'<?php echo OTTOBRE ?>',
+				'<?php echo NOVEMBRE ?>',
+				'<?php echo DICEMBRE ?>'],  
+    onClose: function( selectedDate ) {
+      $( "#to" ).datepicker( "option", "minDate", selectedDate );
+    }
+  });
+  $( "#to" ).datepicker({
+	  numberOfMonths: 1,
+      showButtonPanel: false,
+      dateFormat: 'dd-mm-yy',
+		monthNames: [
+				'<?php echo GENNAIO ?>',
+				'<?php echo FEBBRAIO ?>',
+				'<?php echo MARZO ?>',
+				'<?php echo APRILE ?>',
+				'<?php echo MAGGIO ?>',
+				'<?php echo GIUGNO ?>',
+				'<?php echo LUGLIO ?>',
+				'<?php echo AGOSTO ?>',
+				'<?php echo SETTEMBRE ?>',
+				'<?php echo OTTOBRE ?>',
+				'<?php echo NOVEMBRE ?>',
+				'<?php echo DICEMBRE ?>'],
+    onClose: function( selectedDate ) {
+      //$( "#from" ).datepicker( "option", "maxDate", selectedDate );
+    }
+  });
+});
+</script>
 </head>
 
 <body class="stretched">
@@ -27,16 +78,15 @@ $keywords=KEY_INDEX;
 
 			<div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-1.jpg');"></div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-2.jpg'); background-position: center center;"></div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-3.jpg'); background-position: center center;"></div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-4.jpg'); background-position: center center;"></div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-5.jpg'); background-position: center center;"></div>
-					<div class="swiper-slide dark" style="background-image: url('images/custom/slider-6.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-1.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-2.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-3.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-4.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-5.jpg'); background-position: center center;"></div>
+					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-6.jpg'); background-position: center center;"></div>
 				</div>
 				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
 				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
-				<div id="slide-number"><div id="slide-number-current"></div><span>/</span><div id="slide-number-total"></div></div>
 			</div>
 
 			<script>
@@ -118,7 +168,7 @@ $keywords=KEY_INDEX;
 		============================================= -->
 		<section id="content">
             <div class="content-wrap nopadding">
-               <div class="section nomargin " style="padding: 40px 0 ; background: url('images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
+               <div class="section nomargin " style="padding: 40px 0 ; background: url('<?=TOTALPATH?>images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
                    <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
                             <form action="vendite.php" class="nomargin">
@@ -202,7 +252,7 @@ $keywords=KEY_INDEX;
                         </div>
                     </div>
                     <div class="col_one_third">
-                        <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
+                        <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('<?=TOTALPATH?>images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
                                 <h4 class="dark" style="background: transparent">Prenota la tua vacanza ESTATE 2016</h4>
                             </div>
@@ -212,10 +262,10 @@ $keywords=KEY_INDEX;
                             <div class="panel-body rounded" style="padding: 20px; padding-top: 10px">
                                 <div class="panel panel-default divcenter rounded " style="background: rgba(255,255,255,.8)">
                                     <div class="panel-body rounded" style="padding: 20px;">
-                                        <form class="nomargin">
+                                        <form class="nomargin" action="booking_online.php" id="booking_online" method="get">
                                             <div class="col_full">
-                                                <select id="register-form-category" name="register-form-category" class="form-control required">
-                                                    <option value="">Posti letto</option>
+                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                    <option value=""><?=POSTI_LETTO?></option>
                                                     <option value="sassofono">1</option>
                                                     <option value="piano">2</option>
                                                     <option value="batteria">3</option>
@@ -223,13 +273,13 @@ $keywords=KEY_INDEX;
                                             </div>
                                             
                                             <div class="col_full">
-                                                <div class="input-group date">
-                                                    <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control required" placeholder="dal" /><span class="input-group-addon"><i class="icon-th"></i></span>
+                                                <div class="">
+                                                    <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
                                                 </div>
                                             </div>
                                             <div class="col_full">
-                                                <div class="input-group date">
-                                                    <input type="text" id="register-form-surname" name="register-form-surname" value="" class="form-control required" placeholder="al" /><span class="input-group-addon"><i class="icon-th"></i></span>
+                                                <div class="">
+                                                    <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
                                                 </div>
                                             </div>
                                              <div class="line" style="margin: 42px 0 41px 0"></div>

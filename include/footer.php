@@ -130,4 +130,4 @@
 
 <!-- Footer Scripts
 ============================================= -->
-<script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="<?=TOTALPATH?>js/functions.js"></script>

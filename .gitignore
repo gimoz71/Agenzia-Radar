@@ -1,2 +1,6 @@
 /include/cd.php
 /config.php
+
+/.buildpath
+/.project
+/.settings/
