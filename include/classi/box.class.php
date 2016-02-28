@@ -477,6 +477,7 @@ class box{
 				}
 				else
 				{
+				    print ' <div id="posts" class="small-thumbs">';
 					if($lan=='de')
 			    	{
 			    		$classeDe=' dettagli_alt';
