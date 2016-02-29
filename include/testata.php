@@ -54,15 +54,11 @@ if($scheda)
                     ============================================= -->
                     <div class="top-links">
                         <ul>
-                            <li><span style="padding: 0 15px;">Scegli la tua lingua</span></li>
-                            <li class="lang-switcher"><a href="<?=$titoloIt?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/italian.png" alt="Italiano"></a>
-                                <ul style="border: solid 1px rgba(255,255,255,.15)">
-                                    <li><a href="<?=$titoloDe?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/german.png" alt="Deutsch">Deutsch</a></li>
-                                    <li><a href="<?=$titoloEn?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/english.png" alt="English">English</a></li>
-                                    <li><a href="<?=$titoloRu?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/french.png" alt="русский">русский</a></li>
-                                </ul>
+                            <li><a href="<?=$titoloIt?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/italian.png" alt="Italiano"></a>
+                            <li><a href="<?=$titoloDe?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/german.png" alt="Deutsch"></a></li>
+                            <li><a href="<?=$titoloEn?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/english.png" alt="English"></a></li>
+                            <li><a href="<?=$titoloRu?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/french.png" alt="русский"></a></li>
                             </li>
-
                         </ul>
                     </div><!-- .top-links end -->
 

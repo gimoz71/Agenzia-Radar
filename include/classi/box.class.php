@@ -1209,7 +1209,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 				?>
 				<div class="entry-image" data-lightbox="gallery">
-                    <a href=""<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                    <a href="<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
                  </div><!-- .entry-image end -->
 						    
 			    <?php				
@@ -1223,8 +1223,8 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 			    ?>		   
 			    <div class="fancy-title title-left title-dotted-border">
-            <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
-            </div>
+                    <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
+                </div>
 			   <table class="table table-striped">
         <tbody>
 				<?php 
