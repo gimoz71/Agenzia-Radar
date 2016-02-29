@@ -1,7 +1,7 @@
 <?php include('config.php');
-$titolo=TITOLO_BASE_ERROR;
-$keywords=KEY_DOVE;
-$descrizione=DESCRIZIONE_DOVE;
+$titolo=TITOLO_BASE_INDEX;
+$descrizione=DESCRIZIONE_INDEX;
+$keywords=KEY_INDEX;
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="<?=LANHTML?>">
@@ -25,8 +25,11 @@ $descrizione=DESCRIZIONE_DOVE;
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?php echo TITOLO_ERROR;?></h1>
-               
+                <h1><?php echo CONTATTI;?></h1>
+                <ol class="breadcrumb">
+                    <li><a href="<?=TOTALPATH?>">Home</a></li>
+                    <li class="active"><?=ucfirst(CONTATTACI)?></li>
+                </ol>
             </div>
 
         </section><!-- #page-title end -->
@@ -40,9 +43,20 @@ $descrizione=DESCRIZIONE_DOVE;
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
                             <div class="col_full">
-                                <h3><?php echo TITOLO_ERROR;?></h3>
-                               <p> La pagina che stai cercando non esiste oppure è stata rimossa. Ci scusiamo per il disagio.</p>
-				            </div>
+                                <h3><?php echo CONTATTI;?></h3>
+                                <?php echo CONTENUTOCONTATTI;?> 
+                                <div class="line"></div>
+                                <h3><?php echo CONTATTACI;?></h3>
+                	<?php 
+                	  $url=LANFOLDER.'contatti.php';
+                       include(INCLUDEPATH.'richiesta.php');
+                ?>	
+                           
+                          
+                                
+                          
+                            
+                            </div>
                             
                         </div>
                     </div>

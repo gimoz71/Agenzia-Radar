@@ -1,7 +1,8 @@
 <?php include('config.php');
-$titolo=TITOLO_BASE_ERROR;
-$keywords=KEY_DOVE;
-$descrizione=DESCRIZIONE_DOVE;
+$titolo=TITOLO_BASE_INTORNO;
+$keywords=KEY_INTORNO;
+$descrizione=DESCRIZIONE_INTORNO;
+$menu['dintorni']='class="selezionato"';
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="<?=LANHTML?>">
@@ -25,8 +26,11 @@ $descrizione=DESCRIZIONE_DOVE;
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?php echo TITOLO_ERROR;?></h1>
-               
+                <h1><?=TITOLO_INTORNO?></h1>
+                <ol class="breadcrumb">
+                    <li><a href="<?=TOTALPATH?>">Home</a></li>
+                    <li class="active"><?=TITOLO_INTORNO?></li>
+                </ol>
             </div>
 
         </section><!-- #page-title end -->
@@ -40,8 +44,9 @@ $descrizione=DESCRIZIONE_DOVE;
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
                             <div class="col_full">
-                                <h3><?php echo TITOLO_ERROR;?></h3>
-                               <p> La pagina che stai cercando non esiste oppure è stata rimossa. Ci scusiamo per il disagio.</p>
+                                <h3><?=TITOLO_INTORNO?></h3>
+                        <?php echo CONTENUTOINTORNO;?> 
+				        <p><img src="<?=TOTALPATH?>images/custom/romito.jpg" class="thumbnail"  alt="Panorama di Castiglioncello"></p>
 				            </div>
                             
                         </div>

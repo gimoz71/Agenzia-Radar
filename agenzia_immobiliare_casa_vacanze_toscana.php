@@ -1,7 +1,8 @@
 <?php include('config.php');
-$titolo=TITOLO_BASE_ERROR;
-$keywords=KEY_DOVE;
-$descrizione=DESCRIZIONE_DOVE;
+$titolo=TITOLO_BASE_CHISIAMO;
+$descrizione=DESCRIZIONE_CHISIAMO;
+$keywords=KEY_CHISIAMO;
+$menu['agenzia']='class="selezionato"';
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="<?=LANHTML?>">
@@ -25,8 +26,11 @@ $descrizione=DESCRIZIONE_DOVE;
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?php echo TITOLO_ERROR;?></h1>
-               
+                <h1><?php echo TITOLO_AGENZIA;?></h1>
+                <ol class="breadcrumb">
+                    <li><a href="<?=TOTALPATH?>">Home</a></li>
+                    <li class="active"><?php echo TITOLO_AGENZIA;?></li>
+                </ol>
             </div>
 
         </section><!-- #page-title end -->
@@ -40,8 +44,9 @@ $descrizione=DESCRIZIONE_DOVE;
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
                             <div class="col_full">
-                                <h3><?php echo TITOLO_ERROR;?></h3>
-                               <p> La pagina che stai cercando non esiste oppure è stata rimossa. Ci scusiamo per il disagio.</p>
+                                <h3><?php echo TITOLO_AGENZIA;?></h3>
+                        <?php echo CONTENUTOAGENZIA;?>
+                	  
 				            </div>
                             
                         </div>

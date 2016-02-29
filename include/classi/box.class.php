@@ -958,7 +958,7 @@ function elencoNews($tipo,$lan,$getor=false)
                                         <!-- Entry Content
                                         ============================================= -->
                                         <div class="entry-content notopmargin">
-                                    <?=stripslashes($im['descrizione_'.$lan])?>
+                                    <?=str_replace('<p>&nbsp;</p>', '', stripslashes($im['descrizione_'.$lan]))?>
                                         </div><!-- .entry end -->
          <?php 
      }          
@@ -968,7 +968,6 @@ function elencoNews($tipo,$lan,$getor=false)
         {
             if($tipo=='residence' && $im['id_residence']>0 )
             {
-                print 'pippo';
                 $residence=mysql_fetch_assoc(mysql_query("
 								select
 									*

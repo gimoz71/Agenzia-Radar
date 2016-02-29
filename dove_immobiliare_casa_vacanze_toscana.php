@@ -5,7 +5,7 @@ $descrizione=DESCRIZIONE_DOVE;
 $menu['dove']='class="selezionato"';
 ?>
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="<?=LANHTML?>">
 <head>
 <?php include(INCLUDEPATH.'header.php');?>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -26,10 +26,10 @@ $menu['dove']='class="selezionato"';
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Dove siamo</h1>
+                <h1><?=TITOLO_DOVE?></h1>
                 <ol class="breadcrumb">
                     <li><a href="<?=TOTALPATH?>">Home</a></li>
-                    <li class="active">Dove siamo</li>
+                    <li class="active"><?=ucfirst(TITOLO_DOVE)?></li>
                 </ol>
             </div>
 
@@ -44,14 +44,12 @@ $menu['dove']='class="selezionato"';
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
                             <div class="col_full">
-                                <h3>Come raggiungerci</h3>
-                                <p><img src="<?=TOTALPATH?>images/custom/castiglioncello2.jpg" class="thumbnail fleft rightmargin-xs" alt=""><?php echo CONTENUTODOVESIAMO;?> 
+                                <h3><?=TITOLO_DOVE2?></h3>
+                                <img src="<?=TOTALPATH?>images/custom/castiglioncello2.jpg" class="thumbnail fleft rightmargin-xs" alt=""><?php echo CONTENUTODOVESIAMO;?> 
                             <div class="line"></div>
                           
                                 <div class="gmap" id="google-map2" style="height: 300px"></div>
-
-
-                                <script type="text/javascript">
+  <script type="text/javascript">
 
                                     $('#google-map2').gMap({
 

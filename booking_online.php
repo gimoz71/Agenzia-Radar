@@ -11,7 +11,7 @@ $keywords=elencoLocalita().elencoTipi($_SESSION['lan']);
 $menu['vacanze']='class="selezionato"';
 ?>
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="<?=LANHTML?>">
 <head>
 <?php include(INCLUDEPATH.'header.php');?>
 <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery-ui.min.js"></script>
