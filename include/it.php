@@ -47,6 +47,7 @@ define('DINTORNI','I DINTORNI');
 define('INFORMAZIONI','DOVE SIAMO');               
 define('CONTATTI','CONTATTI');          
 define('LINK','METEO WEBCAM');    
+define('LANHTML','it-IT');
 
 
 /*Menu FOOTER*/
@@ -146,12 +147,12 @@ define('NON_DISPONIBILE','Non disponibile');
 
 /*Contatti*/
 
-define('CONTATTACI','RIchiedi informazioni');
+define('CONTATTACI','Richiedi informazioni');
 
 
-define('CONTENUTOCONTATTI','Agenzia Immobiliare RADAR<br /> Via Aurelia, 548 - 57012 Castiglioncello (LI)<br />
-Tel. +39.0586.752596 - Fax +39.0586.759935 <br />
-email: info@agenziaradar.it ');
+define('CONTENUTOCONTATTI','<p><strong>Agenzia Immobiliare RADAR</strong><br> Via Aurelia, 548 <br>57012 Castiglioncello (LI)<br>
+Tel. +39.0586.752596 - Fax +39.0586.759935 <br>
+Email: info@agenziaradar.it</p> ');
 
 /* Home index.php*/
 
@@ -180,22 +181,19 @@ define('KEY_DOVE','Agenzia, Radar, immobiliare, residence, residences, appartame
 
 
 define('TITOLO_DOVE','DOVE SIAMO');  
-define('CONTENUTODOVESIAMO',' 
+define('TITOLO_DOVE2','Come raggiungere Castiglioncello');
+define('CONTENUTODOVESIAMO',' <p>
+  Raggiungere <strong>Castiglioncello</strong> non è difficile, qualunque sia il mezzo prescelto per gli spostamenti.</p>
+    <p>Chi viaggia in <strong>auto</strong> e viene da nord deve percorrere l\'Autostrada A12 Genova-Rosignano Marittimo fino al casello <strong>Rosignano Marittimo</strong>, quindi proseguire sulla SS1 Aurelia in direzione <strong>Livorno</strong> fino all\'uscita <strong>Castiglioncello</strong>. Chi viene da sud deve percorrere invece la SS1 Aurelia in direzione Grosseto-Livorno dino all\'uscita <strong>Castiglioncello</strong>. </p>
 
-<p><strong>Come raggiungere Castiglioncello</strong></p><br>
+<p>Per chi preferisce il <strong>treno</strong>, la stazione ferroviaria cittadina si trova lungo la linea tirrenica Genova-Pisa-Roma, ma a <strong>Castiglioncello</strong> si fermano soltanto treni regionali. Per chi viene da più lontano ci sono le stazioni di <strong>Rosignano</strong>, a soli 2 km, quella di <strong>Cecina</strong> a 17 km e quella di <strong>Livorno</strong> a 25 km. Infine l\'<strong>aeroporto</strong> più vicino è quello di <strong>Pisa</strong>, a circa 30 km, da cui si può raggiungere <strong>Castiglioncello</strong> in taxi, in treno, o noleggiando un auto.</p>
 <p>
-  Raggiungere Castiglioncello non è difficile, qualunque sia il mezzo prescelto per gli spostamenti. Chi viaggia in auto e viene da nord deve percorrere l\'Autostrada A12 Genova-Rosignano Marittimo fino al casello Rosignano Marittimo, quindi proseguire sulla SS1 Aurelia in direzione Livorno fino all\'uscita Castiglioncello. Chi viene da sud deve percorrere invece la SS1 Aurelia in direzione Grosseto-Livorno dino all\'uscita Castiglioncello. </p>
-<p>&nbsp;</p>
-<p>Per chi preferisce il treno, la stazione ferroviaria cittadina si trova lungo la linea tirrenica Genova-Pisa-Roma, ma a Castiglioncello si fermano soltanto treni regionali. Per chi viene da più lontano ci sono le stazioni di Rosignano, a soli 2 km, quella di Cecina a 17 km e quella di Livorno a 25 km. Infine l\'aeroporto più vicino è quello di Pisa, a circa 30 km, da cui si può raggiungere Castiglioncello in taxi, in treno, o noleggiando un auto.</p>
-<p><br>
-  Castiglioncello si trova in posizione centralissima per chiunque volesse raggiungere altre mete privilegiate della Costa degli Etruschi, e le più belle città d\'arte della Toscana, iniziando un itinerario alla scoperta delle bellezze di questa terra.</p>
-<p>&nbsp;</p>
+  Castiglioncello si trova in posizione centralissima per chiunque volesse raggiungere altre mete privilegiate della <strong>Costa degli Etruschi</strong>, e le più belle città d\'arte della <strong>Toscana</strong>, iniziando un itinerario alla scoperta delle bellezze di questa terra.</p>
+
 <p><strong>Auto:</strong>SS1 - Uscita casello Castiglioncello<br>
   <strong>Treno:</strong>Stazione Rosignano Marittimo<br>
   <strong>Localizzazione:</strong>Via Aurelia N&deg; 548<br>
-<strong>Contatti:</strong>+39.0586.752596</p><br>
-
-
+<strong>Contatti:</strong>+39.0586.752596</p>
 ');
 /*agenzia_immobiliare_casa_vacanze_toscana.php*/
 
@@ -214,18 +212,23 @@ define('TITOLO_AGENZIA','CHI SIAMO');
 define('CONTENUTOAGENZIA','
 
 
-<p>Nell\' incantevole cornice della Costa degli Etruschi, in Castiglioncello, rinomata località turistica del litorale livornese,  la nostra agenzia immobiliare offre alla sua clientela il massimo della professionalità, serietà ed in particolare riservatezza per tutti coloro che desiderano ricevere un servizio di qualità nella compra-vendita immobiliare  o nella scelta di un appartamento per le vacanze estive.</p><br>
-<p>L\'Agenzia Radar, infatti, con esperienza nel settore immobiliare da oltre quarant\'anni, si occupa della vendita di immobili di ogni genere (monolocale, bilocale, trilocale posti direttamente sul mare, appartamenti in palazzina, villette a schiera con giardino, villetta indipendente, case di nuova costruzione, ville di prestigio, immobili di lusso).<br>
-L\'acquisto della seconda casa offre nella località turistica di Castiglioncello, già da tempo conosciuta come la Perla del Tirreno, un rifugio nel mare della Toscana. Pronti ad accogliere qualsiasi vostra richiesta, siamo a disposizione per visionare, selezionare l\'appartamento al mare che più fa al caso vostro per perseguire insieme il miglior investimento. Così come diamo la nostra completa disponibilità nella valutazione gratuita o stima di quegli immobili che vorrete inserire nel nostro circuito delle vendite delle case al mare.  Ci occupiamo anche di fondi, magazzini, negozi, capannoni e attività commerciali.</p>
-<p>&nbsp;</p>
-<p>Siamo anche a vostra disposizione per la gestione di residences , appartamenti e ville. Affidandovi alla nostra professionalità potrete far rendere il vostro investimento al mare, senza nessuna fatica. Infatti, penseremmo noi a tutto.</p>
-<p>&nbsp;</p>
-<img src="http://agenziaradar.it/images/foto_agenzia2.jpg" alt="panorama castiglioncello" width="460" height="295" hspace="5" align="left" /><p>La nostra agenzia immobiliare, specializzata nelle locazioni estive di appartamenti e case per le vacanze nel mare della Toscana,  si occupa di affitti settimanali, mensili o stagionali. Nell\'ampia scelta delle case per vacanza potrete valutare appartamenti in residence con piscina, bilocali al piano terra con giardino, villette con giardino, ampi appartamenti con terrazza, soluzioni con vista mare o immersi nel verde. Dai più economici a quelli di prestigio, tutti selezionati seguendo standard qualitativi che la nostra agenzia si è posta di perseguire, con un prezzo anche low-coast. Le nostre offerte last-minute sono un\'occasione da non perdere.</p>
-<p>&nbsp;</p>
-<p>L\'agenzia Radar di Giorgio Costagli è operativa anche nella vendita, l\'acquisto e l\'affitto di posti barca, posti auto,  box o garage,  nel Marina Cala de\' Medici di Rosignano Marittimo, porto turistico situato  nella provincia di Livorno tra Castiglioncello e Rosignano Solvay. Il posto barca è dotato di ogni servizio in banchina.</p>
-<p>&nbsp;</p>
-<p>Vi  attendiamo nel nostro ufficio che è  aperto anche il sabato e la domenica, per visionare le nostre occasioni.</p>
-<p>&nbsp;</p>
+<p>A <strong>Castiglioncello</strong>, rinomata località turistica del litorale livornese, nell\'incantevole cornice della <strong>Costa degli Etruschi</strong>, opera l\'agenzia immobiliare Radar.
+    </p>
+<p>Ci occupiamo da oltre quarant\'anni della <strong>compra-vendita immobiliare</strong> offrendo la massima riservatezza, consapevoli che l\'acquisto di una casa in una località turistica come Castiglioncello, Perla del Tirreno, offra un rifugio nel mare della Toscana.
+    </p>
+<p>Pronti ad accogliere le vostre richieste, visioniamo e selezioniamo l\'appartamento al mare che più fa al caso vostro per farvi perseguire il miglior investimento possibile. 
+    </p>
+<img src="http://agenziaradar.it/images/foto_agenzia2.jpg" alt="panorama castiglioncello" width="460" height="295" hspace="5" align="left" />
+<p>La nostra agenzia immobiliare, specializzata nelle <strong>locazioni estive</strong> per le vacanze nel mare della Toscana, si occupa di affitti settimanali, mensili o stagionali.</p>
+<p>Siamo a vostra disposizione, inoltre, per la <strong>gestione di residence, appartamenti e ville</strong>, potrete far rendere il vostro investimento al mare, senza nessuna fatica, penseremo noi a tutto.</p>
+<p>Nell\'ampia scelta che offriamo potrete valutare soluzioni selezionate seguendo standard qualitativi che ci siamo posti di perseguire non solo per gli immobili di prestigio, ma anche per quelli low-cost. 
+    </p>
+<p>Non dimenticate di dare un’occhiata alle nostre offerte last-minute.
+    </p>
+<p>L\'agenzia Radar di Giorgio Costagli è operativa anche nella vendita, nell\'acquisto e nell\'affitto di posti barca, posti auto, box o garage, nel Marina Cala de\' Medici di Rosignano Marittimo, porto turistico situato nella provincia di Livorno tra Castiglioncello e Rosignano Solvay. Il posto barca è dotato di ogni servizio in banchina.</p>
+ 
+<p>Vi attendiamo nel nostro ufficio aperto anche il sabato e la domenica, per visionare le nostre occasioni.</p>
+    
 <p><strong>Giorgio Costagli </strong></p>');
 
 
@@ -243,33 +246,43 @@ define('KEY_INDEX','affitti estivi, residence castiglioncello, Agenzia immobilia
 
 define('TITOLO_CASTIGLIONCELLO','CASTIGLIONCELLO, TUSCANY');    
 
-define('CONTENUTOCASTIGLIONCELLO','
-<strong>CASTIGLIONCELLO (LI) Toscana</strong><br><br>
-<p>Antico villaggio etrusco, Castiglioncello è adesso una località turistica di grande prestigio internazionale.</p>
-<p>Denominata &quot;la perla del Tirreno&quot;  per il suo  fascino unico,  è sempre stata racchiusa in una natura protettiva che l&rsquo;ha resa negli anni elegante ed  incontaminata, con le sue lussureggianti pinete, le sue spettacolari scogliere, le baie riparate e le spiagge bagnate dalle limpide acque che la caratterizzano questo tratto di costa .</p>
-<p>Tale scenario, affonda  le radici in tempi lontani.</p>
-<p>&nbsp;</p>
-<p><strong>Cenni storici: </strong></p>
-<p>&nbsp;</p>
-<p>Già nella seconda metà dell\'800,  il critico d\'arte e mecenate Diego Martelli, costruì qui la propria dimora, oggi Castello Pasquini, dove ospitò il famoso gruppo dei pittori Macchiaioli (tra i quali si ricordano Abbati, Fattori, Sernesi, Borrani , Cabianca ecc.) che dettero vita alla &ldquo;Scuola di Castiglioncello&quot;. Tutt&rsquo;oggi il Castello Pasquini è centro di molte attività legate alla cultura, alla danza e al teatro, nonch√© sede del tradizionale Festival della Danza e del Premio Letterario Castiglioncello Costa degli Etruschi. Ricordiamo inoltre che il paesino è reso famoso anche dagli artisti come Gassman, Mastroianni, Sordi ed altri che vi soggiornarono; inoltre fu set cinematografico anche del celebre film &ldquo;Il sorpasso&rdquo; con Vittorio Gassman. Da citare anche la Torre Medicea, realizzata probabilmente a metà del XVI secolo ed utilizzata a scopo difensivo contro i pirati Saraceni che minacciavano le acque tirreniche.                                                                                                                                                                                              Per completare la panoramica sulla storia locale, vale la pena di visitare il Museo Archeologico Nazionale, soprattutto noto per le numerose tombe etrusche rinvenute nella zona.</p>
-<p>&nbsp;</p>
-<p><strong>Castiglioncello rappresenta, per le sue molteplici sfaccettature, uno scenario invitante, ideale per le vacanze estive</strong>.</p>
-<p>&nbsp;</p>
-<p>Situata nel cuore della Toscana, al confine tra il Mar Ligure ed il tirreno settentrionale  presenta una vegetazione rigogliosa, pini e lecci fanno ombra sul litorale  a e la sua costa frastagliata è meta di turisti che ricercano relax e clima mite<strong>. </strong>La <strong>Pineta Marradi posta </strong>direttamente sul mare, dove l\'aria è fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, ed il noto Cinema all&rsquo;aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.                                                                                                                                                                                
-<div  style="float:right;margin: 15px 0px 15px 15px;" >
-  <iframe title="YouTube video player" width="350" height="293" src="http://www.youtube.com/embed/mJDTIPxtrL8?rel=0" frameborder="4" allowfullscreen></iframe>   
-</div>  
-                                                                                       La piazza centrale, <strong>Piazza della Vittoria</strong>, presenta una serie di negozi di classe dove è possibile fare shopping anche nelle ore notturne, e i vari bar storici che si affacciano sulla piazzetta vengono presi d\'assalto all\'ora dell\'aperitivo. <strong>La Baia del Quercetano, </strong>suggestiva caletta, fonte d&rsquo;ispirazione per <strong>Gabriele D&rsquo;Annunzio. </strong> L\'accoglienza, di antica tradizione, offre moltissime possibilità di soggiorno e&nbsp; i numerosi ristoranti propongono una cucina di qualità, grazie anche alla freschezza del pesce, che viene pescato tutti i giorni. <BR>
-  E&rsquo; presente una passeggiata lungomare, il <strong>Lungomare Colombo</strong>,  che si estende per circa 4 kilometri, dove è possibile costeggiare le varie calette che si intervallano una dopo l\'altra, respirando il profumo del mare, partendo dalla <strong>Punta Righini</strong> dove lo scenario che ci si apre davanti mostra la parte più rocciosa e selvaggia della costa, fino al raggiungimento del <strong>Porto Turistico Cala dè Medici</strong>. Il porto dispone di 650 posti barca (il 10% dei quali riservati al transito), un cantiere navale, uno yacht club, un grande parcheggio ed un borgo dove è possibile fare shopping. Chi sbarca al porto turistico Cala de\' Medici aggiunge il proprio tassello a un mosaico di imbarcazioni, volti e lingue, che animano uno spazio vivo e vitale durante tutto l\'anno. Tra le manifestazioni  più importanti di cui il Porto si fa promotore ricordiamo <strong>La Rotta del Vino </strong>la regata più gourmet della Costa degli Etruschi che si svolge durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino, dovrà conquistare una giuria super-specializzata!                            Presso alcune delle nostre strutture,  è possibile  praticare tutti gli sport acquatici come il seawatching, il diving, la pesca, la vela e il windsurf.  Degno di nota è il <strong>Circolo Nautico Castiglioncello</strong>, presente dal 1946, dove si svolgono corsi di vela per utenti di tutte le età e dove è possibile noleggiare imbarcazioni a vela o a motore per esplorare le meraviglie della costa.                                                                                                                                                                                                                                                                                                                           Durante il mese di giugno, presso la Baia di Caletta, si svolge anche la sagra più nota di tutta l&rsquo;estate: la <strong>Festa del Pesce</strong>.</p>
-<p>Castiglioncello possiede clima secco piacevolissimo,  che fa innamorare: tante giornate di sole disseminate nel corso dell&rsquo;anno e temperature sempre miti sono il segreto per la vacanza perfetta. Qui i valori medi di gennaio, il mese più freddo, vanno da una minima di 10°C a una massima di 20°C, mentre in agosto si passa dai 23°C di minima ai 32°C di massima. Le piogge, in genere scarse, raggiungono i massimi valori tra ottobre e dicembre, Il clima mite ed asciutto è consigliato per chi soffre di malattie respiratorie.</p>
-<p>&nbsp;</p>
-<p><strong>Come raggiungere Castiglioncello</strong></p>
-<p>&nbsp;</p>
-<p>Raggiungere <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=55&lan=ita" target="_blank">Castiglioncello</A> non è difficile, qualunque sia il mezzo prescelto per gli spostamenti. Chi viaggia in auto e viene da nord deve percorrere l&rsquo;Autostrada A12 Genova-Rosignano Marittimo fino al casello <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=54&lan=ita">Rosignano Marittimo</A>, quindi proseguire sulla SS1 Aurelia in direzione <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=34&lan=ita">Livorno</A> fino all&rsquo;uscita <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=55&lan=ita">Castiglioncello</A>. Chi viene da sud deve percorrere invece la SS1 Aurelia in direzione Grosseto-Livorno dino all&rsquo;uscita <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=55&lan=ita">Castiglioncello</A>. <BR>
-  <BR>
-Per chi preferisce il treno, la stazione ferroviaria cittadina si trova lungo la linea tirrenica Genova-Pisa-Roma, ma a <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=55&lan=ita">Castiglioncello</A> si fermano soltanto treni regionali. Per chi viene da più lontano ci sono le stazioni di Rosignano, a soli 2 km, quella di <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=45&lan=ita">Cecina</A> a 17 km e quella di <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=34&lan=ita">Livorno</A> a 25 km. Infine l&rsquo;aeroporto più vicino è quello di <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=11&lan=ita">Pisa</A>, a circa 30 km, da cui si può raggiungere <A HREF="http://www.ilturista.info/guide.php?cat1=4&cat2=8&cat3=5&cat4=55&lan=ita">Castiglioncello</A> in taxi, in treno, o noleggiando un auto.</p>
-<p>Castiglioncello si trova in posizione centralissima per chiunque volesse raggiungere altre mete privilegiate della <strong>Costa degli Etruschi</strong>, e le più belle città d&rsquo;arte della <strong>Toscana,</strong> iniziando un itinerario alla scoperta delle bellezze di questa terra.<br><br>
-');
+define('CONTENUTOCASTIGLIONCELLO',' 
+<p>    
+Castiglioncello è una meravigliosa località turistica denominata “la perla del Tirreno” per il suo fascino.<br> 
+Antico villaggio etrusco, è sempre stata racchiusa in una natura protettiva che l’ha resa, negli anni, elegante ed incontaminata.<br>
+Le sue lussureggianti pinete, le scogliere spettacolari, le baie riparate e le spiagge bagnate dalle limpide acque, la caratterizzano rendendola unica.<br> 
+<strong>Castiglioncello rappresenta, uno scenario invitante, ideale per le vacanze estive.</strong>
+</p>    
+<div class="line"></div> 
+<h4>Relax</h4>   
+<p>
+Situata nel cuore della Toscana, al confine tra il Mar Ligure ed il Tirreno settentrionale Castiglioncello risulta il luogo ideale anche per i turisti in cerca di relax e clima mite.<br> 
+La <strong>Baia del Quercetano</strong>, suggestiva caletta, fonte d’ispirazione per <strong>Gabriele D’Annunzio</strong> è un luogo ideale per una giornata di relax.
+</p>
+
+<h4>Luoghi da percorrere</h4>    
+<p>
+La <strong>Pineta Marradi</strong> posta direttamente sul mare, con l\'aria fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, ed il noto Cinema all’aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.<br>
+E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta Righini</strong>, fino ad arrivare al <strong>Porto Turistico Cala de’ Medici</strong>, 4 km respirando il profumo del mare, tra una meravigliosa caletta e l’altra.<br>
+</p>
+<h4>Sport</h4>    
+<p>Se siete amanti degli sport acquatici Castiglioncello offre, tra l’altro, la possibilità di praticare <strong>seawatching</strong>, <strong>diving</strong>, <strong>pesca</strong> e <strong>windsurf</strong>; inoltre presso il <strong>Circolo Nautico Castiglioncello</strong> si svolgono <strong>corsi di vela</strong> per utenti di tutte le età ed è possibile <strong>noleggiare imbarcazioni a vela o a motore</strong> per esplorare le meraviglie della costa. </p>
+<h4>Shopping, Vita ed Eventi</h4>
+<p>
+    <strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo.<br> 
+Tra gli eventi da non perdere assolutamente non possiamo non citare la <strong>Festa del Pesce</strong>, in giugno, presso la Baia di Caletta e <strong>La Rotta del Vino</strong>, la regata più gourmet della Costa degli Etruschi, durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino.</p>
+<h4>Cenni storici</h4>
+<p>Già nella seconda metà dell\'800, il critico d\'arte e mecenate Diego Martelli, costruì qui la propria dimora, oggi <strong>Castello Pasquini</strong>, dove ospitò il famoso gruppo dei pittori <strong>Macchiaioli</strong> (tra i quali si ricordano Abbati, Fattori, Sernesi, Borrani , Cabianca ecc.) che dettero vita alla “Scuola di Castiglioncello". 
+    Tutt’oggi il Castello Pasquini è centro di molte attività legate alla cultura, alla danza e al teatro, nonché sede del tradizionale <strong>Festival della Danza</strong> e del <strong>Premio Letterario Castiglioncello Costa degli Etruschi</strong>. 
+    Ricordiamo inoltre che il paesino è reso famoso anche dagli artisti come Gassman, Mastroianni, Sordi ed altri che vi soggiornarono; inoltre fu set cinematografico anche del celebre film "<strong>Il sorpasso</strong>" con Vittorio Gassman. 
+    Da citare anche la <strong>Torre Medicea</strong>, realizzata probabilmente a metà del XVI secolo ed utilizzata a scopo difensivo contro i pirati Saraceni che minacciavano le acque tirreniche. 
+    Per completare la panoramica sulla storia locale, vale la pena di visitare il <strong>Museo Archeologico Nazionale</strong>, soprattutto noto per le numerose tombe etrusche rinvenute nella zona.
+    </p>
+    <a href="'.LANFOLDER.'dove_immobiliare_casa_vacanze_toscana.php" title="Le indicazioni per raggiungerci a Castiglioncello">Come arrivare a Castiglioncello ></a>
+    
+  <div  style="margin: 15px 0px 15px 15px;" >
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/mJDTIPxtrL8" frameborder="0" allowfullscreen></iframe></div>  
+  ');
 
 
 
@@ -287,26 +300,20 @@ define('KEY_INTORNO','affitti estivi, residence castiglioncello, Agenzia immobil
 define('TITOLO_INTORNO','I DINTORNI COSTA DEGLI ETRUSCHI TOSCANA');    
 
 define('CONTENUTOINTORNO','
-
-<br>
-<p><strong>Bolgheri </strong><strong>(30 Km):</strong> caratteristico borgo medioevale che si sviluppa intorno al suo castello, famoso per il lungo viale dei cipressi decantato dal poeta Carducci. Tale località è resa nota oltre che per la magnificenza dello scenario ambientale che offre, anche per i suoi grandiosi vini rossi. Tra i più famosi vini prodotti troviamo il Sassicaia, il vino autoctono sangiovese e i numerosi vini della tenuta dell\'Ornellaia e della tenuta Guado al Tasso. Bolgheri è dunque una meta enogastronomica che gode di fama mondiale; tra gli eventi che propone ricordiamo il Bolgheri Melody  e il <A HREF="http://www.eventiesagre.it/Eventi_Enogastronomici/2287_Bolgheri+jazz.html" target="_blank">Bolgheri Jazz</A> che si svolgono rispettivamente nei mesi di luglio e di settembre, dove molti produttori dei vini più famosi del luogo, aprano al pubblico le loro cantine per degustazioni ed assaggi fondendo il piacere della tavola con musica ed arte, e cosi <strong>Castagneto Carducci, Casale Marittima, Bibbona, Montescudaio, Guardistallo </strong>e tanti altri paesi affascinanti della Toscana, tutti situati a pochi chilometri di distanza</p>
-<p><strong>Rosignano Marittimo e le Spiagge Bianche </strong><strong>(2 Km):</strong> Un pezzo di Caraibi sulla costa tra Rosignano e Vada ecco come si presentano le Spiagge Bianche con la sabbia color bianco che ricorda quello di un atollo Polinesiano.<BR><br>
-  Ampi parcheggi e spiagge attrezzate oltre ad ampie zone adibite a spiagge libere a disposizione del turista.</p>
-<p><strong>Volterra </strong><strong>(50 Km):</strong> è oggi una città dal caratteristico aspetto medievale, dove è ancora possibile gustare l\'atmosfera di un antico borgo, grazie al relativo isolamento che ha limitato lo sviluppo industriale e commerciale. Circondata interamente dalle mura duecentesche, Volterra possiede un centro storico medioevale perfettamente conservato con la celeberrima P<EM>iazza dei Priori, il Teatro romano di Vallebuona, il Museo etrusco Guarnacci</EM> , che costituiscono i maggiori vanti per l\'antica città etrusca e mete irrinunciabili per tutti i turisti. Volterra si presenta come un angolo di Toscana particolarmente ricco di eventi, specialmente nel periodo estivo, dalla musica lirica al jazz, dal teatro alle rievocazioni medioevali in luoghi incantevoli e ricchi di suggestione e di storia.</p><br><br>
-
-
-<p><strong>Baratti e Populonia </strong><strong>( 65 Km):</strong> Costituisce uno straordinario porto naturale che raccoglie <img src="http://agenziaradar.it/images/80_5_fotoImmobile 2.jpg" width="424" height="282" hspace="4" align="left" title="residence posti barca il Romito Livorno foto by Luca Caponi"  />insieme le bellezze del mare, della spiaggia e dei suggestivi resti archeologici dell\'antica necropoli etrusca. Una strada panoramica percorre tutta la spiaggia del Golfo. La sabbia è abbastanza grossa e la sua caratteristica principale è di assumere a tratti un riflesso blu-argento. Da Baratti, salendo per una strada tortuosa, si raggiunge l\'antico borgo fortificato di Populonia, che domina tutto il Golfo. Populonia costituisce l\'unica città etrusca costruita sul mare, in origine nata per favorire la lavorazione del ferro proveniente dall\'Isola d\'Elba.</p><br><br>
-<p><strong>Terme di Venturina - il Calidario</strong><strong> (53 Km): </strong>Immerso nel verde di una splendida pineta, il Calidario è un laghetto con sorgente termale di acqua calda a 36 gradi che sgorga direttamente nella vasca; una sorgente che offre il suo abbraccio sfruttando i benefici effetti dell\'acqua e del vapore. Già conosciute ai tempi degli Etruschi e dei Romani, queste terme regalano al visitatore un abbraccio caldo di benessere naturale.</p>
-<p><strong>Pisa </strong><strong>(48 Km)</strong>:  è una città di antiche origini, nasce infatti da un insediamento etrusco, divenuto poi una colonia romana e di cui rimangono oggi numerose testimonianze negli edifici religiosi e civili, nei vicoli stretti e nella forma delle piazze. La città, bagnata dal fiume Arno, raggiunge il massimo splendore nel XI secolo come importante base navale e grazie ai traffici commerciali che sviluppa in tutto il mediterraneo. Il monumento più importante è senza dubbio la Torre Pendente e il Duomo anche se vale la pena visitare la Chiesa di Santa Maria della Spina, e l\'antica Chiesa di S. Paolo a Ripa d\'Arno, quest\'ultima chiaro esempio di architettura Romanica.</p>
-<p><strong>Firenze</strong> <strong>( 128 Km): </strong>Bagnata dal fiume Arno e circondata da colline di olivi e vigneti, Firenze, è senza dubbio la città più famosa e attraente della Toscana. <BR>
-  Fondata dai Romani nel primo secolo a.C. , nel XV secolo passò sotto il dominio della famiglia dei Medici, periodo in cui Firenze conobbe il massimo splendore. Da allora i più famosi artisti come Giotto, Cimabue, Michelangelo, Brunelleschi, Botticelli, hanno lasciato con le loro opere una traccia indimenticabile che ancora possiamo ammirare grazie ai loro dipinti, sculture e imponenti opere d\'arte come il Duomo, il Palazzo Vecchio ed altre ancora. I più famosi musei di Firenze sono: la Galleria degli uffizi, la Galleria dell\'Accademia, le Cappelle Medicee, il Museo Nazionale del Bargello. </p>
-<p><strong>Siena</strong> <strong>( 180 Km):</strong> è una antica città di origine etrusca situata nel cuore della Toscana raggiunge il periodo di massimo splendore nel medioevo. Tutt\'oggi, è infatti possibile ammirare le antiche mura e la struttura del borgo medievale costruita da vicoli stretti e palazzi nobiliari. Di notevole interesse artistico il Duomo, che risale al XIV secolo, Piazza del Campo - sede del Palio di Siena - e gli edifici circostanti, e ben 15 musei tra cui il Palazzo e Museo Civico, Pinacoteca nazionale e il Museo delle Tavolette
-  <BR>
-</p>
-<p><strong>Lucca</strong> <strong>(70 Km):</strong> è una delle poche città della Toscana che ancora oggi conserva intatte le mura di cinta che, costruite tra il 1504 e il 1645, non furono mai usate per difesa. Divenne famosa nel XV secolo per l\'arte della seta che divenne la principale fonte economica. Oggi è possibile ammirare il Palazzo della Signoria, la chiesa dei Santi Giovanni e Reparata e piazza San Martino dove si trova il Duomo dedicato a San Martino ed edificio religioso più importante della città. </p>
-<p><strong>San Gimignano </strong><strong>(116 Km)</strong>: famosa in tutto il mondo per le sue 14 torri, San Gimignano è situata nel cuore della campagna Toscana tra Firenze e Siena a 334 metri sul livello del mare e su una collina che domina la Val d\'Elsa.</p>
-<p><strong>Isole dell\'Arcipelago Toscano</strong>: si narra che la Venere del Tirreno, al momento di emergere dalle acque del nostro mare per abbracciare l\'orizzonte lasciò sfuggire sette perle dalla collana che adornava il suo bianco collo le quali caddero in mare trasformandosi nelle Isole dell\'Arcipelago Toscano. Questo è formato da 7 isole: <A HREF="http://www.vacanzeinversilia.com/arcipelago/gorgona.html" target="_blank">Gorgona</A>, <A HREF="http://www.vacanzeinversilia.com/arcipelago/capraia.html" target="_blank">Capraia,</A> <A HREF="http://www.vacanzeinversilia.com/arcipelago/elba.html" target="_blank">Elba</A>, <A HREF="http://www.vacanzeinversilia.com/arcipelago/pianosa.html" target="_blank">Pianosa</A>, <A HREF="http://www.vacanzeinversilia.com/arcipelago/montecristo.html" target="_blank">Montecristo</A>,<A HREF="http://www.vacanzeinversilia.com/arcipelago/giglio.html" target="_blank">Giglio</A> e <A HREF="http://www.vacanzeinversilia.com/arcipelago/giannutri.html" target="_blank">Giannutri</A>. L\'unicità, la bellezza di queste perle,  rappresentano il più grande parco marino d\'Europa, tutela 56.766 ettari di mare e 17.887 ettari di terra e sono da assaporare in tutte le stagioni. Infatti se d\'estate siete attratti dalla prerogativa di un week-end, un soggiorno in queste isole, troverete sicuramente storia, cultura e natura a d accogliervi durante tutto l\'anno. Ogni isola si differenzia dall\'altra. Ognuna ha una storia, una leggenda, che affascina ed incanta e tutte a portata di mano.</p>
-'); 
+<p><img src="'.TOTALPATH.'images/custom/castiglioncello1.jpg" class="thumbnail fright leftmargin-xs" data-height-xs="nomargin" data-height-xxs="nomargin" alt="Blog Single"><strong>Bolgheri </strong><strong>(30 Km):</strong> caratteristico borgo medioevale che si sviluppa intorno al suo castello, famoso per il lungo viale dei cipressi decantato dal poeta Carducci. Tale località è resa nota oltre che per la magnificenza dello scenario ambientale che offre, anche per i suoi grandiosi vini rossi. Tra i più famosi vini prodotti troviamo il Sassicaia, il vino autoctono sangiovese e i numerosi vini della tenuta dell\'Ornellaia e della tenuta Guado al Tasso. Bolgheri è dunque una meta enogastronomica che gode di fama mondiale; tra gli eventi che propone ricordiamo il Bolgheri Melody  e il <a href="http://www.eventiesagre.it/Eventi_Enogastronomici/2287_Bolgheri+jazz.html" target="_blank">Bolgheri Jazz</a> che si svolgono rispettivamente nei mesi di luglio e di settembre, dove molti produttori dei vini più famosi del luogo, aprano al pubblico le loro cantine per degustazioni ed assaggi fondendo il piacere della tavola con musica ed arte, e cosi <strong>Castagneto Carducci, Casale Marittima, Bibbona, Montescudaio, Guardistallo </strong>e tanti altri paesi affascinanti della Toscana, tutti situati a pochi chilometri di distanza</p>
+                            <p><strong>Rosignano Marittimo e le Spiagge Bianche </strong><strong>(2 Km):</strong> Un pezzo di Caraibi sulla costa tra Rosignano e Vada ecco come si presentano le Spiagge Bianche con la sabbia color bianco che ricorda quello di un atollo Polinesiano.<br><br>
+                                Ampi parcheggi e spiagge attrezzate oltre ad ampie zone adibite a spiagge libere a disposizione del turista.</p>
+                            <p><strong>Volterra </strong><strong>(50 Km):</strong> è oggi una città dal caratteristico aspetto medievale, dove è ancora possibile gustare l\'atmosfera di un antico borgo, grazie al relativo isolamento che ha limitato lo sviluppo industriale e commerciale. Circondata interamente dalle mura duecentesche, Volterra possiede un centro storico medioevale perfettamente conservato con la celeberrima P<em>iazza dei Priori, il Teatro romano di Vallebuona, il Museo etrusco Guarnacci</em> , che costituiscono i maggiori vanti per l\'antica città etrusca e mete irrinunciabili per tutti i turisti. Volterra si presenta come un angolo di Toscana particolarmente ricco di eventi, specialmente nel periodo estivo, dalla musica lirica al jazz, dal teatro alle rievocazioni medioevali in luoghi incantevoli e ricchi di suggestione e di storia.</p>
+                            <p><img src="'.TOTALPATH.'images/custom/toscana.jpg" class="thumbnail fleft rightmargin-xs" data-height-xs="nomargin" data-height-xxs="nomargin" alt=""><strong>Baratti e Populonia </strong><strong>( 65 Km):</strong> Costituisce uno straordinario porto naturale che raccoglie insieme le bellezze del mare, della spiaggia e dei suggestivi resti archeologici dell\'antica necropoli etrusca. Una strada panoramica percorre tutta la spiaggia del Golfo. La sabbia è abbastanza grossa e la sua caratteristica principale è di assumere a tratti un riflesso blu-argento. Da Baratti, salendo per una strada tortuosa, si raggiunge l\'antico borgo fortificato di Populonia, che domina tutto il Golfo. Populonia costituisce l\'unica città etrusca costruita sul mare, in origine nata per favorire la lavorazione del ferro proveniente dall\'Isola d\'Elba.</p>
+                            <p><strong>Terme di Venturina - il Calidario</strong><strong> (53 Km): </strong>Immerso nel verde di una splendida pineta, il Calidario è un laghetto con sorgente termale di acqua calda a 36 gradi che sgorga direttamente nella vasca; una sorgente che offre il suo abbraccio sfruttando i benefici effetti dell\'acqua e del vapore. Già conosciute ai tempi degli Etruschi e dei Romani, queste terme regalano al visitatore un abbraccio caldo di benessere naturale.</p>
+                            <p><strong>Pisa </strong><strong>(48 Km)</strong>:  è una città di antiche origini, nasce infatti da un insediamento etrusco, divenuto poi una colonia romana e di cui rimangono oggi numerose testimonianze negli edifici religiosi e civili, nei vicoli stretti e nella forma delle piazze. La città, bagnata dal fiume Arno, raggiunge il massimo splendore nel XI secolo come importante base navale e grazie ai traffici commerciali che sviluppa in tutto il mediterraneo. Il monumento più importante è senza dubbio la Torre Pendente e il Duomo anche se vale la pena visitare la Chiesa di Santa Maria della Spina, e l\'antica Chiesa di S. Paolo a Ripa d\'Arno, quest\'ultima chiaro esempio di architettura Romanica.</p>
+                            <p><strong>Firenze</strong> <strong>( 128 Km): </strong>Bagnata dal fiume Arno e circondata da colline di olivi e vigneti, Firenze, è senza dubbio la città più famosa e attraente della Toscana. <br>
+                                Fondata dai Romani nel primo secolo a.C. , nel XV secolo passò sotto il dominio della famiglia dei Medici, periodo in cui Firenze conobbe il massimo splendore. Da allora i più famosi artisti come Giotto, Cimabue, Michelangelo, Brunelleschi, Botticelli, hanno lasciato con le loro opere una traccia indimenticabile che ancora possiamo ammirare grazie ai loro dipinti, sculture e imponenti opere d\'arte come il Duomo, il Palazzo Vecchio ed altre ancora. I più famosi musei di Firenze sono: la Galleria degli uffizi, la Galleria dell\'Accademia, le Cappelle Medicee, il Museo Nazionale del Bargello. </p>
+                            <p><strong>Siena</strong> <strong>( 180 Km):</strong> è una antica città di origine etrusca situata nel cuore della Toscana raggiunge il periodo di massimo splendore nel medioevo. Tutt\'oggi, è infatti possibile ammirare le antiche mura e la struttura del borgo medievale costruita da vicoli stretti e palazzi nobiliari. Di notevole interesse artistico il Duomo, che risale al XIV secolo, Piazza del Campo - sede del Palio di Siena - e gli edifici circostanti, e ben 15 musei tra cui il Palazzo e Museo Civico, Pinacoteca nazionale e il Museo delle Tavolette.</p>
+                            <p><strong>Lucca</strong> <strong>(70 Km):</strong> è una delle poche città della Toscana che ancora oggi conserva intatte le mura di cinta che, costruite tra il 1504 e il 1645, non furono mai usate per difesa. Divenne famosa nel XV secolo per l\'arte della seta che divenne la principale fonte economica. Oggi è possibile ammirare il Palazzo della Signoria, la chiesa dei Santi Giovanni e Reparata e piazza San Martino dove si trova il Duomo dedicato a San Martino ed edificio religioso più importante della città. </p>
+                            <p><strong>San Gimignano </strong><strong>(116 Km)</strong>: famosa in tutto il mondo per le sue 14 torri, San Gimignano è situata nel cuore della campagna Toscana tra Firenze e Siena a 334 metri sul livello del mare e su una collina che domina la Val d\'Elsa.</p>
+                            <p><strong>Isole dell\'Arcipelago Toscano</strong>: si narra che la Venere del Tirreno, al momento di emergere dalle acque del nostro mare per abbracciare l\'orizzonte lasciò sfuggire sette perle dalla collana che adornava il suo bianco collo le quali caddero in mare trasformandosi nelle Isole dell\'Arcipelago Toscano. Questo è formato da 7 isole: Gorgona, Capraia, Elba, Pianosa, Montecristo,Giglio e Giannutri. L\'unicità, la bellezza di queste perle,  rappresentano il più grande parco marino d\'Europa, tutela 56.766 ettari di mare e 17.887 ettari di terra e sono da assaporare in tutte le stagioni. Infatti se d\'estate siete attratti dalla prerogativa di un week-end, un soggiorno in queste isole, troverete sicuramente storia, cultura e natura a d accogliervi durante tutto l\'anno. Ogni isola si differenzia dall\'altra. Ognuna ha una storia, una leggenda, che affascina ed incanta e tutte a portata di mano.</p>
+    '); 
 
 
 /*DOVE SIAMO */
@@ -319,21 +326,26 @@ define('KEY_SERVIZI','Residence castiglioncello, appartamenti, villa, ville, Cas
 
 
 define('TITOLO_SERVIZI','I SERVIZI');  
+define('TITOLO_SERVIZI2','I Servizi Offerti');
 define('CONTENUTOSERVIZI',' 
-
-
-<strong>I Servizi Offerti</strong><br><br><br>
-
-<p>Stime gratuite dei Vs. immobili</p>
-<p>Svolgimento di tutte le pratiche necessarie per la compravendita</p>
-<p>Controllo accurato degli immobili in vendita (visure ipotecarie, catastali, conformità urbanistica al fine di garantire &quot;un acquisto sicuro&quot;)</p>
-<p>Consulenza gratuita</p>
-<p>Inoltre, possiamo gestire il Vostro immobile per chi vuol &quot;far rendere l\'investimento al mare&quot; affittando i periodi da Voi stessi resi disponibili</p>
-<p>La nostra agenzia, aperta tutto l\'anno sia sabato che domenica, offre alla propria clientela la completa disponibilità non solo per le esigenze relative alle vacanze estive, ma anche particolari attenzioni alle vendite di immobili di qualsiasi genere.</p>
-<p>L\'investimento della casa al mare può spaziare dai monolocali ai bilocali in residence, dai grandi ai piccoli appartamenti in zona centrale, dalle ville/villette sul mare a quelle in collina.</p>
-<p>Non vogliamo dilungarci troppo su questo punto, dato che la nostra pubblicità in questo campo viene fatta dai clienti stessi che già da quarant\'anni hanno avuto la possibilità di usufruire dei nostri servizi.</p>
-<p>I nostri principali obiettivi sono: professionalità, riservatezza ed il piacere di instaurare un rapporto &quot;personale&quot; con i nostri clienti.</p>
-<p>Attendiamo, quindi, una Vostra visita o un Vostro contatto per toccare con mano le nostre offerte.</p><br><br>
+<p>L’Agenzia Radar aperta tutto l\'anno sia sabato sia domenica, offre, alla propria clientela, la completa disponibilità, non solo per le esigenze relative alle vacanze estive, ma anche particolari attenzioni alle vendite di immobili di qualsiasi genere.</p>
+<ul>
+<li class="list-group-item"><i class="icon-line2-note"></i>Completa disponibilità, professionalità e riservatezza</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Consulenze immobiliari gratuite</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Stime gratuite dei vostri immobili</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Espletamento di tutte le pratiche necessarie </li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Assistenza in tutte le fasi fino alla stipula del contratto</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Controllo accurato degli immobili in vendita al fine di garantire "un acquisto sicuro" (visure ipotecarie, catastali, conformità urbanistica)</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Promozione e pubblicità dei vostri immobili</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>Gestione degli immobili in locazione far rendere l\'investimento al mare"</li> 
+</ul>
+<p>
+Ci occupiamo, inoltre, di organizzare al meglio le vostre vacanze al mare nella regione Toscana.<br>
+Cerchiamo la struttura ricettiva perfetta per voi, che sia in grado di offrirvi il meglio anche ad un prezzo low cost, senza farvi rinunciare ai comfort e ai servizi che fanno di una vacanza la vacanza ideale: piscina, vicinanza mare, garage privato, posto auto riservato, terrazza con vista mare, balcone, giardino. 
+</p>
+<p>
+Senza dimenticare il piacere di instaurare un rapporto personale con i nostri clienti.
+</p>
 ');
 
 /* ERROR */
@@ -434,11 +446,6 @@ define('TITOLO_WEBCAM','WEBCAM CASTIGLIONCELLO METEO');
 
 define('CONTENUTOWEBCAM','
 
-
-<strong>WEBCAM METEO</strong><br><br>
-
-
-Testo
 
   ');
 

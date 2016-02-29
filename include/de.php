@@ -47,7 +47,7 @@ define('DINTORNI','DIE UMGEBUNGEN');
 define('INFORMAZIONI','WO SIND WIR');               
 define('CONTATTI','KONTAKTE');          
 define('LINK','WETTER WEBCAM');    
-
+define('LANHTML','de-DE');
 
 /*Menu FOOTER*/
 
@@ -180,6 +180,7 @@ define('KEY_DOVE','Agentur, Radar, Immobilien, Wohnanlage, Ferienanlage, Apparte
 
 
 define('TITOLO_DOVE','WO SIND WIR ');  
+define('TITOLO_DOVE2','Wie man zu Castiglioncello');
 define('CONTENUTODOVESIAMO',' 
 
 <p><strong>Wie Sie in Castiglioncello ankommen</strong></p>
@@ -336,6 +337,7 @@ define('KEY_SERVIZI','Agentur, Radar, Immobilien, Wohnanlage, Ferienanlage, Appa
 
 
 define('TITOLO_SERVIZI','Dienstleistungen');  
+define('TITOLO_SERVIZI2','Dienstleistungen');
 define('CONTENUTOSERVIZI',' 
 
 

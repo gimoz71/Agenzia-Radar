@@ -47,7 +47,7 @@ define('DINTORNI','THE SURROUNDINGS');
 define('INFORMAZIONI','LOCATION');               
 define('CONTATTI','CONTACTS');          
 define('LINK','WEATHER WEBCAM');    
-
+define('LANHTML','en-US');
 
 /*Menu FOOTER*/
 
@@ -179,6 +179,7 @@ define('KEY_DOVE','Agency, Radar, real estate, residence, residences, apartments
 
 
 define('TITOLO_DOVE','LOCATION');  
+define('TITOLO_DOVE2','How to get to Castiglioncello');
 define('CONTENUTODOVESIAMO',' 
 
 <p><strong>How to get to Castiglioncello</strong></p><br>
@@ -355,6 +356,7 @@ define('KEY_SERVIZI','Agency, Radar, real estate, residence, residences, apartme
 
 
 define('TITOLO_SERVIZI','SERVICES');  
+define('TITOLO_SERVIZI2','Services');
 define('CONTENUTOSERVIZI',' 
 
 
