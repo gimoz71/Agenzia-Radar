@@ -691,48 +691,48 @@ class box{
                         </div>
                         <div class="entry-content">
                             <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
-                         <table class="tab_periodi elencoRis">
-	                        <tr>
-	                        <th><?php echo MAGGIO?></th>
-	                        <th><?php echo GIUGNO?></th>
-	                        <th><?php echo LUGLIO?></th>
-	                        <th><?php echo AGOSTO?></th>
-	                        <th><?php echo SETTEMBRE?></th>
-	                        <th><?php echo ALTRO_PERIODO?></th>
-	                        </tr>
-	                        <tr>
-	                        <?php 
-	                        foreach ($this->periodi as $per)
-	                        {
-								$classeQuad1='quad_rosso';
-	                        	$classeQuad2='quad_rosso';
-	                        	if($per=='altro' && $immo[$per]==1)
-								{
-									$classeQuad1='quad_verde';
-									$classeQuad2='quad_verde';
-								}	
-	                        	elseif($per!='altro') 
-								{
-	                        		if($immo[$per.'_1']==1)
-	                            		$classeQuad1='quad_verde';
-	                            	if($immo[$per.'_2']==1)
-	                                	$classeQuad2='quad_verde';
-	                        	}
-	                            
-	                        	?>
-	                        <td>
-	                        <div class="quad_periodo">
-	                        <div class="<?php echo $classeQuad1?>"></div>
-	                        <div class="<?php echo $classeQuad2?>"></div>
-	                        <div class="clear"></div>
-	                        </div>
-	                        </td>
-	                        <?php 
-	                        }
-	                        ?>
-	                        </tr>
-	                        </table>
-	                           <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+                            <table class="tab_periodi elencoRis">
+                                <tr>
+                                <th><?php echo MAGGIO?></th>
+                                <th><?php echo GIUGNO?></th>
+                                <th><?php echo LUGLIO?></th>
+                                <th><?php echo AGOSTO?></th>
+                                <th><?php echo SETTEMBRE?></th>
+                                <th><?php echo ALTRO_PERIODO?></th>
+                                </tr>
+                                <tr>
+                                <?php 
+                                foreach ($this->periodi as $per)
+                                {
+                                    $classeQuad1='quad_rosso';
+                                    $classeQuad2='quad_rosso';
+                                    if($per=='altro' && $immo[$per]==1)
+                                    {
+                                        $classeQuad1='quad_verde';
+                                        $classeQuad2='quad_verde';
+                                    }	
+                                    elseif($per!='altro') 
+                                    {
+                                        if($immo[$per.'_1']==1)
+                                            $classeQuad1='quad_verde';
+                                        if($immo[$per.'_2']==1)
+                                            $classeQuad2='quad_verde';
+                                    }
+
+                                    ?>
+                                <td>
+                                <div class="quad_periodo">
+                                <div class="<?php echo $classeQuad1?>"></div>
+                                <div class="<?php echo $classeQuad2?>"></div>
+                                <div class="clear"></div>
+                                </div>
+                                </td>
+                                <?php 
+                                }
+                                ?>
+                                </tr>
+                                </table>
+                                <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
                        
                         </div>
                     </div>
@@ -1193,18 +1193,20 @@ function elencoNews($tipo,$lan,$getor=false)
          <h3><?php echo APPARTAMENTI;?></h3>
         </div>
 					
-					<ul class="elenco_radar">
+                <div class="elenco_radar">
 					<?php 
 				   while($app=mysql_fetch_assoc($appartamenti))
 				   {?>
-				   <li>
-				   <h4><a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )"><?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )</a></h4>
-				   <?php echo stripslashes($app['descrizione_'.$lan]);?>
-				   </li>
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h4 class="nomargin fleft"><a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )" ><?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )</a></h4>
+                            <a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )" class="button button-rounded button-mini nomargin fright" data-class-lg="not-hidden" data-class-md="hidden" data-class-sm="hidden" data-class-xs="hidden" data-class-xxs="hidden">dettaglio <i class="icon-chevron-right"></i></a></div>
+                        <div class="panel-body"><?php echo stripslashes($app['descrizione_'.$lan]);?></div>
+                    </div>
 				   <?php 
 				   }
 				   ?>
-				   </ul>
+                </div>
 				   
 				   <?php 
 			    }
@@ -1249,28 +1251,19 @@ function elencoNews($tipo,$lan,$getor=false)
         //$url=TOTALPATH.'immobili/'.$_SESSION['lan'].'/'.str_replace('\&','',str_replace(' ','-',$im['nome_tipo_'.$_SESSION['lan']])).'/'.$im['id_immobili'].'_'.str_replace('\.','',str_replace(' ','-',$im['nome_immobile'])).'.html';
     	?>
     	<div class="col_three_fifth nobottommargin">
-                                        <!-- Entry Image
-                                        ============================================= -->
+                <!-- Entry Image
+                ============================================= -->
 			   	<?php
-				if(is_file(PATHROOT.'images/big/'.$im['foto_g_immobile']))
-				{
-					list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
-				?>
-				 <div class="entry-image" data-lightbox="gallery">
-                    <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
-                 </div><!-- .entry-image end -->
-				
-			    <?php
-				}
-				elseif($im['id_residence']>0 && is_file(PATHROOT.'images/big/'.$res['foto_g_immobile']))
-				{
-				?>
-				<div class="entry-image" data-lightbox="gallery">
-                    <a href="<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
-                 </div><!-- .entry-image end -->
-						    
-			    <?php				
-				}
+                if(true)
+                {
+                    //list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
+                    ?>
+                    <div class="entry-image" data-lightbox="gallery">
+                        <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                    </div><!-- .entry-image end -->
+
+                    <?php
+                }
 				?>
 				</div>
                 <div class="col_two_fifth col_last nobottommargin">
