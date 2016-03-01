@@ -13,11 +13,13 @@
 @dark-bg-color-darker: darken(@theme-color, 10%); 
 
 @summer-color : #e68019;
+@deal-color : #c42c17;
 
 
 #content {
     background-color: @theme-color;
 }
+
 .theme-color, .sell{
     color: @theme-color;
 }
@@ -154,6 +156,23 @@
     &:hover {
         background-color: darken(#517bde, 10) !important;
     }
+}
+
+.icon-deal {
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    z-index: 1;
+    box-shadow: 0 2px 2px rgba(0,0,0,.35);
+    -ms-transform: rotate(-14deg); /* IE 9 */
+    -webkit-transform: rotate(-14deg); /* Chrome, Safari, Opera */
+    transform: rotate(-14deg);
+    background: @deal-color; /* Old browsers */
+    background: -moz-linear-gradient(top,  lighten(@deal-color, 5) 0%, lighten(@deal-color, 30) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  lighten(@deal-color, 5) 0%,lighten(@deal-color, 30) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  lighten(@deal-color, 5) 0%,lighten(@deal-color, 30) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@deal-color', endColorstr='@deal-color',GradientType=0 ); /* IE6-9 */
+
 }
 
 /* tabelle periodi disponibilità */

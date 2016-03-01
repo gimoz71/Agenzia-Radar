@@ -119,6 +119,7 @@ class box{
             <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
                 <div class="ipost center clearfix">
                     <div class="entry-image nomargin">
+                        <i class="icon-deal i-circled i-small icon-star3"></i>
                         <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
                     </div>
                     <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
@@ -691,6 +692,11 @@ class box{
                         </div>
                         <div class="entry-content">
                             <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+                            <div id="legenda" class="fright">
+                                <table>
+                                    <tr><td><div class="quad_verde"></div></td><td> <?php echo DISPONIBILE;?></td><td><div class="quad_rosso"></div></td><td> <?php echo NON_DISPONIBILE;?></td></tr>
+                                </table>
+                            </div>
                             <table class="tab_periodi elencoRis">
                                 <tr>
                                 <th><?php echo MAGGIO?></th>
@@ -749,12 +755,7 @@ class box{
 	        if($cosa=='casa_vacanza')
 	        	echo '<div class="fright" style="float: right;"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';	
 	        ?>
-	        <div id="legenda" class="fright">
-	<table>
-	<tr><td><div class="quad_verde"></div></td><td><?php echo DISPONIBILE;?></td></tr>
-	<tr><td><div class="quad_rosso"></div></td><td><?php echo NON_DISPONIBILE;?></td></tr>
-	</table>
-	</div>
+	        
 	        <?php 	
 		}
     }
@@ -1052,9 +1053,14 @@ function elencoNews($tipo,$lan,$getor=false)
 			        ?>
 			    <h3><?php echo LISTINO;?></h3>    
 			    </div>
+                <div id="legenda" class="fright">
+                    <table>
+                        <tr><td><div class="quad_verde"></div></td><td><?php echo DISPONIBILE;?></td><td><div class="quad_rosso"></div></td><td> <?php echo NON_DISPONIBILE;?></td></tr>
+                    </table>
+                </div>  
 			    <table class="tab_periodi">
-			    <tbody>
-	                        <tr>
+                    <tbody>
+                        <tr>
 	                        <th><?php echo MAGGIO; if($im['testo_maggio']!=''){echo '*'; $notaMese[]=array('label'=>MAGGIO,'testo'=>stripslashes($im['testo_maggio']));}?></th>
 	                        <th><?php echo GIUGNO; if($im['testo_giugno']!=''){echo '*'; $notaMese[]=array('label'=>GIUGNO,'testo'=>stripslashes($im['testo_giugno']));}?></th>
 	                        <th><?php echo LUGLIO; if($im['testo_luglio']!=''){echo '*'; $notaMese[]=array('label'=>LUGLIO,'testo'=>stripslashes($im['testo_luglio']));}?></th>
@@ -1125,28 +1131,27 @@ function elencoNews($tipo,$lan,$getor=false)
 	                   echo stripslashes($im['note_listino']);
 	                   ?>
 	                   </div>     
-	                  <div id="legenda" style="width:200px; float: right;margin: 7px 0px 0px 10px;">
-						<table>
-						<tr><td><div class="quad_verde"></div></td><td><?php echo DISPONIBILE;?></td></tr>
-						<tr><td><div class="quad_rosso"></div></td><td><?php echo NON_DISPONIBILE;?></td></tr>
-						</table>
-						</div>   
+                         
 				<div class="clear"></div> 
 				<?php 
 				if(count($notaMese)>0)
 				{   
 				?> 
-				<div id="note_mesi" style="float: left;margin: 7px 0px 15px 10px;">
-						<table>
-						<?php 
-						foreach ($notaMese as $nm)
-						{    
-						?>
-						<tr><th>*<?php echo $nm['label']?></th><td><?php echo $nm['testo']?></td></tr>
-						<?php 
-						}
-						?>
-						</table>
+				<div id="note_mesi" class="">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <?php 
+                                foreach ($notaMese as $nm)
+                                {    
+                                ?>
+                                <tr><th>*<?php echo $nm['label']?></th><td><?php echo $nm['testo']?></td></tr>
+                                <?php 
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
 				</div>  
 			    	<?php 
 				}	
