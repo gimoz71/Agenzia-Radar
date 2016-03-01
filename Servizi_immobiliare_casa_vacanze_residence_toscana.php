@@ -16,7 +16,7 @@ $menu['servizi']='class="selezionato"';
 </head>
 
 <body class="stretched">
-
+<div id="wrapper" class=" clearfix">
 	<?php include INCLUDEPATH.'testata.php';?>
         
 		<?php include INCLUDEPATH.'menu.php';?>

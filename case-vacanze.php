@@ -68,6 +68,7 @@ $(function() {
 </head>
 
 <body class="stretched">
+<div id="wrapper" class=" clearfix">
 <?php include INCLUDEPATH.'testata.php';?>
         
 		<?php include INCLUDEPATH.'menu.php';?>
@@ -102,19 +103,32 @@ $(function() {
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
+                                        <span class="navbar-brand"><strong><?php echo RICERCA;?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                          <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
-                                                    <option value="sassofono">1</option>
-                                                    <option value="piano">2</option>
-                                                    <option value="batteria">3</option>
+                                                         <?php
+                                                    		for ($i=1;$i<=10;$i++)
+                                                    		{?>
+                                                                    	      <option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>>
+                                                                   	          <?=$i?>
+                                                                   	          </option>
+                                                                    	      <?php
+                                                    		}
+                                                    		?>
                                                 </select>
-                                                <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
-                                                <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
+                                                <select name="periodo" class="form-control required">
+                                                    <option value=""> <?php echo PERIODO?> </option>
+                                                    <option value="maggio"> <?php echo MAGGIO?></option>
+                                                    <option value="giugno"> <?php echo GIUGNO?></option>
+                                                    <option value="luglio"> <?php echo LUGLIO?></option>
+                                                    <option value="agosto"> <?php echo AGOSTO?></option>
+                                                    <option value="settembre"><?php echo SETTEMBRE?></option>
+                                                    <option value="altro"> <?php echo ALTRO_PERIODO?></option>
+                                                  </select>
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>

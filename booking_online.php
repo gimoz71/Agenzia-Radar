@@ -9,6 +9,7 @@ $titolo=CAS.' '.elencoLocalita().' Agenzia Immobiliare Radar';
 $descrizione=CAS.' '.elencoLocalita();
 $keywords=elencoLocalita().elencoTipi($_SESSION['lan']);
 $menu['vacanze']='class="selezionato"';
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="<?=LANHTML?>">
@@ -68,6 +69,7 @@ $(function() {
 </head>
 
 <body class="stretched">
+<div id="wrapper" class=" clearfix">
 <?php include INCLUDEPATH.'testata.php';?>
         
 		<?php include INCLUDEPATH.'menu.php';?>
@@ -102,19 +104,23 @@ $(function() {
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
+                                        <span class="navbar-brand"><strong><?php echo RICERCA;?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                          <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
-                                                    <option value="sassofono">1</option>
-                                                    <option value="piano">2</option>
-                                                    <option value="batteria">3</option>
+                                                    <?php
+                                            		for ($i=1;$i<=10;$i++)
+                                            		{?>
+                                            		<option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>><?=$i?></option>
+                                            		<?php
+                                            		}
+                                            		?>
                                                 </select>
-                                                <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
-                                                <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
+                                                <input type="text" id="from" name="DateFrom" value="<?php echo $_GET['DateFrom']?>" class="form-control required " placeholder="<?php echo DAL;?>" />
+                                                <input type="text" id="to" name="DateTo" value="<?php echo $_GET['DateTo']?>" class="form-control required" placeholder="<?php echo AL;?>" />
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>

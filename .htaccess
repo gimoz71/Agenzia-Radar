@@ -1,0 +1,38 @@
+ErrorDocument 404 http://localhost/agenziaradar/newp/error.php
+
+#Options +Indexes #riga non supportata dall'hosting (da aggiornare)
+RewriteEngine On
+RewriteBase /agenziaradar/newp
+
+RewriteRule ^(.*)/news/([0-9]+)_(.*).html$ scheda_news.php?id=$2&lan=$1 
+RewriteRule ^(.*)/pdf/(.*).php$ pdf/brochure.php [QSA]
+
+#ITALIANO
+
+RewriteRule ^it/(.*)/([0-9]+)_(.*).html$ scheda.php?id=$2&lan=it [QSA]
+RewriteRule ^it/(.*)/(.*).php(/?.*)$ $2.php?$3
+
+#INGLESE
+
+RewriteRule ^en/(.*)/([0-9]+)_(.*).html$ scheda.php?id=$2&lan=en [QSA]
+RewriteRule ^en/(.*)/(.*).php$ $2.php
+
+#TEDESCO
+
+RewriteRule ^de/(.*)/([0-9]+)_(.*).html$ scheda.php?id=$2&lan=de [QSA]
+RewriteRule ^de/(.*)/(.*).php(/?.*)$ $2.php
+
+#RUSSO
+
+RewriteRule ^ru/(.*)/([0-9]+)_(.*).html$ scheda.php?id=$2&lan=ru [QSA]
+RewriteRule ^ru/(.*)/(.*).php$ $2.php
+
+RewriteRule ^ru/(.*).php $1.php?lan=ru [QSA]
+RewriteRule ^it/(.*).php $1.php?lan=it [QSA]
+RewriteRule ^en/(.*).php $1.php?lan=en [QSA]
+RewriteRule ^de/(.*).php $1.php?lan=de [QSA]
+
+
+ # Displaying PHP errors
+php_flag display_errors off
+php_value error_reporting 6143

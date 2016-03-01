@@ -1,9 +1,7 @@
 
-
-
 <!-- Footer
 ============================================= -->
-<footer id="footer" class="dark">
+<footer id="footer" class="dark" style="maring-top:0px !important;">
 
     <div class="container">
 

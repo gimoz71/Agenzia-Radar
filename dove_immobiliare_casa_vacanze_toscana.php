@@ -11,12 +11,11 @@ $menu['dove']='class="selezionato"';
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.gmap.js"></script>
 
-  
 
 </head>
 
 <body class="stretched">
-
+<div id="wrapper" class=" clearfix">
 	<?php include INCLUDEPATH.'testata.php';?>
         
 		<?php include INCLUDEPATH.'menu.php';?>

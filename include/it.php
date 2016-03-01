@@ -67,8 +67,6 @@ define('RESIDENCESULMARE_FOOTER','Residence sul mare Castiglioncello');
 define('PRIVACY_FOOTER','Disclaimer Privacy');
 
 
-  
-
 /*Tipi*/
 define('ALTRE','Vedi altre proposte');
 define('T_CASE_VACANZA','case vacanza');
@@ -136,8 +134,6 @@ define('RIC_BARCA','Posto barca');
 define('RIC_CAPANNONI','Capannoni');
 
 /*Varie*/
-
-
 define('SCHEDA_PDF','Scarica la scheda in PDF');
 define('DESCRIZIONE','Descrizione');
 define('ALTRE_FOTO','Altre foto');

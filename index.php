@@ -264,11 +264,17 @@ $(function() {
                                     <div class="panel-body rounded" style="padding: 20px;">
                                         <form class="nomargin" action="booking_online.php" id="booking_online" method="get">
                                             <div class="col_full">
-                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
-                                                    <option value="sassofono">1</option>
-                                                    <option value="piano">2</option>
-                                                    <option value="batteria">3</option>
+                                                   <?php
+                                            		for ($i=1;$i<=10;$i++)
+                                            		{?>
+                                                            	      <option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>>
+                                                           	          <?=$i?>
+                                                           	          </option>
+                                                            	      <?php
+                                            		}
+                                            		?>
                                                 </select>
                                             </div>
                                             

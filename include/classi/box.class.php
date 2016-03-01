@@ -83,7 +83,7 @@ class box{
     	}
     	elseif($tipo=='last_minute')
     	{
-    		$immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and last_minute= 1 and pubblicato=1 order by home desc,rand() limit 0,6")or die(mysql_error());
+    		$immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and pubblicato=1 order by last_minute desc, rand() limit 0,6")or die(mysql_error());
     		$cosa='offerte';
     	}
     	elseif($tipo=='case_vacanza')
@@ -362,6 +362,7 @@ class box{
     }
     function elencoBookingOnline($post, $lan,$getor=false)
     {
+        $ricercaCasaVacanza = false;
 		$_POST = ($post) ? $post : $_POST;
     	$query="select * from immobili i,localita l, tipi t where (offerta=1 or residence=1 or id_residence>0) and pubblicato=1";
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
@@ -373,7 +374,13 @@ class box{
 			$_POST['DateFrom']=$this->ottData($_POST['DateFrom']);	
 			$_POST['DateTo']=$this->ottData($_POST['DateTo']);
   		}
-		$_POST['UserCode']='110519F4FF1';
+  		$da = strtotime($_POST['DateFrom']);
+  		$a = strtotime($_POST['DateTo']);
+  		if(($a - $da) >= 1209600)
+  		{
+  		    $ricercaCasaVacanza=true;
+  		}    
+  		$_POST['UserCode']='110519F4FF1';
 		$_POST['SCode']='2B9';
 		$_POST['Function']='Resources';
 		$_POST['Version']='1.6';
@@ -399,7 +406,8 @@ class box{
 			}
 			if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
 			{
-					$_POST['Function']='Availability';
+					//$_POST['Function']='Availability';
+					$_POST['Function']='RADAR';
 					$get='?';
 					foreach ($_POST as $k=>$v)
 					{
@@ -417,9 +425,7 @@ class box{
 			 		$RCode='RCode=';
 					foreach($disponibili['Resource'] as $dis)
 					{
-						$cod=$this->disponibile($dis);
-						if($cod!==false)
-						$RCode.=$cod.'|';
+					   $RCode.=$dis['@attributes']['Code'].'|';
 					}
 			}
 			$_POST['Function']='resourceDetails';
@@ -510,10 +516,58 @@ class box{
                         </div>
                     </div>
                 </div>
-                
-			        	
-			        	<?php
+   		        	<?php
 			     	}
+			     	if($ricercaCasaVacanza)
+			     	{?>
+			     	<div class="fancy-title title-left title-dotted-border">
+            <h3>Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
+            </div>
+			     	<nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                         <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
+                                            <div class="form-group">
+                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                    <option value=""><?=POSTI_LETTO?></option>
+                                                     <?php
+                                            		for ($i=1;$i<=10;$i++)
+                                            		{
+                                            		?>
+                                                         <option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>><?=$i?></option>
+                                                   <?php
+                                            		}
+                                            		?>
+                                                </select>
+                                               <select name="periodo" class="form-control required">
+                                                    <option value=""> <?php echo PERIODO?> </option>
+                                                    <option value="maggio"> <?php echo MAGGIO?></option>
+                                                    <option value="giugno"> <?php echo GIUGNO?></option>
+                                                    <option value="luglio"> <?php echo LUGLIO?></option>
+                                                    <option value="agosto"> <?php echo AGOSTO?></option>
+                                                    <option value="settembre"><?php echo SETTEMBRE?></option>
+                                                    <option value="altro"> <?php echo ALTRO_PERIODO?></option>
+                                                  </select>
+                                            </div>
+                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+			     	   <?php  
+			     	}    
+			     	?>
+			     	</div>
+			     	<?php 
 			     }
 			    }
 				else
@@ -607,6 +661,7 @@ class box{
 		}
 		else
 		{
+		    print ' <div id="posts" class="small-thumbs">';
 			if($lan=='de')
 	    	{
 	    		$classeDe=' dettagli_alt';
@@ -686,6 +741,7 @@ class box{
 	        	
 	        	<?php
 	        }
+	        print '</div>';
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	        
 	        if($cosa=='residence')
@@ -958,7 +1014,7 @@ function elencoNews($tipo,$lan,$getor=false)
                                         <!-- Entry Content
                                         ============================================= -->
                                         <div class="entry-content notopmargin">
-                                    <?=str_replace('<p>&nbsp;</p>', '', stripslashes($im['descrizione_'.$lan]))?>
+                                    <?= stripslashes($im['descrizione_'.$lan])?>
                                         </div><!-- .entry end -->
          <?php 
      }          
@@ -988,13 +1044,14 @@ function elencoNews($tipo,$lan,$getor=false)
             			    	
             			    } ?>
             				
-				<div class="periodi">
+				 <div class="fancy-title title-left title-dotted-border">
 				<?php 
 				if($tipo=='case_vacanza' && $cdr=='')
 			    {
 			            $noteMese=array();
 			        ?>
-			    <h3  style="margin: 0px 0px 15px 0px;"><?php echo LISTINO;?></h3>    
+			    <h3><?php echo LISTINO;?></h3>    
+			    </div>
 			    <table class="tab_periodi">
 			    <tbody>
 	                        <tr>
