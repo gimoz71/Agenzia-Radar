@@ -28,18 +28,22 @@ if($_SESSION['lan']!='it')
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
                         <ul>
                             <li><a href="<?=LANFOLDER?>index.php"><div><i class="icon-home2"></i>Home page</div></a></li>
-                            <li><a href="#"><div><?php echo AGENZIA; ?><i class="icon-chevron-down"></i></div></a>
+                            <li><a href="javascript:void(0)"><div><?php echo AGENZIA; ?><i class="icon-chevron-down"></i></div></a>
                                 <ul>
                                     <li><a href="<?=LANFOLDER?>agenzia_immobiliare_casa_vacanze_toscana.php"><div><?php echo AGENZIA; ?></div></a>
                                     <li><a href="<?=LANFOLDER?>Servizi_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo SERVIZI;?></div></a></li>
                                     <li><a href="<?=LANFOLDER?>dove_immobiliare_casa_vacanze_toscana.php"><div><?php echo INFORMAZIONI;?></i></div></a>
                                 </ul>
                             </li>
+                            <li><a href="javascript:void(0)" ><div>Info<i class="icon-chevron-down"></i></div></a>
+                                <ul>
+                                    <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>Castiglioncello</i></div></a>
+                                    <li><a href="<?=LANFOLDER?>intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo DINTORNI;?></div></a></li>
+                                </ul>
+                            </li>
                             
-                            <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>Castiglioncello</i></div></a>
-                            <li><a href="<?=LANFOLDER?>intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo DINTORNI;?></div></a></li>
                             <li><a href="<?=LANFOLDER?>immobili.php"><div>Vendite</div></a></li>
-                            <li><a href="#"><div>Affitti <i class="icon-chevron-down"></i></div></a>
+                            <li><a href="javascript:void(0)"><div>Affitti <i class="icon-chevron-down"></i></div></a>
                                 <ul>
                                     <li><a href="<?=LANFOLDER?>residence.php"><div><?php echo RESIDENCE;?></div></a></li>
                                     <li><a href="<?=LANFOLDER?>case-vacanze.php"><div><?php echo VACANZE;?></div></a></li>
