@@ -53,12 +53,13 @@ if($scheda)
                     <!-- Top Links
                     ============================================= -->
                     <div class="top-links">
-                        <ul style="border: solid 1px rgba(255,255,255,.15)">
+                        <ul>
                             <li><a href="<?=$titoloIt?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/italian.png" alt="Italiano"></a>
                             <li><a href="<?=$titoloDe?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/german.png" alt="Deutsch"></a></li>
-                            <li><a href="<?=$titoloEn?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/french.png" alt="English"></a></li>
+                            <li><a href="<?=$titoloEn?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/english.png" alt="English"></a></li>
+                            <li><a href="<?=$titoloRu?><?=$lg?>"><img src="<?php echo IMAGESPATH;?>icons/flags/french.png" alt="русский"></a></li>
+                            </li>
                         </ul>
-                      
                     </div><!-- .top-links end -->
 
                 </div>

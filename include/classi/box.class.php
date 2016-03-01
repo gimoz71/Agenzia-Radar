@@ -309,7 +309,7 @@ class box{
 	        	}
 	        	
 	        	?>
-	        	<div class="entry clearfix">
+                <div class="entry noborder nomargin nopadding clearfix">
                     <div class="entry-image">
                         <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
                     </div>
@@ -319,12 +319,12 @@ class box{
                             <h4><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></h4>
                         </div>
                         <div class="entry-content">
-                            <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
-                            <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+                            <p><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+                            <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-mini button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-	        	
+                <div class="divider divider-center "><i class="icon-circle"></i></div>
 	        	<?php
 	        }
 	        ?>
@@ -333,9 +333,9 @@ class box{
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	    
 	        if($cosa=='residence')
-	        	echo '<div class="fright" style="float:right;"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
+                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'">'.PROP_VACANZE.' <i class="icon-chevron-right"></i></a></div>';
 	        if($cosa=='casa_vacanza')
-	        	echo '<div class="fright" style="float: right;"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
+                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'">'.PROP_VACANZE.' <i class="icon-chevron-right"></i></a></div>';
 	        	
 		}
     }
@@ -1266,7 +1266,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 				?>
 				<div class="entry-image" data-lightbox="gallery">
-                    <a href=""<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                    <a href="<?php echo IMAGESPATH;?>big/<?=$res['foto_g_immobile']?>" class="thumbnail" data-lightbox="gallery-item" title="<?php echo $titolo?>"><img src="<?php echo IMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
                  </div><!-- .entry-image end -->
 						    
 			    <?php				
@@ -1280,8 +1280,8 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 			    ?>		   
 			    <div class="fancy-title title-left title-dotted-border">
-            <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
-            </div>
+                    <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
+                </div>
 			   <table class="table table-striped">
         <tbody>
 				<?php 
