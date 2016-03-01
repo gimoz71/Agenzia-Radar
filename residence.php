@@ -109,9 +109,9 @@ $(function() {
                                             <div class="form-group">
                                                 <select name="Beds" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
-                                                    <option value="sassofono">1</option>
-                                                    <option value="piano">2</option>
-                                                    <option value="batteria">3</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
                                                 </select>
                                                 <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
                                                 <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
@@ -122,14 +122,11 @@ $(function() {
                                 </div>
                             </nav>
 
-                            <div class="line"></div>
-                           
                             <?php 
                             //print_r($_GET);
-                            $box->elencoImmobili('residence',$_SESSION['lan'],$_GET);
-                 ?>
+                                $box->elencoImmobili('residence',$_SESSION['lan'],$_GET);
+                            ?>
                         
-                           
                         </div>
                     </div>
 				</div>
