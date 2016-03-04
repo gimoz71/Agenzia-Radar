@@ -66,8 +66,8 @@ $titoloIt=$box->costruisciPathLan($cosa, $immobile, 'it');
 $(document).ready(function(){
 	//Examples of how to assign the Colorbox event to elements
 	
-	$(".elencoImmagini").colorbox({rel:'group4', slideshow:true});
-	$(".iframe").colorbox({iframe:true, width:"700px", height:"400px"});
+//	$(".elencoImmagini").colorbox({rel:'group4', slideshow:true});
+//	$(".iframe").colorbox({iframe:true, width:"700px", height:"400px"});
 	
 });
 </script>
@@ -113,7 +113,7 @@ $(document).ready(function(){
                                         
                                     </div>
                                 </div>
-                                 <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $immobile['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+                                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $immobile['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin " data-lightbox="iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>

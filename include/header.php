@@ -24,7 +24,7 @@
     ============================================= -->
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/plugins.js"></script>
-    <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="<?php echo TOTALPATH;?>js/canvas.slider.fade.js"></script>
 <!--
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/colorbox.css" type="text/css" />
      <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/bb.css" type="text/css" />

@@ -139,9 +139,8 @@ $(function() {
                             <div class="line"></div>
                            
                             <?php 
-                                           
-                	$box->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$get);
-                ?>
+                                $box->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$get);
+                            ?>
                         
                            
                         </div>

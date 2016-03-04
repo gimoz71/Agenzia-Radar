@@ -119,7 +119,7 @@ class box{
             <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
                 <div class="ipost center clearfix">
                     <div class="entry-image nomargin">
-                        <i class="icon-deal i-circled i-small icon-star3"></i>
+                        <i class="icon-deal i-circled i-small icon-thumbs-up2"></i>
                         <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
                     </div>
                     <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
@@ -312,7 +312,7 @@ class box{
 	        	?>
                 <div class="entry noborder nomargin nopadding clearfix">
                     <div class="entry-image">
-                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
                     </div>
                     <div class="entry-c">
                         <div class="entry-title">
@@ -751,9 +751,9 @@ class box{
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	        
 	        if($cosa=='residence')
-	        	echo '<div class="fright" style="float:right;"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
+                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
 	        if($cosa=='casa_vacanza')
-	        	echo '<div class="fright" style="float: right;"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';	
+                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';	
 	        ?>
 	        
 	        <?php 	
@@ -1164,10 +1164,10 @@ function elencoNews($tipo,$lan,$getor=false)
 			    		}
 			    	}
 			    	?>
-			    	<div style="margin-top: 25px;">
-			    	<div class="bottone_prenota_vac_<?php echo $_SESSION['lan']?>">
-                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="form_esterno"></a>
-                </div>
+                <div style="margin-top: 25px;">
+                    <div class="bottone_prenota_vac_<?php echo $_SESSION['lan']?>">
+                        <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="form_esterno"></a>
+                    </div>
                 </div>
 			    	<?php 
 			    }
@@ -1220,7 +1220,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 					if(is_file('images/big/'.$im['foto'.$i.'_immobile']))
 					{
-						$foto.="\n".'<a href="'.IMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'" class="cornice_foto left colorbox" title="'.$titolo.'" rel="colorbox"  style="margin: 5px 2px;background-image: url('.IMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].');"><img src="'.IMAGESPATH.'cornice_foto.png" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a>';
+                    $foto.="\n".'<a href="'.IMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'" class="cornice_foto left " title="'.$titolo.'"  data-lightbox="gallery-item" style="margin: 5px 2px;background-image: url('.IMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].');"><img src="'.IMAGESPATH.'cornice_foto.png" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a>';
 					}
 				}
 				if($foto!='')
@@ -1264,7 +1264,7 @@ function elencoNews($tipo,$lan,$getor=false)
                     //list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
                     ?>
                     <div class="entry-image" data-lightbox="gallery">
-                        <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                        <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" data-lightbox="gallery-item" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
                     </div><!-- .entry-image end -->
 
                     <?php
@@ -1305,7 +1305,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				}
 				?>
 				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
-				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin " data-lightbox="iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
                 </div>
 				
 				<?php 

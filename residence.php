@@ -117,7 +117,10 @@ $(function() {
                                                 <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
                                                 <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
                                             </div>
-                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
+                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button> 
+                                             <div class="form-group ">
+                                                 <button class="btn btn-default">Prezzo pi&ugrave; alto&nbsp;&nbsp;<i class="icon-sort"></i></button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
