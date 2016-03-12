@@ -42,13 +42,11 @@ $menu['dove']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_full">
+                            <div class="col_full nomargin">
                                 <h3><?=TITOLO_DOVE2?></h3>
                                 <img src="<?=TOTALPATH?>images/custom/castiglioncello2.jpg" class="thumbnail fleft rightmargin-xs" alt=""><?php echo CONTENUTODOVESIAMO;?> 
-                            <div class="line"></div>
-                          
-                                <div class="gmap" id="google-map2" style="height: 300px"></div>
-  <script type="text/javascript">
+                                
+                                <script type="text/javascript">
 
                                     $('#google-map2').gMap({
 

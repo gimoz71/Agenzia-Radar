@@ -43,10 +43,10 @@ $menu['dintorni']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_full">
+                            <div class="col_full nomargin">
                                 <h3><?=TITOLO_INTORNO?></h3>
                         <?php echo CONTENUTOINTORNO;?> 
-				        <p><img src="<?=TOTALPATH?>images/custom/romito.jpg" class="thumbnail"  alt="Panorama di Castiglioncello"></p>
+                                <img src="/images/romito.jpg" class="thumbnail nomargin" style="width: 100%" alt="Panorama di Castiglioncello">
 				            </div>
                             
                         </div>

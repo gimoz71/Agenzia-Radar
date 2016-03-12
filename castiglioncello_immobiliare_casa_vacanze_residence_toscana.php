@@ -43,9 +43,9 @@ $menu['castiglioncello']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_full">
+                            <div class="col_full nomargin">
                                 <h3>Castiglioncello (LI) - Toscana</h3>
-                        <img src="<?php echo TOTALPATH;?>images/custom/foto_sezione_castiglioncello1.jpg" alt="panorama castiglioncello" width="364" height="248" hspace="5" align="right" /><?php echo CONTENUTOCASTIGLIONCELLO;?> 
+                                <?php echo CONTENUTOCASTIGLIONCELLO;?> 
 				            </div>
                             
                         </div>

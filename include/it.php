@@ -185,11 +185,30 @@ define('CONTENUTODOVESIAMO',' <p>
 <p>Per chi preferisce il <strong>treno</strong>, la stazione ferroviaria cittadina si trova lungo la linea tirrenica Genova-Pisa-Roma, ma a <strong>Castiglioncello</strong> si fermano soltanto treni regionali. Per chi viene da più lontano ci sono le stazioni di <strong>Rosignano</strong>, a soli 2 km, quella di <strong>Cecina</strong> a 17 km e quella di <strong>Livorno</strong> a 25 km. Infine l\'<strong>aeroporto</strong> più vicino è quello di <strong>Pisa</strong>, a circa 30 km, da cui si può raggiungere <strong>Castiglioncello</strong> in taxi, in treno, o noleggiando un auto.</p>
 <p>
   Castiglioncello si trova in posizione centralissima per chiunque volesse raggiungere altre mete privilegiate della <strong>Costa degli Etruschi</strong>, e le più belle città d\'arte della <strong>Toscana</strong>, iniziando un itinerario alla scoperta delle bellezze di questa terra.</p>
-
-<p><strong>Auto:</strong>SS1 - Uscita casello Castiglioncello<br>
-  <strong>Treno:</strong>Stazione Rosignano Marittimo<br>
-  <strong>Localizzazione:</strong>Via Aurelia N&deg; 548<br>
-<strong>Contatti:</strong>+39.0586.752596</p>
+<div class="line"></div>
+<div class="col_two_fifth nobottommargin">
+    <table class="table table-hover">
+        <tr>
+            <td><strong>Auto:</strong></td>
+            <td>SS1 - Uscita casello Castiglioncello</td>
+        </tr>
+        <tr>
+            <td><strong>Treno:</strong></td>
+            <td>Stazione Rosignano Marittimo</td>
+        </tr>
+        <tr>
+            <td><strong>Localizzazione:</strong></td>
+            <td>Via Aurelia N&deg; 548</td>
+        </tr>
+        <tr>
+            <td><strong>Contatti:</strong></td>
+            <td>+39.0586.752596</td>
+        </tr>
+    </table>
+</div>
+<div class="col_three_fifth col_last nobottommargin">
+    <div class="gmap thumbnail nomargin" id="google-map2" style="height: 300px"></div>
+</div>
 ');
 /*agenzia_immobiliare_casa_vacanze_toscana.php*/
 
@@ -211,21 +230,21 @@ define('CONTENUTOAGENZIA','
 <p>A <strong>Castiglioncello</strong>, rinomata località turistica del litorale livornese, nell\'incantevole cornice della <strong>Costa degli Etruschi</strong>, opera l\'agenzia immobiliare Radar.
     </p>
 <p>Ci occupiamo da oltre quarant\'anni della <strong>compra-vendita immobiliare</strong> offrendo la massima riservatezza, consapevoli che l\'acquisto di una casa in una località turistica come Castiglioncello, Perla del Tirreno, offra un rifugio nel mare della Toscana.
-    </p>
-<p>Pronti ad accogliere le vostre richieste, visioniamo e selezioniamo l\'appartamento al mare che più fa al caso vostro per farvi perseguire il miglior investimento possibile. 
-    </p>
-<img src="http://agenziaradar.it/images/foto_agenzia2.jpg" alt="panorama castiglioncello" width="460" height="295" hspace="5" align="left" />
-<p>La nostra agenzia immobiliare, specializzata nelle <strong>locazioni estive</strong> per le vacanze nel mare della Toscana, si occupa di affitti settimanali, mensili o stagionali.</p>
-<p>Siamo a vostra disposizione, inoltre, per la <strong>gestione di residence, appartamenti e ville</strong>, potrete far rendere il vostro investimento al mare, senza nessuna fatica, penseremo noi a tutto.</p>
-<p>Nell\'ampia scelta che offriamo potrete valutare soluzioni selezionate seguendo standard qualitativi che ci siamo posti di perseguire non solo per gli immobili di prestigio, ma anche per quelli low-cost. 
-    </p>
-<p>Non dimenticate di dare un’occhiata alle nostre offerte last-minute.
-    </p>
+    <br>Pronti ad accogliere le vostre richieste, visioniamo e selezioniamo l\'appartamento al mare che più fa al caso vostro per farvi perseguire il miglior investimento possibile. 
+</p>
+
+
+<p>La nostra agenzia immobiliare, specializzata nelle <strong>locazioni estive</strong> per le vacanze nel mare della Toscana, si occupa di affitti settimanali, mensili o stagionali.<br>Siamo a vostra disposizione, inoltre, per la <strong>gestione di residence, appartamenti e ville</strong>, potrete far rendere il vostro investimento al mare, senza nessuna fatica, penseremo noi a tutto.</p>
+<p><img src="/images/foto_agenzia2.jpg" alt="interno agenzia Radar" class="thumbnail fleft" style="margin-right: 20px;"> Nell\'ampia scelta che offriamo potrete valutare soluzioni selezionate seguendo standard qualitativi che ci siamo posti di perseguire non solo per gli immobili di prestigio, ma anche per quelli low-cost. 
+    <br>Non dimenticate di dare un’occhiata alle nostre offerte last-minute.
+</p>
 <p>L\'agenzia Radar di Giorgio Costagli è operativa anche nella vendita, nell\'acquisto e nell\'affitto di posti barca, posti auto, box o garage, nel Marina Cala de\' Medici di Rosignano Marittimo, porto turistico situato nella provincia di Livorno tra Castiglioncello e Rosignano Solvay. Il posto barca è dotato di ogni servizio in banchina.</p>
  
-<p>Vi attendiamo nel nostro ufficio aperto anche il sabato e la domenica, per visionare le nostre occasioni.</p>
-    
-<p><strong>Giorgio Costagli </strong></p>');
+<div class="line"></div>
+<blockquote class="quote">
+    <p>Vi attendiamo nel nostro ufficio aperto anche il sabato e la domenica, per visionare le nostre occasioni.</p>
+    <footer>Giorgio Costagli, Agenzia Radar</footer>
+</blockquote>');
 
 
 
@@ -243,7 +262,8 @@ define('KEY_INDEX','affitti estivi, residence castiglioncello, Agenzia immobilia
 define('TITOLO_CASTIGLIONCELLO','CASTIGLIONCELLO, TUSCANY');    
 
 define('CONTENUTOCASTIGLIONCELLO',' 
-<p>    
+<img src="/images/castiglioncello.jpg" alt="panorama castiglioncello" class="thumbnail fright" style="margin-left: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
+<p>
 Castiglioncello è una meravigliosa località turistica denominata “la perla del Tirreno” per il suo fascino.<br> 
 Antico villaggio etrusco, è sempre stata racchiusa in una natura protettiva che l’ha resa, negli anni, elegante ed incontaminata.<br>
 Le sue lussureggianti pinete, le scogliere spettacolari, le baie riparate e le spiagge bagnate dalle limpide acque, la caratterizzano rendendola unica.<br> 
@@ -257,26 +277,32 @@ La <strong>Baia del Quercetano</strong>, suggestiva caletta, fonte d’ispirazio
 </p>
 
 <h4>Luoghi da percorrere</h4>    
+<img src="/images/pineta-marradi.jpg" alt="La Pineta Marradi" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>
 La <strong>Pineta Marradi</strong> posta direttamente sul mare, con l\'aria fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, ed il noto Cinema all’aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.<br>
 E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta Righini</strong>, fino ad arrivare al <strong>Porto Turistico Cala de’ Medici</strong>, 4 km respirando il profumo del mare, tra una meravigliosa caletta e l’altra.<br>
 </p>
 <h4>Sport</h4>    
 <p>Se siete amanti degli sport acquatici Castiglioncello offre, tra l’altro, la possibilità di praticare <strong>seawatching</strong>, <strong>diving</strong>, <strong>pesca</strong> e <strong>windsurf</strong>; inoltre presso il <strong>Circolo Nautico Castiglioncello</strong> si svolgono <strong>corsi di vela</strong> per utenti di tutte le età ed è possibile <strong>noleggiare imbarcazioni a vela o a motore</strong> per esplorare le meraviglie della costa. </p>
+<div class="clear"></div>
 <h4>Shopping, Vita ed Eventi</h4>
-<p>
-    <strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo.<br> 
+<p><strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo.<br> 
 Tra gli eventi da non perdere assolutamente non possiamo non citare la <strong>Festa del Pesce</strong>, in giugno, presso la Baia di Caletta e <strong>La Rotta del Vino</strong>, la regata più gourmet della Costa degli Etruschi, durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino.</p>
 <h4>Cenni storici</h4>
+<img src="/images/castello-pasquini.jpg" alt="Il Castello Pasquini" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>Già nella seconda metà dell\'800, il critico d\'arte e mecenate Diego Martelli, costruì qui la propria dimora, oggi <strong>Castello Pasquini</strong>, dove ospitò il famoso gruppo dei pittori <strong>Macchiaioli</strong> (tra i quali si ricordano Abbati, Fattori, Sernesi, Borrani , Cabianca ecc.) che dettero vita alla “Scuola di Castiglioncello". 
     Tutt’oggi il Castello Pasquini è centro di molte attività legate alla cultura, alla danza e al teatro, nonché sede del tradizionale <strong>Festival della Danza</strong> e del <strong>Premio Letterario Castiglioncello Costa degli Etruschi</strong>. 
     Ricordiamo inoltre che il paesino è reso famoso anche dagli artisti come Gassman, Mastroianni, Sordi ed altri che vi soggiornarono; inoltre fu set cinematografico anche del celebre film "<strong>Il sorpasso</strong>" con Vittorio Gassman. 
     Da citare anche la <strong>Torre Medicea</strong>, realizzata probabilmente a metà del XVI secolo ed utilizzata a scopo difensivo contro i pirati Saraceni che minacciavano le acque tirreniche. 
     Per completare la panoramica sulla storia locale, vale la pena di visitare il <strong>Museo Archeologico Nazionale</strong>, soprattutto noto per le numerose tombe etrusche rinvenute nella zona.
-    </p>
-    <a href="'.LANFOLDER.'dove_immobiliare_casa_vacanze_toscana.php" title="Le indicazioni per raggiungerci a Castiglioncello">Come arrivare a Castiglioncello ></a>
+</p>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'dove_immobiliare_casa_vacanze_toscana.php" class=" button button-rounded button-light nomargin" title="Le indicazioni per raggiungerci a Castiglioncello">Come arrivare a Castiglioncello ></a>
+</div>
+<div class="line"></div>
     
-  <div  style="margin: 15px 0px 15px 15px;" >
+  <div>
   <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/mJDTIPxtrL8" frameborder="0" allowfullscreen></iframe></div>  
   ');
 
@@ -326,14 +352,14 @@ define('TITOLO_SERVIZI2','I Servizi Offerti');
 define('CONTENUTOSERVIZI',' 
 <p>L’Agenzia Radar aperta tutto l\'anno sia sabato sia domenica, offre, alla propria clientela, la completa disponibilità, non solo per le esigenze relative alle vacanze estive, ma anche particolari attenzioni alle vendite di immobili di qualsiasi genere.</p>
 <ul>
-<li class="list-group-item"><i class="icon-line2-note"></i>Completa disponibilità, professionalità e riservatezza</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Consulenze immobiliari gratuite</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Stime gratuite dei vostri immobili</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Espletamento di tutte le pratiche necessarie </li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Assistenza in tutte le fasi fino alla stipula del contratto</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Controllo accurato degli immobili in vendita al fine di garantire "un acquisto sicuro" (visure ipotecarie, catastali, conformità urbanistica)</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Promozione e pubblicità dei vostri immobili</li>
-<li class="list-group-item"><i class="icon-line2-note"></i>Gestione degli immobili in locazione far rendere l\'investimento al mare"</li> 
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Completa disponibilità, professionalità e riservatezza</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Consulenze immobiliari gratuite</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Stime gratuite dei vostri immobili</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Espletamento di tutte le pratiche necessarie </li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Assistenza in tutte le fasi fino alla stipula del contratto</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Controllo accurato degli immobili in vendita al fine di garantire "un acquisto sicuro" (visure ipotecarie, catastali, conformità urbanistica)</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Promozione e pubblicità dei vostri immobili</li>
+<li class="list-group-item"><i class="icon-line2-note"></i>&nbsp;&nbsp;&nbsp;Gestione degli immobili in locazione far rendere l\'investimento al mare"</li> 
 </ul>
 <p>
 Ci occupiamo, inoltre, di organizzare al meglio le vostre vacanze al mare nella regione Toscana.<br>

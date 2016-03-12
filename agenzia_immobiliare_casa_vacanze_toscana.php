@@ -52,9 +52,7 @@ $menu['agenzia']='class="selezionato"';
                         </div>
                     </div>
 				</div>
-                
-
-      <?php 
+                <?php 
                 include INCLUDEPATH.'blog.php';
                 ?>
 			</div>

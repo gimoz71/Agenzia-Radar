@@ -43,18 +43,14 @@ $menu['servizi']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_full">
+                            <div class="col_full nomargin">
                                 <h3><?=TITOLO_SERVIZI2?></h3>
-                        <?php echo CONTENUTOSERVIZI;?> 
-				        <p><img src="<?=TOTALPATH?>images/custom/romito.jpg" class="thumbnail"  alt="Panorama di Castiglioncello"></p>
+                                <?php echo CONTENUTOSERVIZI;?> 
 				            </div>
-                            
                         </div>
                     </div>
 				</div>
-                
-
-      <?php 
+                <?php 
                 include INCLUDEPATH.'blog.php';
                 ?>
 			</div>
