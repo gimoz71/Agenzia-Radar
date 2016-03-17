@@ -119,7 +119,9 @@ class box{
             <div class="col_half <?php echo $ultimo;?>" data-class-lg="col_half" data-class-md="col_half" data-class-sm="col_full" data-class-xs="col_half" data-class-xxs="col_full">
                 <div class="ipost center clearfix">
                     <div class="entry-image nomargin">
+                    <?php if($immo['offerta']==1){?>
                         <i class="icon-deal i-circled i-small icon-thumbs-up2"></i>
+                        <?php }?>
                         <a href="<?php echo $url;?>" class="thumbnail"><div  style="background: url('<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>') no-repeat center center; background-size: cover;" data-height-lg="100" data-height-md="90" data-height-sm="140" data-height-xs="280" data-height-xxs="200"><img class="image_fade hidden" src="<?php echo TOTALPATHREMOTE;?>images/thbn/<?php echo $immo['foto_g_immobile']?>" alt="Image"></div></a>
                     </div>
                     <div class="entry-content" style="overflow: hidden" data-height-lg="100" data-height-md="100" data-height-sm="100" data-height-xs="50" data-height-xxs="70">
@@ -164,6 +166,12 @@ class box{
     		$query="select * from immobili i,localita l, tipi t where last_minute=0 and  offerta=0 and last_minute=0 and residence=0 and id_residence=0 and contratto='vendita' and pubblicato=1";
     		$cosa='immobile';
     		$pagina='immobili.php';
+    	}
+		elseif($tipo=='affitti')
+    	{
+    		$query="select * from immobili i,localita l, tipi t where last_minute=0 and  offerta=0 and last_minute=0 and residence=0 and id_residence=0 and contratto='affitto' and pubblicato=1";
+    		$cosa='immobile';
+    		$pagina='affitti.php';
     	}
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
     	if($getor!==false)
@@ -312,7 +320,10 @@ class box{
 	        	?>
                 <div class="entry noborder nomargin nopadding clearfix">
                     <div class="entry-image">
-                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                     <?php if($immo['offerta']=='1'){?>
+                        <i class="icon-deal i-circled icon-thumbs-up2"></i>
+                        <?php }?>
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
                     </div>
                     <div class="entry-c">
                         <div class="entry-title">
@@ -369,6 +380,8 @@ class box{
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
     	$cosa='casa_vacanza';
     	$pagina='booking_online.php';
+    	$partenza=$_POST['DateTo'];
+    	$arrivo=$_POST['DateFrom'];
    		require_once(CLASSPATH.'ParseXml.class.php');
 		if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
   		{  		
@@ -390,137 +403,208 @@ class box{
 		{
 			$get.=$k.'='.$v.'&';
 		}
-		$get.='Restrictions=S';
-		$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$get,'&');
-		$xml_elenco=new ParseXml();
-		$xml_disponibili=new ParseXml();
-		$xml_codici=new ParseXml();
-		$xml_elenco->LoadFile($url);
-		$alloggi = $xml_elenco->ToArray();
 		
-		 if(count($alloggi['Resource'])>0 && $alloggi['Resource']!='')
+		$get.='Restrictions=S';
+		
+		
+		//print $url;
+		
+		$RCode='RCode=';
+		if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
 		{
-			$RCode='RCode=';
-			foreach($alloggi['Resource'] as $al)
-			{
-				$RCode.=$al['Code'].'|';
-			}
-			if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
-			{
-					//$_POST['Function']='Availability';
-					$_POST['Function']='RADAR';
-					$get='?';
-					foreach ($_POST as $k=>$v)
-					{
-						$get.=$k.'='.$v.'&';
-					}
-					$RCode=trim($RCode,'|').'&';
-					$new_get=$get.'&'.$RCode.'Restrictions=S';
-					$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
-					//print $url;
-					$xml_disponibili->LoadFile($url);
-					$disponibili = $xml_disponibili->ToArray();
-					/*print '<pre>';
-					 print_r($disponibili);
-					 print '</pre>';*/
-			 		$RCode='RCode=';
-					foreach($disponibili['Resource'] as $dis)
-					{
-					   $RCode.=$dis['@attributes']['Code'].'|';
-					}
-			}
-			$_POST['Function']='resourceDetails';
-			$_POST['Fields']='codice,codicerisorsa,nomerisorsa';
+		    //Controllo la disponibilità per il periodo indicato
+			$_POST['Function']='RADAR';
 			$get='?';
 			foreach ($_POST as $k=>$v)
 			{
 				$get.=$k.'='.$v.'&';
 			}
-			$RCode=trim($RCode,'|');
-			$new_get=$get.'&'.$RCode.'&Restrictions=S';
+			$RCode=trim($RCode,'|').'&';
+			$new_get=$get.'&Restrictions=S';
 			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
-			//print $url;
-			$xml_codici->LoadFile($url);
-			$codDisponibili = $xml_codici->ToArray();
-			if(count($codDisponibili['Resource'])>0 && $codDisponibili['Resource']!='')
-		    {
-			$codi=' and (';
-			/*print '<pre>';
-		  print_r($codDisponibili['Resource']);
-		  print '</pre>';*/
-			foreach ($codDisponibili['Resource'] as $cd)
-			{               
-				if(trim($cd['codice'])!='')
+			
+			$xml_disponibili=simplexml_load_file($url);
+			
+	 		$RCode='RCode=';
+	 		if($xml_disponibili->Resource)
+	 		{
+	 		    foreach($xml_disponibili->Resource as $dis)
 				{
-					$codi.=' id_immobili=\''.$cd['codice'].'\' or';
-					$codici[$cd['codice']]=$cd['codicerisorsa'];
-				}		
-			}
-			$codi=trim($codi,'or').') ';
-		  
-			if($codi!=' and ()')
-			{
-		    if($_POST['posti']!='')
-					{
-					    $posti=$_POST['posti']+2;
-						$codi.= ' and i.n_vani>='.$_POST['posti'].' and i.n_vani<='.$posti; 
-						if($get!='')
-						{
-							$get.='&amp;';
-						}
-						$get.='posti='.$_POST['posti'];
-					}
-		  
-		  		$ordine=" order by i.n_vani asc, home desc ,ordine asc";
-				$query=$query.$codi;
-				$totImm=mysql_query($query);
-				$tot=mysql_num_rows($totImm);
-				$query=$query.' '.$ordine;
-				//print $query;
-				$immobili=mysql_query($query)or die(mysql_error().$query);
-				if(@mysql_num_rows($immobili)==0)
-				{
-					print '<div class="item_large"> '.NOIMMO.'</div>';
+				    
+				   $attr=$dis[0]->attributes();
+				   
+				   $RCode.=$attr['Code'].'|';
 				}
-				else
-				{
-				    print ' <div id="posts" class="small-thumbs">';
-					if($lan=='de')
-			    	{
-			    		$classeDe=' dettagli_alt';
-			    	}
-			        while($immo=mysql_fetch_assoc($immobili))
-			        {
-			        	$url=$this->costruisciPath($cosa, $immo,$lan);
-			           	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
-			        	if($cosa=='casa_vacanza')
-			        	{
-			        		$titolo.=' ('.$immo['n_vani'].' '.POSTI_LETTO.')';
-			        	}
-			        	if($immo['residence']==1)
-			        	{
-			        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
-			        	}
-			        	?>
-    			        	<div class="entry clearfix">
-                    <div class="entry-image">
-                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" ><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
-                    </div>
-                    <div class="entry-c">
-                        <div class="entry-title">
-                            <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a></h2>
-                            <h4><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></h4>
-                        </div>
-                        <div class="entry-content">
-                            <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
-                            <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-   		        	<?php
-			     	}
-			     	if($ricercaCasaVacanza)
-			     	{?>
+				//Cerco i prezzi
+			 	$_POST['Function']='Estimates';
+    			$get='?';
+    			foreach ($_POST as $k=>$v)
+    			{
+    				$get.=$k.'='.$v.'&';
+    			}
+    			$RCode=trim($RCode,'|');
+    			$new_get=$get.'&'.$RCode;
+    			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
+    			$xml_prezzi=simplexml_load_file($url);
+    			if($xml_prezzi->Resource)
+    		    {
+    		        $RCode='RCode=';
+    		        $elencoImmobili=array();
+    				foreach ($xml_prezzi->Resource as $cd)
+        			{   
+        			    $attr=$cd[0]->attributes();
+        			   
+        				if(trim($attr['Code'])!='' && $cd->Treatment->Price !='')
+        				{
+        				    $prezzo = intval($cd->Treatment->Price);
+        				    $codice = (string)$attr['Code'];
+        				    $elencoImmobili[$codice] = $prezzo;
+        					$RCode.=$attr['Code'].'|';
+        					
+        				}		
+        			}
+    			    if(count($elencoImmobili)>0)
+    			    {    
+            			//Cerco i dettagli dell'immobile
+            			$_POST['Function']='resourceDetails';
+            			$_POST['Fields']='codice,codicerisorsa,nomerisorsa';
+            			$get='?';
+            			foreach ($_POST as $k=>$v)
+            			{
+            			    $get.=$k.'='.$v.'&';
+            			}
+            			$RCode=trim($RCode,'|');
+            			$new_get=$get.'&'.$RCode.'&Restrictions=S';
+            			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&');
+            			//print $url;
+            			$xml_elenco=simplexml_load_file($url);
+        			
+        			
+        			    $codi=' and (';
+        			    
+        			    foreach ($xml_elenco->Resource as $cd)
+        			    {
+        			        if(trim($cd->codice)!='')
+        			        {
+        			            $codi.=' id_immobili=\''.$cd->codice.'\' or';
+        			            $c=(string)$cd->codicerisorsa;
+        			            $d=(string) $cd->codice;
+        			            $codici[$c]=$d;
+        			        }
+        			    }
+    			
+    			        $codi=trim($codi,'or').') ';
+    		  
+            			if($codi!=' and ()')
+            			{
+                		    if($_POST['posti']!='')
+        					{
+        					    $posti=$_POST['posti']+2;
+        						$codi.= ' and i.n_vani>='.$_POST['posti'].' and i.n_vani<='.$posti; 
+        						if($get!='')
+        						{
+        							$get.='&amp;';
+        						}
+        						$get.='posti='.$_POST['posti'];
+        					}
+    		  
+            		  		$ordine=" order by i.n_vani asc, home desc ,ordine asc";
+            				$query=$query.$codi;
+            				$totImm=mysql_query($query);
+            				$tot=mysql_num_rows($totImm);
+            				$query=$query.' '.$ordine;
+            				//print $query;
+            				$immobili=mysql_query($query)or die(mysql_error().$query);
+            				if(@mysql_num_rows($immobili)==0)
+            				{
+            					print '<div class="item_large"> '.NOIMMO.'</div>';
+            				}
+            				else
+            				{
+            				    print ' <div id="posts" class="small-thumbs">';
+            					if($lan=='de')
+            			    	{
+            			    		$classeDe=' dettagli_alt';
+            			    	}
+            			    	$immobiliEle=array();
+            			        while($immob=mysql_fetch_assoc($immobili))
+            			        {
+            			            $immobiliEle[$immob['id_immobili']]=$immob; 
+            			        }    
+            			        
+            			        asort($elencoImmobili);
+            			        /*print '<pre>';
+            			        var_dump($immobiliEle);
+            			        print '</pre>';*/
+            			        foreach ($elencoImmobili as $value=>$key)
+            			        {    
+            			            if(isset($immobiliEle[$codici[$value]]))
+            			            {    
+            			            $immo=$immobiliEle[$codici[$value]];
+            			            $url=$this->costruisciPath($cosa, $immo,$lan);
+            			           	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
+            			        	if($cosa=='casa_vacanza')
+            			        	{
+            			        		$titolo.=' ('.$immo['n_vani'].' '.POSTI_LETTO.')';
+            			        	}
+            			        	if($immo['residence']==1)
+            			        	{
+            			        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
+            			        	}
+            			        	?>
+                			        	<div class="entry clearfix">
+                                <div class="entry-image">
+                                    <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" ><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a> <span class="prezzo"> <?php echo '€ '.$elencoImmobili[$value];?><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span></h2>
+                                        <h4><?php visRiferimento($immo['rif']);?> </h4>
+                                    </div>
+                                    <div class="entry-content">
+                                        <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+                                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+           		        	<?php
+            			            }
+            			        }
+            			   }
+            	       }
+        			}
+        			if($ricercaCasaVacanza)
+        			{
+        			    $_POST['DateFrom']!='' && $_POST['DateTo']!='';
+        			    $da=explode('-',$arrivo);
+        			    $a=explode('-',$partenza);
+        			    $periodo=$da[1];
+        			     
+        			    $periodi=array(
+        			        '05'=>'maggio',
+        			        '06'=>'giugno',
+        			        '07'=>'luglio',
+        			        '08'=>'agosto',
+        			        '09'=>'settembre',
+        			        '01'=>'altro',
+        			        '02'=>'altro',
+        			        '03'=>'altro',
+        			        '04'=>'altro',
+        			        '10'=>'altro',
+        			        '11'=>'altro',
+        			        '12'=>'altro',
+        			    );
+        			    if($da[1]!=$a[1])
+        			    {
+        			        if($da[0]>20)
+        			        {
+        			            $periodo=$a[1];
+        			        }
+        			    }
+        			     
+        			    $ric['periodo'] = $periodi[$periodo];
+        			    $ric['posti'] = $_GET['posti'];
+        			    ?>
 			     	<div class="fancy-title title-left title-dotted-border">
             <h3>Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
             </div>
@@ -551,12 +635,12 @@ class box{
                                                 </select>
                                                <select name="periodo" class="form-control required">
                                                     <option value=""> <?php echo PERIODO?> </option>
-                                                    <option value="maggio"> <?php echo MAGGIO?></option>
-                                                    <option value="giugno"> <?php echo GIUGNO?></option>
-                                                    <option value="luglio"> <?php echo LUGLIO?></option>
-                                                    <option value="agosto"> <?php echo AGOSTO?></option>
-                                                    <option value="settembre"><?php echo SETTEMBRE?></option>
-                                                    <option value="altro"> <?php echo ALTRO_PERIODO?></option>
+                                                    <option value="maggio" <?php if($periodo=='05') {echo ' selected="selected"';}?>> <?php echo MAGGIO?></option>
+                                                    <option value="giugno" <?php if($periodo=='06') {echo ' selected="selected"';}?>> <?php echo GIUGNO?></option>
+                                                    <option value="luglio" <?php if($periodo=='07') {echo ' selected="selected"';}?>> <?php echo LUGLIO?></option>
+                                                    <option value="agosto" <?php if($periodo=='08') {echo ' selected="selected"';}?>> <?php echo AGOSTO?></option>
+                                                    <option value="settembre" <?php if($periodo=='09') {echo ' selected="selected"';}?>><?php echo SETTEMBRE?></option>
+                                                    <option value="altro" <?php if($periodi[$periodo]=='altro') {echo ' selected="selected"';}?>> <?php echo ALTRO_PERIODO?></option>
                                                   </select>
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
@@ -569,6 +653,8 @@ class box{
 			     	?>
 			     	</div>
 			     	<?php 
+			     	$this->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$ric);
+			     	
 			     }
 			    }
 				else
@@ -580,11 +666,7 @@ class box{
 			{
 				print '<div class="item_large"> '.NOIMMO.'</div>';
 			}
-		}
-		else
-		{
-			print '<div class="item_large"> '.NOIMMO.'</div>';
-		}	
+			
     }
     
     function elencoImmobiliVacanze($tipo,$lan,$getor=false)
@@ -594,7 +676,7 @@ class box{
     		$query="select * from immobili i,localita l, tipi t where (offerta=1) and pubblicato=1";
     		$cosa='casa_vacanza';
     		$pagina='case-vacanze.php';
-    	
+    	$get='';
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
     	if($getor!==false)
     	{
@@ -606,7 +688,7 @@ class box{
 					$get.='&amp;';
 				}
 				$query.=' and UPPER(REPLACE(rif," ",""))like \'%'.strtoupper(str_replace(' ', '',$getor['rif']))."%'";
-				$get.='tipo='.$getor['tipo'];
+				$get.='tipo='.$tipo;
 			}	
     	
 			if($getor['localita']!='')
@@ -620,7 +702,7 @@ class box{
 			}
     	    if($getor['posti']!='')
 			{
-			    $posti=$getor['posti']+2;
+				$posti=$getor['posti']+2;
 				$query.= ' and i.n_vani>='.$getor['posti'].' and i.n_vani<='.$posti; 
 				if($get!='')
 				{
@@ -650,7 +732,7 @@ class box{
 				$limit=' limit '.$start.','.$stop;
 			}
 		$ordine=" order by i.n_vani asc, home desc ,ordine asc";
-	
+	  // print $query;
 		$totImm=mysql_query($query);
 		$tot=mysql_num_rows($totImm);
 		$query=$query.' '.$ordine.$limit;
@@ -751,9 +833,9 @@ class box{
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	        
 	        if($cosa=='residence')
-                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
+	        	echo '<div class="button button-light fright"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';
 	        if($cosa=='casa_vacanza')
-                echo '<div class="button button-light fright"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';	
+	        	echo '<div class="button button-light fright"><a href="'.LANFOLDER.'residence.php"  title="'.PROP_VACANZE.'"> > '.PROP_VACANZE.'</a></div>';	
 	        ?>
 	        
 	        <?php 	
@@ -1015,7 +1097,7 @@ function elencoNews($tipo,$lan,$getor=false)
                                         <!-- Entry Content
                                         ============================================= -->
                                         <div class="entry-content notopmargin">
-                                    <?= stripslashes($im['descrizione_'.$lan])?>
+                                    <?= str_replace('</p>', '<br>', str_replace('<p>', '',stripslashes($im['descrizione_'.$lan])))?>
                                         </div><!-- .entry end -->
          <?php 
      }          
@@ -1053,11 +1135,27 @@ function elencoNews($tipo,$lan,$getor=false)
 			        ?>
 			    <h3><?php echo LISTINO;?></h3>    
 			    </div>
-                <div id="legenda" class="fright">
-                    <table>
-                        <tr><td><div class="quad_verde"></div></td><td><?php echo DISPONIBILE;?></td><td><div class="quad_rosso"></div></td><td> <?php echo NON_DISPONIBILE;?></td></tr>
-                    </table>
-                </div>  
+			    <div class="periodi">
+			    <div id="legenda" style="width:200px; float: right;margin: 7px 0px 0px 10px;">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="quad_verde"></div>
+                                                            </td>
+                                                            <td><?php echo DISPONIBILE;?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="quad_rosso"></div>
+                                                            </td>
+                                                            <td><?php echo NON_DISPONIBILE;?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                
+                <div class="table-responsive">
 			    <table class="tab_periodi">
                     <tbody>
                         <tr>
@@ -1126,6 +1224,7 @@ function elencoNews($tipo,$lan,$getor=false)
 	                        </tr>
 	                        </tbody>
 	                        </table>
+	                        </div>
 	                   <div style="float: left;width: 450px;margin: 7px 0px 0px 10px;">
 	                   <?php 
 	                   echo stripslashes($im['note_listino']);
@@ -1164,10 +1263,10 @@ function elencoNews($tipo,$lan,$getor=false)
 			    		}
 			    	}
 			    	?>
-                <div style="margin-top: 25px;">
-                    <div class="bottone_prenota_vac_<?php echo $_SESSION['lan']?>">
-                        <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="form_esterno"></a>
-                    </div>
+			    	<div style="margin-top: 25px;">
+			    	<div class="bottone_prenota_vac_<?php echo $_SESSION['lan']?>">
+                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="form_esterno"></a>
+                </div>
                 </div>
 			    	<?php 
 			    }
@@ -1187,6 +1286,7 @@ function elencoNews($tipo,$lan,$getor=false)
 			    }
 			    ?>
 			    <div class="clear"></div>
+			    </div>
 			    </div>
 				</div>
 				<?php 
@@ -1220,7 +1320,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 					if(is_file('images/big/'.$im['foto'.$i.'_immobile']))
 					{
-                    $foto.="\n".'<a href="'.IMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'" class="cornice_foto left " title="'.$titolo.'"  data-lightbox="gallery-item" style="margin: 5px 2px;background-image: url('.IMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].');"><img src="'.IMAGESPATH.'cornice_foto.png" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a>';
+						$foto.="\n".'<a href="'.IMAGESPATH.'big/'.$im['foto'.$i.'_immobile'].'" class="cornice_foto left colorbox" title="'.$titolo.'" rel="colorbox"  style="margin: 5px 2px;background-image: url('.IMAGESPATH.'thbn/'.$im['foto'.$i.'_immobile'].');"><img src="'.IMAGESPATH.'cornice_foto.png" width="150" height="116" alt="thumb" alt="'.$titolo.'" title="'.$titolo.'"/></a>';
 					}
 				}
 				if($foto!='')
@@ -1264,7 +1364,7 @@ function elencoNews($tipo,$lan,$getor=false)
                     //list($width, $height, $type, $attr) = getimagesize(PATHROOT."images/big/".$im['foto_g_immobile']);
                     ?>
                     <div class="entry-image" data-lightbox="gallery">
-                        <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" data-lightbox="gallery-item" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
+                        <a href="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" class="thumbnail elencoImmagini" title="<?php echo $titolo?>"><img src="<?php echo REMOTEIMAGESPATH;?>big/<?=$im['foto_g_immobile']?>" alt="<?php echo $titolo?>"></a>
                     </div><!-- .entry-image end -->
 
                     <?php
@@ -1305,7 +1405,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				}
 				?>
 				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
-                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin " data-lightbox="iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
                 </div>
 				
 				<?php 
@@ -1324,7 +1424,7 @@ function elencoNews($tipo,$lan,$getor=false)
     		if($pag!='' && $pag>1)
     		{
     			$li=$pag-1;
-    			$frecciasx=' <li><a href="'.LANFOLDER.$nomePag.'?'.$get.'pag='.$li.'" title="Pag. '.$li.'"><</a></li> ';
+    			$frecciasx=' <li><a href="'.LANFOLDER.$nomePag.'?'.$get.'&pag='.$li.'" title="Pag. '.$li.'"><</a></li> ';
     		}
 
     		$p=ceil($tot/$num);
@@ -1339,7 +1439,7 @@ function elencoNews($tipo,$lan,$getor=false)
     			{
     				$li=$pag+1;
     			}
-    			$frecciadx=' <li><a href="'.LANFOLDER.$nomePag.'?'.$get.'pag='.$li.'" title="Pag. '.$li.'">></a></li> ';
+    			$frecciadx=' <li><a href="'.LANFOLDER.$nomePag.'?'.$get.'&pag='.$li.'" title="Pag. '.$li.'">></a></li> ';
     		}
     		if($get!='')
     		{

@@ -46,7 +46,7 @@ $menu['dintorni']='class="selezionato"';
                             <div class="col_full nomargin">
                                 <h3><?=TITOLO_INTORNO?></h3>
                         <?php echo CONTENUTOINTORNO;?> 
-                                <img src="/images/romito.jpg" class="thumbnail nomargin" style="width: 100%" alt="Panorama di Castiglioncello">
+                                <img src="<?=TOTALPATH?>/images/romito.jpg" class="thumbnail nomargin" style="width: 100%" alt="Panorama di Castiglioncello">
 				            </div>
                             
                         </div>

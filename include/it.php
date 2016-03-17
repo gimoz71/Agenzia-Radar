@@ -235,7 +235,7 @@ define('CONTENUTOAGENZIA','
 
 
 <p>La nostra agenzia immobiliare, specializzata nelle <strong>locazioni estive</strong> per le vacanze nel mare della Toscana, si occupa di affitti settimanali, mensili o stagionali.<br>Siamo a vostra disposizione, inoltre, per la <strong>gestione di residence, appartamenti e ville</strong>, potrete far rendere il vostro investimento al mare, senza nessuna fatica, penseremo noi a tutto.</p>
-<p><img src="/images/foto_agenzia2.jpg" alt="interno agenzia Radar" class="thumbnail fleft" style="margin-right: 20px;"> Nell\'ampia scelta che offriamo potrete valutare soluzioni selezionate seguendo standard qualitativi che ci siamo posti di perseguire non solo per gli immobili di prestigio, ma anche per quelli low-cost. 
+<p><img src="'.TOTALPATH.'/images/foto_agenzia2.jpg" alt="interno agenzia Radar" class="thumbnail fleft" style="margin-right: 20px;"> Nell\'ampia scelta che offriamo potrete valutare soluzioni selezionate seguendo standard qualitativi che ci siamo posti di perseguire non solo per gli immobili di prestigio, ma anche per quelli low-cost. 
     <br>Non dimenticate di dare un’occhiata alle nostre offerte last-minute.
 </p>
 <p>L\'agenzia Radar di Giorgio Costagli è operativa anche nella vendita, nell\'acquisto e nell\'affitto di posti barca, posti auto, box o garage, nel Marina Cala de\' Medici di Rosignano Marittimo, porto turistico situato nella provincia di Livorno tra Castiglioncello e Rosignano Solvay. Il posto barca è dotato di ogni servizio in banchina.</p>
@@ -262,7 +262,7 @@ define('KEY_INDEX','affitti estivi, residence castiglioncello, Agenzia immobilia
 define('TITOLO_CASTIGLIONCELLO','CASTIGLIONCELLO, TUSCANY');    
 
 define('CONTENUTOCASTIGLIONCELLO',' 
-<img src="/images/castiglioncello.jpg" alt="panorama castiglioncello" class="thumbnail fright" style="margin-left: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
+<img src="'.TOTALPATH.'/images/castiglioncello.jpg" alt="panorama castiglioncello" class="thumbnail fright" style="margin-left: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>
 Castiglioncello è una meravigliosa località turistica denominata “la perla del Tirreno” per il suo fascino.<br> 
 Antico villaggio etrusco, è sempre stata racchiusa in una natura protettiva che l’ha resa, negli anni, elegante ed incontaminata.<br>
@@ -277,7 +277,7 @@ La <strong>Baia del Quercetano</strong>, suggestiva caletta, fonte d’ispirazio
 </p>
 
 <h4>Luoghi da percorrere</h4>    
-<img src="/images/pineta-marradi.jpg" alt="La Pineta Marradi" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
+<img src="'.TOTALPATH.'/images/pineta-marradi.jpg" alt="La Pineta Marradi" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>
 La <strong>Pineta Marradi</strong> posta direttamente sul mare, con l\'aria fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, ed il noto Cinema all’aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.<br>
 E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta Righini</strong>, fino ad arrivare al <strong>Porto Turistico Cala de’ Medici</strong>, 4 km respirando il profumo del mare, tra una meravigliosa caletta e l’altra.<br>
@@ -289,7 +289,7 @@ E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta
 <p><strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo.<br> 
 Tra gli eventi da non perdere assolutamente non possiamo non citare la <strong>Festa del Pesce</strong>, in giugno, presso la Baia di Caletta e <strong>La Rotta del Vino</strong>, la regata più gourmet della Costa degli Etruschi, durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino.</p>
 <h4>Cenni storici</h4>
-<img src="/images/castello-pasquini.jpg" alt="Il Castello Pasquini" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
+<img src="'.TOTALPATH.'/images/castello-pasquini.jpg" alt="Il Castello Pasquini" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>Già nella seconda metà dell\'800, il critico d\'arte e mecenate Diego Martelli, costruì qui la propria dimora, oggi <strong>Castello Pasquini</strong>, dove ospitò il famoso gruppo dei pittori <strong>Macchiaioli</strong> (tra i quali si ricordano Abbati, Fattori, Sernesi, Borrani , Cabianca ecc.) che dettero vita alla “Scuola di Castiglioncello". 
     Tutt’oggi il Castello Pasquini è centro di molte attività legate alla cultura, alla danza e al teatro, nonché sede del tradizionale <strong>Festival della Danza</strong> e del <strong>Premio Letterario Castiglioncello Costa degli Etruschi</strong>. 
     Ricordiamo inoltre che il paesino è reso famoso anche dagli artisti come Gassman, Mastroianni, Sordi ed altri che vi soggiornarono; inoltre fu set cinematografico anche del celebre film "<strong>Il sorpasso</strong>" con Vittorio Gassman. 
