@@ -23,13 +23,13 @@ class box{
     		$lan2='en';
     	if($cosa!='news')
     	{	
-    	$pathImmo=TOTALPATH.$lan.'/'.$cosa.'-'.$immo['categoria_immobile'].'-'.stripslashes(str_replace(' ','_',$immo['localita']));
-    	if(isset($immo['nome_tipo_'.$lan2]) && $immo['nome_tipo_'.$lan2]!='')
-    		$pathImmo.='-'.strtolower(decodificaTitolo($immo['nome_tipo_'.$lan2]));
-    	$pathImmo.='-'.strtolower($this->desPrezzo[$immo['contratto']]).'/'.$immo['id_immobili'].'_'.decodificaTitolo($immo['nome_immobile_'.$lan2]).'.html';
+	    	$pathImmo=TOTALPATH.$lan.'/'.$cosa.'-'.$immo['categoria_immobile'].'-'.stripslashes(str_replace(' ','_',$immo['localita']));
+	    	if(isset($immo['nome_tipo_'.$lan2]) && $immo['nome_tipo_'.$lan2]!='')
+	    		$pathImmo.='-'.strtolower(decodificaTitolo($immo['nome_tipo_'.$lan2]));
+	    	$pathImmo.='-'.strtolower($this->desPrezzo[$immo['contratto']]).'/'.$immo['id_immobili'].'_'.decodificaTitolo($immo['nome_immobile_'.$lan2]).'.html';
     	}
     	else
-    		{
+    	{
     		$pathImmo=LANFOLDER.$cosa.'/'.$immo['id_news'].'_'.decodificaTitolo($immo['titolo_news_'.$lan2]).'.html';		
     	}
     	return $pathImmo;
@@ -141,7 +141,7 @@ class box{
     	
     }
     
-    function elencoImmobili($tipo,$lan,$getor=false)
+    function elencoImmobili($tipo,$lan,$getor=false,$ordinePrezzo=false)
     {
         if($tipo=='residence')
         {
@@ -185,6 +185,16 @@ class box{
 				$query.=' and t.id_tipi='.$getor['tipo'];
 				$get.='tipo='.$getor['tipo'];
 			}
+		if($getor['ordinaprezzo']!='')
+			{
+				print 'pippo';
+				if($get!='')
+				{
+					$get.='&amp;';
+				}
+				$ordinePrezzo=true;
+				$get.='ordinaprezzo=1';
+			}		
     	if($getor['rif']!='')
 			{
 				if($get!='')
@@ -287,7 +297,8 @@ class box{
 				$limit=' limit '.$start.','.$stop;
 			}
 		$ordine=" order by home desc ,ordine asc, i.n_vani asc";
-
+		if($odinePrezzo)
+			$ordine=" order by prezzo asc";
 		$totImm=mysql_query($query);
 		$tot=mysql_num_rows($totImm);
 		$query=$query.' '.$ordine.$limit;
@@ -306,9 +317,11 @@ class box{
 	    	}
 	        while($immo=mysql_fetch_assoc($immobili))
 	        {
+				
 	        	$url=$this->costruisciPath($cosa, $immo,$lan);
 	        	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
-	        	if($cosa=='casa_vacanza')
+	        	
+				if($cosa=='casa_vacanza')
 	        	{
 	        		$titolo.=' ('.$immo['n_vani'].' '.POSTI_LETTO.')';
 	        	}
@@ -316,7 +329,6 @@ class box{
 	        	{
 	        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
 	        	}
-	        	
 	        	?>
                 <div class="entry noborder nomargin nopadding clearfix">
                     <div class="entry-image">
@@ -327,7 +339,7 @@ class box{
                     </div>
                     <div class="entry-c">
                         <div class="entry-title">
-                            <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a></h2>
+                            <h2><a href="<?php echo $url;?>"><?php echo $titolo;?></a></h2>
                             <h4><?php visRiferimento($immo['rif']);?> <?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></h4>
                         </div>
                         <div class="entry-content">

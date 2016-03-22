@@ -25,7 +25,8 @@ $caratteristicheImmobili=array(
     'piano'=>'Floor',
     'dis_negozi'=>'Distance from stores  (m)',	
 	'dis_stazione'=>'Distance from the train station  (m)',
-	'dis_mare'=>'Distance from the sea  (m)'
+	'dis_mare'=>'Distance from the sea  (m)',
+	'IPE'=>'Classe Energetica'
 );
 $caratteristicheCaseVacanza=array(
     'prezzo'=>'Price',
@@ -35,7 +36,8 @@ $caratteristicheCaseVacanza=array(
     'piano'=>'Floor',
    'dis_negozi'=>'Distance from stores (m)',	
 	'dis_stazione'=>'Distance from the train station  (m)',
-	'dis_mare'=>'Distance from the sea  (m)'
+	'dis_mare'=>'Distance from the sea  (m)',
+	'IPE'=>'Classe Energetica'
 );
 /*Menu*/
 define('AGENZIA',"THE AGENCY");
@@ -48,6 +50,8 @@ define('INFORMAZIONI','LOCATION');
 define('CONTATTI','CONTACTS');          
 define('LINK','WEATHER WEBCAM');    
 define('LANHTML','en-US');
+define('AFFITTOESTESO','Affitti residenziali e commerciali');
+define('ALTREOFFERTE','ALTRE OFFERTE');
 
 /*Menu FOOTER*/
 
@@ -97,6 +101,7 @@ define('PROVINCIA','Province/Region');
 define('EMAIL','Email');
 define('IMPORTO','Amount');
 define('CONFERMA','Confirmation');
+define('ORDINAPREZZO','Oridina per prezzo');
 
 /*Keywords*/
 define('KEY_CASE1','vacation homes');
@@ -209,7 +214,7 @@ define('KEY_CHISIAMO','Agency, Radar, real estate, residence, residences, apartm
 
 
 define('TITOLO_AGENZIA','ABOUT US');    
-
+define('TITOLO_AGENZIA2','RADAR AGENCY');   
 define('CONTENUTOAGENZIA','
 
 

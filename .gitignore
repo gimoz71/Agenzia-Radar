@@ -5,3 +5,9 @@
 /.project
 /.settings/
 /.htaccess
+
+/.DS_Store
+
+/images/.DS_Store
+
+/images/icons/.DS_Store

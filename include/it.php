@@ -25,7 +25,8 @@ $caratteristicheImmobili=array(
     'piano'=>'Piano',
     'dis_negozi'=>'Dis. negozi (m)',	
 	'dis_stazione'=>'Dis. stazione  (m)',
-	'dis_mare'=>'Dis. Mare  (m)'
+	'dis_mare'=>'Dis. Mare  (m)',
+	'IPE'=>'Classe Energetica'
 );
 $caratteristicheCaseVacanza=array(
     'prezzo'=>'Prezzo',
@@ -48,7 +49,8 @@ define('INFORMAZIONI','DOVE SIAMO');
 define('CONTATTI','CONTATTI');          
 define('LINK','METEO WEBCAM');    
 define('LANHTML','it-IT');
-
+define('AFFITTOESTESO','Affitti residenziali/commerciali');
+define('ALTREOFFERTE','ALTRE OFFERTE');
 
 /*Menu FOOTER*/
 
@@ -97,6 +99,7 @@ define('PROVINCIA','Provincia');
 define('EMAIL','Email');
 define('IMPORTO','Importo');
 define('CONFERMA','Conferma');
+define('ORDINAPREZZO','Ordina per prezzo');
 
 /*Keywords*/
 define('KEY_CASE1','case vacanza');
@@ -180,7 +183,7 @@ define('TITOLO_DOVE','DOVE SIAMO');
 define('TITOLO_DOVE2','Come raggiungere Castiglioncello');
 define('CONTENUTODOVESIAMO',' <p>
   Raggiungere <strong>Castiglioncello</strong> non è difficile, qualunque sia il mezzo prescelto per gli spostamenti.</p>
-    <p>Chi viaggia in <strong>auto</strong> e viene da nord deve percorrere l\'Autostrada A12 Genova-Rosignano Marittimo fino al casello <strong>Rosignano Marittimo</strong>, quindi proseguire sulla SS1 Aurelia in direzione <strong>Livorno</strong> fino all\'uscita <strong>Castiglioncello</strong>. Chi viene da sud deve percorrere invece la SS1 Aurelia in direzione Grosseto-Livorno dino all\'uscita <strong>Castiglioncello</strong>. </p>
+    <p>Chi viaggia in <strong>auto</strong> e viene da nord deve percorrere l\'Autostrada A12 Genova-Rosignano Marittimo fino al casello <strong>Rosignano Marittimo</strong>, quindi proseguire sulla SS1 Aurelia in direzione <strong>Livorno</strong> fino all\'uscita <strong>Castiglioncello</strong>. Chi viene da sud deve percorrere invece la SS1 Aurelia in direzione Grosseto-Livorno fino all\'uscita <strong>Castiglioncello</strong>. </p>
 
 <p>Per chi preferisce il <strong>treno</strong>, la stazione ferroviaria cittadina si trova lungo la linea tirrenica Genova-Pisa-Roma, ma a <strong>Castiglioncello</strong> si fermano soltanto treni regionali. Per chi viene da più lontano ci sono le stazioni di <strong>Rosignano</strong>, a soli 2 km, quella di <strong>Cecina</strong> a 17 km e quella di <strong>Livorno</strong> a 25 km. Infine l\'<strong>aeroporto</strong> più vicino è quello di <strong>Pisa</strong>, a circa 30 km, da cui si può raggiungere <strong>Castiglioncello</strong> in taxi, in treno, o noleggiando un auto.</p>
 <p>
@@ -194,7 +197,7 @@ define('CONTENUTODOVESIAMO',' <p>
         </tr>
         <tr>
             <td><strong>Treno:</strong></td>
-            <td>Stazione Rosignano Marittimo</td>
+            <td>Stazione di Castiglioncello</td>
         </tr>
         <tr>
             <td><strong>Localizzazione:</strong></td>
@@ -223,7 +226,7 @@ define('KEY_CHISIAMO','Residence castiglioncello, immobiliare, residence, reside
 
 
 define('TITOLO_AGENZIA','CHI SIAMO');    
-
+define('TITOLO_AGENZIA2','L\'AGENZIA RADAR');    
 define('CONTENUTOAGENZIA','
 
 
@@ -279,15 +282,15 @@ La <strong>Baia del Quercetano</strong>, suggestiva caletta, fonte d’ispirazio
 <h4>Luoghi da percorrere</h4>    
 <img src="'.TOTALPATH.'/images/pineta-marradi.jpg" alt="La Pineta Marradi" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>
-La <strong>Pineta Marradi</strong> posta direttamente sul mare, con l\'aria fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, ed il noto Cinema all’aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.<br>
-E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta Righini</strong>, fino ad arrivare al <strong>Porto Turistico Cala de’ Medici</strong>, 4 km respirando il profumo del mare, tra una meravigliosa caletta e l’altra.<br>
+La <strong>Pineta Marradi</strong> posta direttamente sul mare, con l\'aria fragrante di iodio e di essenze silvestri, invita a rilassanti passeggiate; al suo interno sono presenti vari punti di svago per i più piccoli, campi da tennis ed il noto Cinema all’aperto attivo durante i mesi estivi, mesi nei quali viene allestito anche il mercatino del giovedì.<br>
+E non perdetevi il <strong>Lungomare Colombo</strong>, partendo da <strong>Punta Righini</strong>, fino ad arrivare al <strong>Porto Turistico Cala de’ Medici</strong>, 4 km respirando il profumo del mare, tra una meravigliosa caletta e l’altra, tra un suggestivo ristorantino ed un aperitivo al tramonto.<br>
 </p>
 <h4>Sport</h4>    
 <p>Se siete amanti degli sport acquatici Castiglioncello offre, tra l’altro, la possibilità di praticare <strong>seawatching</strong>, <strong>diving</strong>, <strong>pesca</strong> e <strong>windsurf</strong>; inoltre presso il <strong>Circolo Nautico Castiglioncello</strong> si svolgono <strong>corsi di vela</strong> per utenti di tutte le età ed è possibile <strong>noleggiare imbarcazioni a vela o a motore</strong> per esplorare le meraviglie della costa. </p>
 <div class="clear"></div>
 <h4>Shopping, Vita ed Eventi</h4>
-<p><strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo.<br> 
-Tra gli eventi da non perdere assolutamente non possiamo non citare la <strong>Festa del Pesce</strong>, in giugno, presso la Baia di Caletta e <strong>La Rotta del Vino</strong>, la regata più gourmet della Costa degli Etruschi, durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino.</p>
+<p><strong>Piazza della Vittoria</strong> è il luogo ideale per gli appassionati di shopping, con negozi aperti fino a tarda serata, e il punto d’incontro per l’aperitivo. <br> 
+Tra gli eventi da non perdere assolutamente non possiamo non citare  il Foodies Festival  in aprile, una manifestazione di 3 giorni interamente dedicati alla cultura del buon cibo e del buon bere, che vede Castiglioncello chiudere le sue strade al traffico per aprire le porte ad un’esperienza straordinaria dedicata al gusto, o la <strong>Festa del Pesce</strong>, in giugno, presso la Baia di Caletta o, sempre in giugno,  presso il Casale del Mare,  il <strong>Concorso ippico Nazionale</strong>, dove i cavalieri si danno battaglia in una cornice mozzafiato  tra il verde della campagna ed il blu intenso del mare o ancora <strong>La Rotta del Vino</strong>, la regata più gourmet della Costa degli Etruschi, durante la seconda settimana di settembre e dove le imbarcazioni si sfidano in mare, mentre a bordo alcuni chef sono impegnati nella realizzazione del piatto che per fantasia ed abbinamento al vino. </p>
 <h4>Cenni storici</h4>
 <img src="'.TOTALPATH.'/images/castello-pasquini.jpg" alt="Il Castello Pasquini" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>Già nella seconda metà dell\'800, il critico d\'arte e mecenate Diego Martelli, costruì qui la propria dimora, oggi <strong>Castello Pasquini</strong>, dove ospitò il famoso gruppo dei pittori <strong>Macchiaioli</strong> (tra i quali si ricordano Abbati, Fattori, Sernesi, Borrani , Cabianca ecc.) che dettero vita alla “Scuola di Castiglioncello". 

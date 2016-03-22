@@ -35,21 +35,22 @@ if($_SESSION['lan']!='it')
                                     <li><a href="<?=LANFOLDER?>dove_immobiliare_casa_vacanze_toscana.php"><div><?php echo INFORMAZIONI;?></i></div></a>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><div>INFORMAZIONI<i class="icon-chevron-down"></i></div></a>
+                            <li><a href="javascript:void(0)"><div>CASTIGLIONCELLO<i class="icon-chevron-down"></i></div></a>
                                   <ul>
-                                    <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>Castiglioncello</i></div></a>
+                                    <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>Informazioni</i></div></a>
                                     <li><a href="<?=LANFOLDER?>intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo DINTORNI;?></div></a></li>
                                  </ul>   
                              </li>  
                             <li><a href="<?=LANFOLDER?>immobili.php"><div>Vendite</div></a></li>
-                            <li><a href="javascript:void(0)"><div>Affitti <i class="icon-chevron-down"></i></div></a>
+                            <li><a href="javascript:void(0)"><div><?php echo AFFITTO;?><i class="icon-chevron-down"></i></div></a>
                                 <ul>
-                                    <li><a href="<?=LANFOLDER?>affitti.php"><div><?php echo AFFITTO;?></div></a></li>
+                                    <li><a href="<?=LANFOLDER?>affitti.php"><div><?php echo AFFITTOESTESO;?></div></a></li>
                                     <li><a href="<?=LANFOLDER?>residence.php"><div><?php echo RESIDENCE;?></div></a></li>
                                     <li><a href="<?=LANFOLDER?>case-vacanze.php"><div><?php echo VACANZE;?></div></a></li>
+									<li><a href="<?=LANFOLDER?>offerte.php"><div><?php echo ALTREOFFERTE;?></div></a></li>
                                 </ul>
                             <li><a href="<?=LANFOLDER?>webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>WEBCAM</div></a></li>
-                            <li><a href="blog/"><div>Blog</div></a></li>
+                            <li><a href="<?=TOTALPATH?>blog/"><div>Blog</div></a></li>
                             <li><a href="<?php echo LANFOLDER?>contatti.php"><div><?php echo CONTATTI;?></div></a></li>
                         </ul>
                     </div>

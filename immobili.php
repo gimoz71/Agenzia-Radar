@@ -85,13 +85,22 @@ $menu['immobili']='class="selezionato"';
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>
+										
                                     </div>
                                 </div>
+								
                             </nav>
-
+							<div class="container-fluid">
+								<form method="post" action="<?=TOTALPATH?>immobili.php?<?=$get?>">
+												<div class="form-group">
+												<button type="submit" name="ordinaprezzo" value="1" class="btn btn-primary"><?php echo ORDINAPREZZO;?></button>
+											</div>
+										</form>
+									</div>
                             <div class="line"></div>
                            
                             <?php 
+							
                                 $box->elencoImmobili('immobili',$_SESSION['lan'],$get);
                             ?>
                            

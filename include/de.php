@@ -25,7 +25,8 @@ $caratteristicheImmobili=array(
     'piano'=>'Stockwerk',
     'dis_negozi'=>'Entfernung Geschäfte  (m)',	
 	'dis_stazione'=>'Entfernung Bahnhof  (m)',
-	'dis_mare'=>'Entfernung Meer  (m)'
+	'dis_mare'=>'Entfernung Meer  (m)',
+	'IPE'=>'Classe Energetica'
 );
 $caratteristicheCaseVacanza=array(
     'prezzo'=>'Preis',
@@ -35,7 +36,8 @@ $caratteristicheCaseVacanza=array(
     'piano'=>'Stockwerk',
    'dis_negozi'=>'Entfernung Geschäfte (m)',	
 	'dis_stazione'=>'Entfernung Bahnhof  (m)',
-	'dis_mare'=>'Entfernung Meer  (m)'
+	'dis_mare'=>'Entfernung Meer  (m)',
+	'IPE'=>'Classe Energetica'
 );
 /*Menu*/
 define('AGENZIA',"DIE AGENTUR");
@@ -48,6 +50,8 @@ define('INFORMAZIONI','WO SIND WIR');
 define('CONTATTI','KONTAKTE');          
 define('LINK','WETTER WEBCAM');    
 define('LANHTML','de-DE');
+define('AFFITTOESTESO','Affitti residenziali e commerciali');
+define('ALTREOFFERTE','ALTRE OFFERTE');
 
 /*Menu FOOTER*/
 
@@ -98,6 +102,7 @@ define('PROVINCIA','Provinz');
 define('EMAIL','Email');
 define('IMPORTO','Gesamtbetrag');
 define('CONFERMA','Bestätigen');
+define('ORDINAPREZZO','Oridina per prezzo');
 
 /*Keywords*/
 define('KEY_CASE1','Ferienhäuser');
@@ -215,7 +220,7 @@ define('KEY_CHISIAMO','Agentur, Radar, Immobilien, Wohnanlage, Ferienanlage, App
 
 
 define('TITOLO_AGENZIA','ÜBER UNS');    
-
+define('TITOLO_AGENZIA2','ÜBER UNS');   
 define('CONTENUTOAGENZIA','
 
 

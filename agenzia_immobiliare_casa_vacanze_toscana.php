@@ -26,10 +26,10 @@ $menu['agenzia']='class="selezionato"';
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?php echo TITOLO_AGENZIA;?></h1>
+                <h1><?php echo TITOLO_AGENZIA2;?></h1>
                 <ol class="breadcrumb">
                     <li><a href="<?=TOTALPATH?>">Home</a></li>
-                    <li class="active"><?php echo TITOLO_AGENZIA;?></li>
+                    <li class="active"><?php echo TITOLO_AGENZIA2;?></li>
                 </ol>
             </div>
 
@@ -44,7 +44,7 @@ $menu['agenzia']='class="selezionato"';
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
                             <div class="col_full">
-                                <h3><?php echo TITOLO_AGENZIA;?></h3>
+                                <h3><?php echo TITOLO_AGENZIA2;?></h3>
                         <?php echo CONTENUTOAGENZIA;?>
                 	  
 				            </div>
