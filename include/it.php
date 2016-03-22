@@ -149,7 +149,7 @@ define('NON_DISPONIBILE','Non disponibile');
 define('CONTATTACI','Richiedi informazioni');
 
 
-define('CONTENUTOCONTATTI','<p><strong>Agenzia Immobiliare RADAR</strong><br> Via Aurelia, 548 <br>57012 Castiglioncello (LI)<br>
+define('CONTENUTOCONTATTI','<h4><strong>Agenzia Immobiliare RADAR</strong></h4><p> Via Aurelia, 548 <br>57012 Castiglioncello (LI)<br>
 Tel. +39.0586.752596 - Fax +39.0586.759935 <br>
 Email: info@agenziaradar.it</p> ');
 

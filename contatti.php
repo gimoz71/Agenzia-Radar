@@ -42,17 +42,20 @@ $keywords=KEY_INDEX;
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="postcontent nobottommargin">
-                                <h3><?php echo CONTATTACI;?></h3>
+                            <div class="col_two_fifth nobottommargin">
+<!--                                <h4><?php echo CONTATTI;?></h4>-->
+                                <img src="http://local.radar.it//images/foto_agenzia2.jpg" alt="interno agenzia Radar" class="thumbnail">
+                                <?php echo CONTENUTOCONTATTI;?> 
+                            </div>
+                            <div class="col_three_fifth col_last nobottommargin">
+                                
+                                <div class="fancy-title title-left title-dotted-border">
+                                    <h3><?php echo CONTATTACI;?></h3>
+                                </div>
                                 <?php 
                                 $url=LANFOLDER.'contatti.php';
                                 include(INCLUDEPATH.'richiesta.php');
                                 ?>	
-                            </div>
-                            <div class="sidebar col_last nobottommargin">
-
-<!--                                <h4><?php echo CONTATTI;?></h4>-->
-                                <?php echo CONTENUTOCONTATTI;?> 
                             </div>
                         </div>
                     </div>
