@@ -8,6 +8,7 @@ $titolo=IMMO.' '.elencoLocalita().' Agenzia Immobiliare Radar';
 $descrizione=IMMO.' '.elencoLocalita();
 $keywords=elencoLocalita().elencoTipi($_SESSION['lan']);
 $menu['immobili']='class="selezionato"';
+$stringaGet=generaGet($_GET);
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -91,17 +92,22 @@ $menu['immobili']='class="selezionato"';
 								
                             </nav>
 							<div class="container-fluid">
-								<form method="post" action="<?=TOTALPATH?>immobili.php?<?=$get?>">
+								<form method="post" action="<?=TOTALPATH?>immobili.php?<?=$stringaGet?>ordinaPrezzo=1">
 												<div class="form-group">
-												<button type="submit" name="ordinaprezzo" value="1" class="btn btn-primary"><?php echo ORDINAPREZZO;?></button>
+												<button type="submit" name="cerca" value="1" class="btn btn-primary"><?php echo ORDINAPREZZO;?></button>
 											</div>
 										</form>
 									</div>
                             <div class="line"></div>
                            
                             <?php 
-							
-                                $box->elencoImmobili('immobili',$_SESSION['lan'],$get);
+							$ordina=false;
+							if(isset($_GET['ordinaPrezzo']) && $_GET['ordinaPrezzo']==1)
+							{
+								print 'ordina';
+								$ordina=true;
+							};
+                                $box->elencoImmobili('immobili',$_SESSION['lan'],$get,$ordina);
                             ?>
                            
                         </div>
