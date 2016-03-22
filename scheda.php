@@ -161,7 +161,7 @@ $(document).ready(function(){
 
                                 <!-- Single Post
                                 ============================================= -->
-                                <div class="entry clearfix">
+                                <div class="entry clearfix" data-lightbox="gallery">
 
                                     <?php $box->boxImmobile($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);?>
                                     <div class="col_full nomargin">
