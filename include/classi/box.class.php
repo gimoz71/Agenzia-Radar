@@ -844,8 +844,7 @@ class box{
                         </div>
                     </div>
                 </div>
-	        	
-	        	
+	        		        	
 	        	<?php
 	        }
 	        print '</div>';

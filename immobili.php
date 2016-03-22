@@ -93,11 +93,11 @@ $stringaGet=generaGet($_GET);
                             </nav>
 							<div class="container-fluid">
 								<form method="post" action="<?=TOTALPATH?>immobili.php?<?=$stringaGet?>ordinaPrezzo=1">
-												<div class="form-group">
-												<button type="submit" name="cerca" value="1" class="btn btn-primary"><?php echo ORDINAPREZZO;?></button>
-											</div>
-										</form>
+									<div class="form-group">
+										<button type="submit" name="cerca" value="1" class="btn btn-primary"><?php echo ORDINAPREZZO;?></button>
 									</div>
+								</form>
+							</div>
                             <div class="line"></div>
                            
                             <?php 
