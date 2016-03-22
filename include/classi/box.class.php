@@ -143,8 +143,7 @@ class box{
     
     function elencoImmobili($tipo,$lan,$getor=false,$ordinePrezzo=false)
     {
-		var_dump($ordinePrezzo);
-        if($tipo=='residence')
+		if($tipo=='residence')
         {
         	$query="select * from immobili i,localita l, tipi t where residence=1 and id_residence=0 and pubblicato=1 ";
         	$cosa="residence";
@@ -177,8 +176,7 @@ class box{
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
     	if($getor!==false)
     	{
-			var_dump($getor);
-	    	if($getor['tipo']!='')
+			if($getor['tipo']!='')
 			{
 				if($get!='')
 				{
@@ -189,7 +187,6 @@ class box{
 			}
 		if($getor['ordinaPrezzo']!='')
 			{
-				print 'pippo';
 				if($get!='')
 				{
 					$get.='&amp;';
@@ -299,9 +296,8 @@ class box{
 				$limit=' limit '.$start.','.$stop;
 			}
 		$ordine=" order by home desc ,ordine asc, i.n_vani asc";
-		if($odinePrezzo)
+		if($ordinePrezzo)
 		{
-			print 'pippo2';
 			$ordine=" order by prezzo asc";
 			
 		}	
@@ -364,7 +360,7 @@ class box{
 	        ?>
 	        </div>
 	        <?php 
-	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
+			$this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	    
 	        if($cosa=='residence')
                 echo '<div class="button button-light fright"><a href="'.LANFOLDER.'case-vacanze.php" title="'.PROP_VACANZE.'">'.PROP_VACANZE.' <i class="icon-chevron-right"></i></a></div>';
@@ -853,6 +849,7 @@ class box{
 	        	<?php
 	        }
 	        print '</div>';
+			var_dump($get);
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	        
 	        if($cosa=='residence')
