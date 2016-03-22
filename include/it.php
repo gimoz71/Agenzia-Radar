@@ -272,13 +272,12 @@ Antico villaggio etrusco, è sempre stata racchiusa in una natura protettiva che
 Le sue lussureggianti pinete, le scogliere spettacolari, le baie riparate e le spiagge bagnate dalle limpide acque, la caratterizzano rendendola unica.<br> 
 <strong>Castiglioncello rappresenta, uno scenario invitante, ideale per le vacanze estive.</strong>
 </p>    
-<div class="line"></div> 
+
 <h4>Relax</h4>   
 <p>
 Situata nel cuore della Toscana, al confine tra il Mar Ligure ed il Tirreno settentrionale Castiglioncello risulta il luogo ideale anche per i turisti in cerca di relax e clima mite.<br> 
 La <strong>Baia del Quercetano</strong>, suggestiva caletta, fonte d’ispirazione per <strong>Gabriele D’Annunzio</strong> è un luogo ideale per una giornata di relax.
 </p>
-
 <h4>Luoghi da percorrere</h4>    
 <img src="'.TOTALPATH.'/images/pineta-marradi.jpg" alt="La Pineta Marradi" class="thumbnail fleft" style="margin-right: 20px;" data-class-lg="img-half" data-class-md="img-half" data-class-sm="img-full" data-class-xs="img-full" data-class-xxs="img-full">
 <p>

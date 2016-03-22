@@ -42,16 +42,17 @@ $keywords=KEY_INDEX;
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_half">
-<!--                                <h4><?php echo CONTATTI;?></h4>-->
-                                <?php echo CONTENUTOCONTATTI;?> 
-                            </div>
-                            <div class="col_half col_last">
+                            <div class="postcontent nobottommargin">
                                 <h3><?php echo CONTATTACI;?></h3>
                                 <?php 
-                                    $url=LANFOLDER.'contatti.php';
-                                    include(INCLUDEPATH.'richiesta.php');
+                                $url=LANFOLDER.'contatti.php';
+                                include(INCLUDEPATH.'richiesta.php');
                                 ?>	
+                            </div>
+                            <div class="sidebar col_last nobottommargin">
+
+<!--                                <h4><?php echo CONTATTI;?></h4>-->
+                                <?php echo CONTENUTOCONTATTI;?> 
                             </div>
                         </div>
                     </div>
