@@ -52,24 +52,24 @@ $contatti=array(
 	}
 	if ($_POST['nome']=='' && $_POST['nome']=='')
 	{
-		$classe['nome']=' class="bordoRosso" ';
+		$classe['nome']=' bordoRosso';
 	}
     if ($_POST['cognome']=='' && $_POST['cognome']=='')
 	{
-		$classe['cognome']=' class="bordoRosso" ';
+		$classe['cognome']=' bordoRosso';
 	}
 	if ($_POST['note']=='')
 	{
-		$classe['note']=' class="bordoRosso" ';
+		$classe['note']=' bordoRosso';
 	}
 	if(md5(strtoupper($_POST['jpg_captcha']))!=$_POST['captcha'])
 	{
-		$classe['jpg_captcha']=' class="bordoRosso" ';
+		$classe['jpg_captcha']=' bordoRosso';
 		$msg=$msg.'Violazione capcha';
 	}
 	if ($_POST['email']=='' || !eregi("[a-z0-9][_\.a-z0-9-]+@([a-z0-9][0-9a-z-]+\.)+([a-z]{2,4})", $_POST['email']))
 	{
-		$classe['email']=' class="bordoRosso" ';;
+		$classe['email']=' bordoRosso';;
 	}
 	
     if(count($classe)==0)

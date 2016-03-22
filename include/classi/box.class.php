@@ -335,7 +335,14 @@ class box{
                      <?php if($immo['offerta']=='1'){?>
                         <i class="icon-deal i-circled icon-thumbs-up2"></i>
                         <?php }?>
+<<<<<<< HEAD
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image">
+							<span class="prezzo-float label label-success"><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span>
+							<img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
+						</a>
+=======
                         <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image"><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+>>>>>>> 6b35985d2c4914d936ec5e671b65e0c7d9786d8a
                     </div>
                     <div class="entry-c">
                         <div class="entry-title">
