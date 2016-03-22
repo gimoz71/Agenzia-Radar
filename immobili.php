@@ -104,7 +104,6 @@ $stringaGet=generaGet($_GET);
 							$ordina=false;
 							if(isset($_GET['ordinaPrezzo']) && $_GET['ordinaPrezzo']==1)
 							{
-								print 'ordina';
 								$ordina=true;
 							};
                                 $box->elencoImmobili('immobili',$_SESSION['lan'],$get,$ordina);
