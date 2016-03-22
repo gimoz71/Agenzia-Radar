@@ -78,10 +78,10 @@ $(function() {
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Immobili in vendita</h1>
+                <h1><?php echo CAS?></h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Immobili</li>
+                    <li class="active"><?php echo CAS?></li>
                 </ol>
             </div>
 
@@ -106,7 +106,7 @@ $(function() {
                                         <span class="navbar-brand"><strong><?php echo RICERCA;?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                                         <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">
+                                         <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
                                                 <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
@@ -139,8 +139,9 @@ $(function() {
                             <div class="line"></div>
                            
                             <?php 
-                                $box->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$get);
-                            ?>
+                                           
+                	$box->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$get);
+                ?>
                         
                            
                         </div>

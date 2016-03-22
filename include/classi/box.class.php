@@ -634,7 +634,7 @@ class box{
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                          <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
                                                      <?php
                                             		for ($i=1;$i<=10;$i++)

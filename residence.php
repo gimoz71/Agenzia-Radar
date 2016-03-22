@@ -78,10 +78,10 @@ $(function() {
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Immobili in vendita</h1>
+                <h1><?=RESIDENCE?></h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Immobili</li>
+                    <li class="active"><?=RESIDENCE?></li>
                 </ol>
             </div>
 
@@ -108,19 +108,23 @@ $(function() {
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                          <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <select name="Beds" id="register-form-category" class="form-control required">
+                                                <select name="posti" id="register-form-category" class="form-control required">
                                                     <option value=""><?=POSTI_LETTO?></option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
-                                                </select>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+												</select>
                                                 <input type="text" id="from" name="DateFrom" value="" class="form-control required " placeholder="<?php echo DAL;?>" />
                                                 <input type="text" id="to" name="DateTo" value="" class="form-control required" placeholder="<?php echo AL;?>" />
                                             </div>
-                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button> 
-                                             <div class="form-group ">
-                                                 <button class="btn btn-default">Prezzo pi&ugrave; alto&nbsp;&nbsp;<i class="icon-sort"></i></button>
-                                            </div>
+                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>
                                     </div>
                                 </div>
