@@ -50,7 +50,7 @@ if($_SESSION['lan']!='it')
 									<li><a href="<?=LANFOLDER?>offerte.php"><div><?php echo ALTREOFFERTE;?></div></a></li>
                                 </ul>
                             <li><a href="<?=LANFOLDER?>webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>WEBCAM</div></a></li>
-                            <li><a href="<?=TOTALPATH?>blog/"><div>Blog</div></a></li>
+                            <li><a href="<?=TOTALPATHREMOTE?>blog/"><div>Blog</div></a></li>
                             <li><a href="<?php echo LANFOLDER?>contatti.php"><div><?php echo CONTATTI;?></div></a></li>
                         </ul>
                     </div>
