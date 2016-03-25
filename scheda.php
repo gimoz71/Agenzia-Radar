@@ -98,14 +98,13 @@ $(document).ready(function(){
                         <div class="panel-body rounded" style="padding: 20px;">
                             
                             <div class="single-post nobottommargin">
-
                                 <!-- Single Post
                                 ============================================= -->
                                 <div class="entry clearfix" data-lightbox="gallery">
-
                                     <?php $box->boxImmobile($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);?>
                                     <div class="col_full nomargin">
                                     <?php $box->boxFoto($_SESSION['lan'], $immobile)?>
+<<<<<<< HEAD
                                      <?php $box->boxDescrizione($_SESSION['lan'], $immobile);?>
 									 <div class="line"></div>
                              
@@ -114,9 +113,18 @@ $(document).ready(function(){
                                      ?>
                                         
                                         
+=======
+                                    <?php $box->boxDescrizione($_SESSION['lan'], $immobile);
+                                    $box->boxResidence($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);
+                                    ?>
+>>>>>>> b49aedcaae5ce38f46ff64103317af473bf6b887
                                     </div>
                                 </div>
-                                 <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $immobile['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
+                                <div class="promo promo-center  notopmargin">
+                                    <h3>Serve aiuto? Chiama ora al<br><span>+39 0586 752596</span></h3>
+                                    <span>Oppure contattaci cliccando sul pulsante di seguito.<br>Siamo a tua disposizione per qualsiasi dubbio, curiosità o richiesta in dettaglio</span>
+                                </div>
+                                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $immobile['id_immobili'];?>" class="button btn-block center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
