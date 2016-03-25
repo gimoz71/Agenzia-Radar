@@ -123,15 +123,15 @@ $(function() {
                <div class="section nomargin " style="padding: 40px 0 ; background: url('<?=TOTALPATH?>images/custom/bg-small-area.jpg') no-repeat center center; background-size: cover" data-class-xxs="nothidden" data-class-xs="nothidden" data-class-sm="hidden" data-class-md="hidden" data-class-lg="hidden">
                    <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
-                            <form action="vendite.php" class="nomargin">
+                            <form action="<?=LANFOLDER?>immobili.php" class="nomargin">
                                 <button class="button button-blue button-3d btn-block button-rounded nomargin">Immobili in vendita</button>
                             </form>  
                             <div class="divider" style="margin: 10px 0"></div>
-                            <form action="#" class="nomargin">
+                            <form action="<?=LANFOLDER?>residence.php" class="nomargin">
                                 <button class="button button-blue button-3d btn-block button-rounded nomargin">Vacanze Estate 2016</button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
-                            <form action="#" class="nomargin">
+                            <form action="<?=LANFOLDER?>offerte.php" class="nomargin">
                                 <button class="button button-blue button-3d btn-block button-rounded nomargin"><?=ALTREOFFERTE?></i></button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
@@ -206,7 +206,7 @@ $(function() {
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('<?=TOTALPATH?>images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
-                                <h4 class="dark" style="background: transparent">Prenota la tua vacanza ESTATE 2016</h4>
+                                <h4 class="dark" style="background: transparent">Prenota la tua vacanza <?php echo ESTATE?> <?php echo indicaAnno();?></h4>
                             </div>
                             <div class="divider divider-border divider-center nomargin">
                                 <i class="icon-arrow-down2"></i>

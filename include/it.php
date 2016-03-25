@@ -36,7 +36,8 @@ $caratteristicheCaseVacanza=array(
     'piano'=>'Piano',
     'dis_negozi'=>'Dis. negozi (m)',	
 	'dis_stazione'=>'Dis. stazione  (m)',
-	'dis_mare'=>'Dis. mare  (m)'
+	'dis_mare'=>'Dis. mare  (m)',
+	'IPE'=>'Classe Energetica'
 );
 /*Menu*/
 define('AGENZIA',"L'AGENZIA");
@@ -88,7 +89,7 @@ define('CITTA','Citt&agrave;');
 define('NOTE','Richiesta');
 define('PROPOSTA','Proposta');
 define('INVIA','Invia');
-define('RICHIEDI','Richiedi informazioni su questo immobile');
+define('RICHIEDI','Richiedi informazioni');
 define('LETTO','Ho letto e approvato ');
 define('INFORMATIVA','l\'informativa sulla privacy');
 define('PAGAMENTI','Pagamenti');
@@ -212,6 +213,12 @@ define('CONTENUTODOVESIAMO',' <p>
 <div class="col_three_fifth col_last nobottommargin">
     <div class="gmap thumbnail nomargin" id="google-map2" style="height: 300px"></div>
 </div>
+<br>
+	<div class="clear"></div>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'agenzia_immobiliare_casa_vacanze_toscana.php" class=" button button-rounded button-light nomargin" title="Chi siamo l\'agenzia immobiliare Radar">L\'agenzia ></a>
+</div>
 ');
 /*agenzia_immobiliare_casa_vacanze_toscana.php*/
 
@@ -247,7 +254,13 @@ define('CONTENUTOAGENZIA','
 <blockquote class="quote">
     <p>Vi attendiamo nel nostro ufficio aperto anche il sabato e la domenica, per visionare le nostre occasioni.</p>
     <footer>Giorgio Costagli, Agenzia Radar</footer>
-</blockquote>');
+</blockquote>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'Servizi_immobiliare_casa_vacanze_residence_toscana.php" class=" button button-rounded button-light nomargin" title="I servizi offerti dall\'agenzia immobiliare Radar">I nostri servizi ></a>
+</div>
+
+');
 
 
 
@@ -303,9 +316,10 @@ Tra gli eventi da non perdere assolutamente non possiamo non citare  il Foodies 
 <a href="'.LANFOLDER.'dove_immobiliare_casa_vacanze_toscana.php" class=" button button-rounded button-light nomargin" title="Le indicazioni per raggiungerci a Castiglioncello">Come arrivare a Castiglioncello ></a>
 </div>
 <div class="line"></div>
-    
-  <div>
-  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/mJDTIPxtrL8" frameborder="0" allowfullscreen></iframe></div>  
+    <div class="center">
+<a href="https://www.youtube-nocookie.com/embed/mJDTIPxtrL8" data-lightbox="iframe" class=" button button-rounded button-light nomargin" title="Video Castiglioncello"> Guarda il video su Castiglioncello</a>
+	</div>
+	
   ');
 
 
@@ -370,6 +384,10 @@ Cerchiamo la struttura ricettiva perfetta per voi, che sia in grado di offrirvi 
 <p>
 Senza dimenticare il piacere di instaurare un rapporto personale con i nostri clienti.
 </p>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'dove_immobiliare_casa_vacanze_toscana.php" class=" button button-rounded button-light nomargin" title="Sove di trova l\'agenzia immobiliare Radar">Dove siamo ></a>
+</div>
 ');
 
 /* ERROR */

@@ -346,7 +346,7 @@ class box{
                     <div class="entry-c">
                         <div class="entry-title">
                             <h2><a href="<?php echo $url;?>"><?php echo $titolo;?></a></h2>
-                            <h4><?php visRiferimento($immo['rif']);?> <span class="prezzo label label-success"><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span></h4>
+                            <h4><?php visRiferimento($immo['rif']);?> </h4>
                         </div>
                         <div class="entry-content">
                             <p><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
@@ -554,12 +554,20 @@ class box{
             			        /*print '<pre>';
             			        var_dump($immobiliEle);
             			        print '</pre>';*/
+								if($ricercaCasaVacanza)
+								{?><div class="entry clearfix">
+									<a href="#caseVacanza" class="">Vedi anche le nostre offerte per le case vacanza ></a>
+                            </div>
+									
+									<?php
+								}	
             			        foreach ($elencoImmobili as $value=>$key)
             			        {    
             			            if(isset($immobiliEle[$codici[$value]]))
             			            {    
             			            $immo=$immobiliEle[$codici[$value]];
             			            $url=$this->costruisciPath($cosa, $immo,$lan);
+									$url.='?prezzo='.$elencoImmobili[$value].'&periodo='.$partenza.'_'.$arrivo;
             			           	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
             			        	if($cosa=='casa_vacanza')
             			        	{
@@ -572,12 +580,15 @@ class box{
             			        	?>
                 			        	<div class="entry clearfix">
                                 <div class="entry-image">
-                                    <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" ><img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>"></a>
+                                    <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" >
+										<span class="prezzo-float label label-success"><?php echo '€'.$elencoImmobili[$value];?><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span>
+										<img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
+									</a>
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
                                         <h2><a href="<?php echo $url;?>"><?php echo stripslashes($immo['nome_immobile_'.$lan])?></a> </h2>
-                                        <h4><?php visRiferimento($immo['rif']);?> <span class="prezzo label label-success"><?php echo '€'.$elencoImmobili[$value];?><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span></h4>
+                                        <h4><?php visRiferimento($immo['rif']);?> </h4>
                                     </div>
                                     <div class="entry-content">
                                         <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
@@ -624,7 +635,7 @@ class box{
         			    $ric['posti'] = $_GET['posti'];
         			    ?>
 			     	<div class="fancy-title title-left title-dotted-border">
-            <h3>Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
+            <h3 id="caseVacanza">Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
             </div>
 			     	<nav class="navbar navbar-default" role="navigation">
                                 <div class="container-fluid">
@@ -798,6 +809,7 @@ class box{
                                     <tr><td><div class="quad_verde"></div></td><td> <?php echo DISPONIBILE;?></td><td><div class="quad_rosso"></div></td><td> <?php echo NON_DISPONIBILE;?></td></tr>
                                 </table>
                             </div>
+							<div class="table-responsive">
                             <table class="tab_periodi elencoRis">
                                 <tr>
                                 <th><?php echo MAGGIO?></th>
@@ -839,6 +851,7 @@ class box{
                                 ?>
                                 </tr>
                                 </table>
+							</div>
                                 <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
                        
                         </div>
@@ -848,7 +861,7 @@ class box{
 	        	<?php
 	        }
 	        print '</div>';
-			var_dump($get);
+			
 	        $this->boxPagine($tot, $getor['pag'], $get, 10,$pagina);
 	        
 	        if($cosa=='residence')
@@ -1139,19 +1152,20 @@ function elencoNews($tipo,$lan,$getor=false)
 								    id_immobili=".$im['id_residence']));
                 $url_res=$this->costruisciPath('residence',$residence, $lan);
                 ?>
-            			    <div class="bottone_residence_<?php echo $_SESSION['lan']?>">
-                            <a href="<?php echo $url_res;?>" title="<?php echo RESIDENCE;?>" ></a>
+            			    <div class="fright">
+                            <a href="<?php echo $url_res;?>" title="<?php echo RESIDENCE;?>" class="button center button-blue button-rounded nomargin iframe" >Vai al residence ></a>
                             </div>
             			    	<?php 
             			    	
             			    } ?>
             				
-				 <div class="fancy-title title-left title-dotted-border">
+				 
 				<?php 
 				if($tipo=='case_vacanza' && $cdr=='')
 			    {
 			            $noteMese=array();
 			        ?>
+				<div class="fancy-title title-left title-dotted-border">	
 			    <h3><?php echo LISTINO;?></h3>    
 			    </div>
 			    <div class="periodi">
@@ -1244,9 +1258,9 @@ function elencoNews($tipo,$lan,$getor=false)
 	                        </tbody>
 	                        </table>
 	                        </div>
-	                   <div style="float: left;width: 450px;margin: 7px 0px 0px 10px;">
+	                   <div style="float: left;margin: 7px 0px 0px 10px;">
 	                   <?php 
-	                   echo stripslashes($im['note_listino']);
+	                   echo str_replace('</p>', '<br>', str_replace('<p>', '',stripslashes($im['note_listino'])));
 	                   ?>
 	                   </div>     
                          
@@ -1282,37 +1296,39 @@ function elencoNews($tipo,$lan,$getor=false)
 			    		}
 			    	}
 			    	?>
+			    	
 			    	<div style="margin-top: 25px;">
-			    	<div class="bottone_prenota_vac_<?php echo $_SESSION['lan']?>">
-                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="form_esterno"></a>
+                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="button center button-blue button-rounded nomargin iframe"> Prenota la tua vacanza</a>
                 </div>
-                </div>
+                
 			    	<?php 
 			    }
 			    elseif($tipo=='residence' && $im['id_residence']>0 ) 
 			    {?>
-			    <div class="bottone_prenota_<?php echo $_SESSION['lan']?>">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" title="<?php echo PRENOTA;?>" class="form_esterno"></a>
+			    <div  class="fleft">
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" data-lightbox="iframe" title="<?php echo PRENOTA;?>" class="button center button-blue button-rounded nomargin iframe">Prenota/Altro periodo</a>
                 </div>
 			    	<?php 
 			    }
 			    elseif($tipo=='residence' && $im['id_residence']==0)
 			    {?>
-			    <div class="bottone_prenota_<?php echo $_SESSION['lan']?>">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>" class="form_esterno"></a>
+			    <div class="fleft">
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>"  data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" >Prenota/Altro periodo</a>
                 </div>
 			    	<?php 
 			    }
 			    ?>
 			    <div class="clear"></div>
 			    </div>
-			    </div>
+			    <div class="line"></div>
+			
 				
 				<?php 
 			    if($tipo=='residence' && $im['id_residence']==0)
 			    {
 			    	$appartamenti=mysql_query("select * from immobili i, tipi t where i.id_tipi=t.id_tipi and id_residence=".$im['id_immobili'].' order by ordine');
 				?>
+				
 					<div class="fancy-title title-left title-dotted-border">
          <h3><?php echo APPARTAMENTI;?></h3>
         </div>
@@ -1393,6 +1409,17 @@ function elencoNews($tipo,$lan,$getor=false)
                 <div class="col_two_fifth col_last nobottommargin">
             
 				<?php 
+				if((isset($_GET['prezzo']) && $_GET['prezzo']!='') && (isset($_GET['periodo']) && $_GET['periodo']!=''))
+				{
+					$per=explode('_',$_GET['periodo']);
+					?>
+					<div class="fancy-title title-left ">
+                    <h3>Prezzo soggiorno:  <span class="label label-warning" style="color: #ffffff;">€ <?php echo $_GET['prezzo'];?></span></h3>
+                </div>
+				<div>
+						 
+				</div>		 
+				<?php }	
 				if($car!==false)
 				{
 			    ?>		   
@@ -1402,9 +1429,10 @@ function elencoNews($tipo,$lan,$getor=false)
 			   <table class="table table-striped">
         <tbody>
 				<?php 
+				
 				foreach ($car as $k=>$v)
-				{
-					if($im[$k]!=0 && $im[$k]!='')
+				{   
+					if($im[$k]!='0' && $im[$k]!='')
 					{
 						$valore=$im[$k];
 						if($k=='prezzo')
@@ -1424,8 +1452,9 @@ function elencoNews($tipo,$lan,$getor=false)
 				}
 				?>
 				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
-				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a>
-                </div>
+				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a><br><br>
+				<a href="tel:+390586752596" class="button center button-blue button-rounded nomargin iframe"><i class="icon-call"></i> Sreve aiuto? Chiamaci!</a>
+			</div>
 				
 				<?php 
 				

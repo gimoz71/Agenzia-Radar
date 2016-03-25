@@ -19,47 +19,33 @@ else
  
 ?>
 <form action="<?php echo $url;?>" method="post">
-<div class="col_half">
-    <label><?=NOME?></label>
+<div class="col_full">
+    <label><?=NOME?>*</label>
     <input type="text" name="nome" value="<?=$_POST['nome']?>" class="form-control required <?php echo $classe['nome']?>"  /><?=$hidden?>
 </div>
-<div class="col_half col_last">
-    <label><?=COGNOME?></label>
-    <input type="text" name="cognome" value="<?=$_POST['cognome']?>" class="form-control required <?php echo $classe['cognome']?>"  />
-</div>
     
-<div class="col_one_third">
+<div class="col_half">
     <label><?=TELEFONO?></label>
     <input type="text" name="telefono" value="<?=$_POST['telefono']?>" class="form-control required <?php echo $classe['telefono']?>"  />
 </div>
-<div class="col_one_third">
-    <label><?=CELLULARE?></label>
-    <input type="text" name="cellulare" value="<?=$_POST['cellulare']?>" class="form-control required <?php echo $classe['cellulare']?>" />
-</div>
-<div class="col_one_third col_last">
-    <label>Email</label>
+
+<div class="col_half col_last">
+    <label>Email*</label>
     <input type="text" name="email" value="<?=$_POST['email']?>" class="form-control required <?php echo $classe['email']?>" />
 </div>
-<div class="col_half">
-    <label><?=STATO?></label>
-    <input type="text" name="stato" value="<?=$_POST['stato']?>" class="form-control required <?php echo $classe['stato']?>" />
-</div>
-<div class="col_half col_last">
-    <label><?=CITTA?></label>
-    <input type="text" name="citta" value="<?=$_POST['citta']?>" class="form-control required" <?php echo $classe['citta']?>/>
-</div>
+
 <div class="col_full">
-    <label><?=NOTE?></label>
+    <label><?=NOTE?>*</label>
     <textarea rows="10" cols="25" name="note" class="form-control required <?php echo $classe['note']?>" ><?=stripslashes($_POST['note'])?></textarea>
 </div>
 <div class="col_full">
-    <label>Codice di sicurezza:</label>
-    <?php $captcha=gen_password(5);?>*
+    <label>Codice di sicurezza*</label><br>
+    <?php $captcha=gen_password(5);?>
     <img src="<?php echo TOTALPATH;?>captcha.php?code=<?php echo $captcha?>" class="fleft"/>
     <input type="text" name="jpg_captcha" class="form-control required <?php echo $classe['jpg_captcha']?>"  id="jpg_captcha" value=""  ><input type="hidden" name="captcha" value="<?php echo md5(strtoupper($captcha));?>">
 </div>
 <div class="col_full">
-    <input type="checkbox" name="privacy" value="1" class="required" checked="checked" style="margin-right: 20px;" /> <label><?php echo LETTO;?></label>
+    <input type="checkbox" name="privacy" value="1" class="required" checked="checked" style="margin-right: 20px;" /> <label><?php echo LETTO;?>*</label>
     <a href="<?php echo TOTALPATH;?>privacy-disclaimer_casa_vacanze_residence_toscana.php"  <?php echo $classe['privacy']?> target="_blank" title="<?php echo INFORMATIVA;?>"><?php echo INFORMATIVA; ?></a>.</span>
 </div>
 <div class="col_full">

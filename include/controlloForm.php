@@ -1,6 +1,6 @@
 <?php
 session_start();
-$email='info@agenziaradar.it';
+$email='info@beatriceweb.it';
 
 $contatti=array(    
     array(
@@ -8,36 +8,19 @@ $contatti=array(
       'label'=>'Nome',
       'tipo'=>'text'
     ),
-   array(
-      'nome'=>'cognome',
-      'label'=>'Cognome',
-      'tipo'=>'text'
-    ), 
+	
      array(
       'nome'=>'telefono',
       'label'=>'Telefono',
       'tipo'=>'text'
     ),
-    array(
-      'nome'=>'cellulare',
-      'label'=>'Cellulare',
-      'tipo'=>'text'
-    ),
+    
     array(
       'nome'=>'email',
       'label'=>'E-mail',
       'tipo'=>'text'
     ),
-    array(
-      'nome'=>'stato',
-      'label'=>'Stato',
-      'tipo'=>'text'
-    ),
-    array(
-      'nome'=>'citta',
-      'label'=>'Citta',
-      'tipo'=>'text'
-    ),
+    
      array(
       'nome'=>'note',
       'label'=>'Note',
@@ -54,10 +37,7 @@ $contatti=array(
 	{
 		$classe['nome']=' bordoRosso';
 	}
-    if ($_POST['cognome']=='' && $_POST['cognome']=='')
-	{
-		$classe['cognome']=' bordoRosso';
-	}
+    
 	if ($_POST['note']=='')
 	{
 		$classe['note']=' bordoRosso';

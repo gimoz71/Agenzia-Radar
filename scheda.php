@@ -71,67 +71,7 @@ $(document).ready(function(){
 	
 });
 </script>
-<style>
-       /* .tab_periodi {
-            margin: 10px 0px 10px 0px;
-            clear: both;
-            width: 100%;
-        }
-        
-        .tab_periodi td {
-            border: 1px solid #e5e5e5;
-            width: 150px;
-            padding: 2px 5px 2px 5px;
-            word-wrap: normal;
-        }
-        
-        .tab_periodi td ul {
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        .tab_periodi td ul li {
-            list-style: none;
-            padding: 0px;
-            margin: 3px;
-        }
-        
-        .tab_periodi th {
-            border: 1px solid #e5e5e5;
-            width: 150px;
-            background-color: #18368a;
-            color: #ffffff;
-            text-align: center;
-            padding: 2px 5px 2px 5px;
-        }
-        
-        .periodo {
-            width: 50px;
-            float: left;
-            font-weight: bold;
-        }
-        
-        .quad_verde {
-            background-color: green;
-        }
-        
-        .quad_rosso {
-            background-color: red;
-        }
-        
-        .quad_periodo {
-            margin: 5px auto;
-            width: 60px;
-        }
-        
-        .quad_verde,
-        .quad_rosso {
-            width: 27px;
-            height: 10px;
-            margin: 0px 1px;
-            float: left;
-        }*/
-    </style>
+
 </head>
 
 <body class="stretched">
@@ -166,8 +106,10 @@ $(document).ready(function(){
                                     <?php $box->boxImmobile($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);?>
                                     <div class="col_full nomargin">
                                     <?php $box->boxFoto($_SESSION['lan'], $immobile)?>
-                                     <?php $box->boxDescrizione($_SESSION['lan'], $immobile);
-                                     $box->boxResidence($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);
+                                     <?php $box->boxDescrizione($_SESSION['lan'], $immobile);?>
+									 <div class="line"></div>
+                             
+									 <?php $box->boxResidence($cosa,$_SESSION['lan'],$_GET['id'],$immobile,$car,$res,$_GET['CdR']);
                                      
                                      ?>
                                         
