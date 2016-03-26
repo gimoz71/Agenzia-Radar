@@ -83,7 +83,7 @@ $(function() {
 					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-3.jpg'); background-position: center center;"></div>
 					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-4.jpg'); background-position: center center;"></div>
 					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-5.jpg'); background-position: center center;"></div>
-					<div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-6.jpg'); background-position: center center;"></div>
+					<!-- <div class="swiper-slide dark" style="background-image: url('<?=TOTALPATH?>images/custom/slider-6.jpg'); background-position: center center;"></div> -->
 				</div>
 				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
 				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>

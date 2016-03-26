@@ -338,7 +338,7 @@ class box{
                      <?php if($immo['offerta']=='1'){?>
                         <i class="icon-deal i-circled icon-thumbs-up2"></i>
                         <?php }?>
-                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" data-lightbox="image">
+                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
 							<span class="prezzo-float label label-success"><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span>
 							<img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
 						</a>
@@ -1306,14 +1306,14 @@ function elencoNews($tipo,$lan,$getor=false)
 			    elseif($tipo=='residence' && $im['id_residence']>0 ) 
 			    {?>
 			    <div  class="fleft">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" data-lightbox="iframe" title="<?php echo PRENOTA;?>" class="button center button-blue button-rounded nomargin iframe">Prenota/Altro periodo</a>
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" data-lightbox="iframe" title="<?php echo PRENOTA;?>" class="button center button-blue button-rounded nomargin iframe">Prenota ora</a>
                 </div>
 			    	<?php 
 			    }
 			    elseif($tipo=='residence' && $im['id_residence']==0)
 			    {?>
 			    <div class="fleft">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>"  data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" >Prenota/Altro periodo</a>
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>"  data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" >Prenota ora</a>
                 </div>
 			    	<?php 
 			    }
@@ -1415,7 +1415,8 @@ function elencoNews($tipo,$lan,$getor=false)
 					?>
 					<div class="fancy-title title-left ">
                     <h3>Prezzo soggiorno:  <span class="label label-warning" style="color: #ffffff;">€ <?php echo $_GET['prezzo'];?></span></h3>
-                </div>
+					<p>dal <?=$per[0]?> al <?=$per[1]?></p>
+                	</div>
 				<div>
 						 
 				</div>		 
@@ -1453,7 +1454,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				?>
 				<h5><a href="<?php echo LANFOLDER?>pdf/brochure.php?id=<?php echo $im['id_immobili'];?>" target="_blank" title="<?php echo SCHEDA_PDF;?>"><?php echo SCHEDA_PDF;?> <img src="<?php echo IMAGESPATH?>custom/logo_pdf.jpg" alt="<?php echo SCHEDA_PDF;?>"></a></h5>
 				<a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" data-lightbox="iframe" class="button center button-blue button-rounded nomargin iframe" title="<?php echo RICHIEDI;?>"><?php echo RICHIEDI;?> <i class="icon-chevron-right"></i></a><br><br>
-				<a href="tel:+390586752596" class="button center button-blue button-rounded nomargin iframe"><i class="icon-call"></i> Sreve aiuto? Chiamaci!</a>
+				<a href="tel:+390586752596" class="button center button-blue button-rounded nomargin iframe"><i class="icon-call"></i> 0586/752596</a>
 			</div>
 				
 				<?php 

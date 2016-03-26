@@ -1,6 +1,6 @@
 <?php include('config.php');
 $get=false;
-if(isset($_GET['cerca']) || isset($_GET['pag']))
+if(isset($_GET['cerca']) || isset($_GET['pag']) || isset($_GET['ordinaPrezzo']))
 {
 	$get=$_GET;
 }
@@ -57,7 +57,7 @@ $stringaGet=generaGet($_GET);
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                         <form action="<?=TOTALPATH?>immobili.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Rif." name="rif">&nbsp;
+                                                <input type="text" class="form-control" placeholder="Rif." name="rif" <?php if(isset($_GET['rif']) && $_GET['rif']!=''){ print 'value="'.$_GET['rif'].'"';}?> >&nbsp;
                                                 <select name="categoria"  class="form-control required">
                                                     <option  value=""> <?=CATEGORIA_IMMO?> </option>
                                                     <option value="residenziale" <?php if($_GET['categoria']=='residenziale') echo ' selected="selected" ';?>><?=RIC_RESIDENZIALE?></option>
@@ -78,10 +78,10 @@ $stringaGet=generaGet($_GET);
                                                 </select>&nbsp;
                                                 <select  name="prezzo" class="form-control required">
                                                     <option  value=""> <?=PREZZO?> </option>
-                                                		<option value="0-250000"><?=FINO?> 250.000 &euro;</option>
-                                                		<option value="250001-350000">250.000 - 350.000 &euro;</option>
-                                                		<option value="350001-700000">350.000 - 700.000 &euro;</option>
-                                                		<option value="700001-100000000"><?=OLTRE?> 700.000 &euro;</option>
+                                                		<option value="0-250000" <?php if($_GET['prezzo']=='0-250000'){print 'selected="selected"';} ?> ><?=FINO?> 250.000 &euro;</option>
+                                                		<option value="250001-350000" <?php if($_GET['prezzo']=='250001-350000'){print 'selected="selected"';} ?>>250.000 - 350.000 &euro;</option>
+                                                		<option value="350001-700000" <?php if($_GET['prezzo']=='350001-700000'){print 'selected="selected"';} ?>>350.000 - 700.000 &euro;</option>
+                                                		<option value="700001-100000000" <?php if($_GET['prezzo']=='700001-100000000'){print 'selected="selected"';} ?>><?=OLTRE?> 700.000 &euro;</option>
                                                 </select>&nbsp;
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
@@ -91,6 +91,7 @@ $stringaGet=generaGet($_GET);
                                 </div>
 								
                             </nav>
+							<?php if(isset($_GET['cerca'])){ ?>
 							<div class="container-fluid">
 								<form method="post" action="<?=TOTALPATH?>immobili.php?<?=$stringaGet?>ordinaPrezzo=1">
 									<div class="form-group">
@@ -98,8 +99,9 @@ $stringaGet=generaGet($_GET);
 									</div>
 								</form>
 							</div>
+							<?php } ?>
                             <div class="line"></div>
-                           
+                            
                             <?php 
 							$ordina=false;
 							if(isset($_GET['ordinaPrezzo']) && $_GET['ordinaPrezzo']==1)

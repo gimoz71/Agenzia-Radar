@@ -41,7 +41,7 @@ if($_SESSION['lan']!='it')
                                     <li><a href="<?=LANFOLDER?>intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo DINTORNI;?></div></a></li>
                                  </ul>   
                              </li>  
-                            <li><a href="<?=LANFOLDER?>immobili.php"><div>Vendite</div></a></li>
+                            <li><a href="<?=LANFOLDER?>immobili.php"><div>Vendita</div></a></li>
                             <li><a href="#"  onclick="void(0);"><div><?php echo AFFITTO;?><i class="icon-chevron-down"></i></div></a>
                                 <ul>
                                     <li><a href="<?=LANFOLDER?>affitti.php"><div><?php echo AFFITTOESTESO;?></div></a></li>
