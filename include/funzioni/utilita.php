@@ -556,23 +556,32 @@ function creaBriciole($cosa,$im,$pagina,$lan,$res=false)
     	'affitto'=>AFFITTO,
         'vendita'=>VENDITA
     ); 
+	
     $briciole='
                 <ol class="breadcrumb">';
-	$briciole.= '<li><a href="'.LANFOLDER.$pagina.'" title="'.LISTA.' '.$nomiTipi[$cosa].'" class="grassetto"> '.LISTA.' '.$nomiTipi[$cosa].'</a></li> ';
+	$briciole.= '<li><a href="'.LANFOLDER.$pagina.'" title="'.LISTA.' '.$nomiTipi[$cosa].'" class="grassetto"> '.ucfirst(LISTA.' '.$nomiTipi[$cosa]).'</a></li> ';
 	if($im['residence']==0 && $cosa=='residence')
 	{
-		$briciole.='<li><a href="'.costruisciPath($cosa, $res, $lan).'" title="'.stripslashes($res['nome_immobile_'.$lan]).'"  class="grassetto">'.stripslashes($res['nome_immobile_'.$lan]).'</a></li> ';
+		$briciole.='<li><a href="'.costruisciPath($cosa, $res, $lan).'" title="'.stripslashes($res['nome_immobile_'.$lan]).'"  class="grassetto">'.stripslashes(ucfirst($res['nome_immobile_'.$lan])).'</a></li> ';
 	}
     
 	if($im['residence']==1)
 	{
-		$briciole.='<li>'.stripslashes($im['nome_immobile_'.$lan]).'</li>';
+		$briciole.='<li>'.ucfirst(stripslashes($im['nome_immobile_'.$lan])).'</li>';
 	}
 	else 
 	{
-	    $briciole.='<li>'.$contratti[$im['contratto']].' '.stripslashes(strtolower($im['nome_tipo_'.$lan])).' '.stripslashes($im['nome_immobile_'.$lan]).'</li>';
+	    $briciole.='<li>'.ucfirst($contratti[$im['contratto']].' '.stripslashes(strtolower($im['nome_tipo_'.$lan])).' '.stripslashes($im['nome_immobile_'.$lan])).'</li>';
 	}
     $briciole.='</ol>';
 	return $briciole;
 }
+function generaGet($get)
+{
+	$stringa='';
+	foreach ($get as $key => $value) {
+		$stringa.=$key.'='.$value.'&';
+	}
+	return $stringa;
+}	
 ?>

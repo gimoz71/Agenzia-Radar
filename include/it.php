@@ -317,7 +317,7 @@ Tra gli eventi da non perdere assolutamente non possiamo non citare  il Foodies 
 </div>
 <div class="line"></div>
     <div class="center">
-<a href="'.LANFOLDER.'intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php" data-lightbox="iframe" class=" button button-rounded button-light nomargin" title="'.DINTORNI.'"> '.DINTORNI.' ></a>
+<a href="'.LANFOLDER.'intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php" class=" button button-rounded button-light nomargin" title="'.DINTORNI.'"> '.DINTORNI.' ></a>
 	</div>
 	
   ');

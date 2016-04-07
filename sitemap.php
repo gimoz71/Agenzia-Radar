@@ -1,0 +1,454 @@
+<?php
+include('config.php');
+$query="select * from immobili i,localita l, tipi t where pubblicato=1 and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita";
+$immo=mysql_query($query)or die(mysql_error());
+header('Content-Type: text/xml');
+print'<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+';
+
+			$immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and residence = 1 and pubblicato=1")or die(mysql_error());
+	$cosa='residence';	
+  
+   while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+   }
+   $immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and pubblicato=1 and last_minute=1 ")or die(mysql_error());
+   $cosa='offerte';
+   while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+ }
+ $immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and offerta=1 and pubblicato=1 ")or die(mysql_error());
+    		$cosa='casa_vacanza';
+		while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+ }	
+    		$immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and last_minute=0 and  offerta=0 and residence=0 and id_residence=0")or die(mysql_error());
+    		$cosa='immobile';
+			while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+ }
+    		$immobili=mysql_query("select * from immobili i, localita l, tipi t where t.id_tipi=i.id_tipi and l.id_localita=i.id_localita and (offerta=1 or residence=1)and pubblicato=1")or die(mysql_error());
+    		$cosa='casa_vacanza';
+ while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+ }
+ $immobili=mysql_query("select * from news n where pubblicata=1")or die(mysql_error());
+    		$cosa='news';
+ while($immo=mysql_fetch_assoc($immobili))
+   { 
+	   
+   	$pathImmoIT=$box->costruisciPathLan($cosa,$immo,'it');
+	$pathImmoEN=$box->costruisciPathLan($cosa,$immo,'en');
+	$pathImmoDE=$box->costruisciPathLan($cosa,$immo,'de');
+   	print'<url>
+		<loc>'.$pathImmoIT.'</loc>
+	    <lastmod>'.date('Y-m-d').'</lastmod>
+      
+      <changefreq>weekly</changefreq>
+	  <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="'.$pathImmoDE.'"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="'.$pathImmoEN.'"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="'.$pathImmoIT.'"
+					 />
+    
+	 </url>';
+ }
+ ?>
+ <url>
+  <loc>http://www.agenziaradar.it/it/contatti.php</loc>
+  <priority>0.80</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/contatti.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/contatti.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/contatti.php"
+				 />
+</url>
+<url>
+  <loc>http://www.agenziaradar.it/it/webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php</loc>
+  <priority>0.80</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+				 />
+</url>
+<url>
+  <loc>http://www.agenziaradar.it/it/index.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/index.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/index.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/index.php"
+				 />
+</url>
+<url>
+  <loc>http://www.agenziaradar.it/it/agenzia_immobiliare_casa_vacanze_toscana.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/agenzia_immobiliare_casa_vacanze_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/agenzia_immobiliare_casa_vacanze_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/agenzia_immobiliare_casa_vacanze_toscana.php"
+				 />
+			 </url>
+<url>
+  <loc>http://www.agenziaradar.it/it/Servizi_immobiliare_casa_vacanze_residence_toscana.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/Servizi_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/Servizi_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/Servizi_immobiliare_casa_vacanze_residence_toscana.php"
+				 />
+			 </url>	
+<url>
+  <loc>http://www.agenziaradar.it/it/dove_immobiliare_casa_vacanze_toscana.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/dove_immobiliare_casa_vacanze_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/dove_immobiliare_casa_vacanze_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/dove_immobiliare_casa_vacanze_toscana.php"
+				 />
+			 </url>	
+<url>
+  <loc>http://www.agenziaradar.it/it/castiglioncello_immobiliare_casa_vacanze_residence_toscana.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+				 />
+			 </url>	
+<url>
+  <loc>http://www.agenziaradar.it/it/intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"
+				 />
+			 </url>		
+<url>
+  <loc>http://www.agenziaradar.it/it/immobili.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/immobili.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/immobili.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/immobili.php"
+				 />
+			 </url>		
+<url>
+  <loc>http://www.agenziaradar.it/it/affitti.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/affitti.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/affitti.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/affitti.php"
+				 />
+			 </url>		
+<url>
+  <loc>http://www.agenziaradar.it/it/residence.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/residence.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/residence.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/residence.php"
+				 />
+			 </url>		
+<url>
+  <loc>http://www.agenziaradar.it/it/case-vacanze.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/case-vacanze.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/case-vacanze.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/case-vacanze.php"
+				 />
+			 </url>		
+<url>
+  <loc>http://www.agenziaradar.it/it/offerte.php</loc>
+  <priority>0.90</priority>
+  <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="http://www.agenziaradar.it/de/offerte.php"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="http://www.agenziaradar.it/en/offerte.php"
+                 />
+	 <xhtml:link 
+                 rel="alternate"
+                 hreflang="it"
+                 href="http://www.agenziaradar.it/it/offerte.php"
+				 />
+			 </url>					 
+ <?php
+ 
+   print '</urlset>';

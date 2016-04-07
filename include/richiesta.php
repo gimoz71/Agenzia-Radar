@@ -41,8 +41,8 @@ else
 <div class="col_full">
     <label>Codice di sicurezza*</label><br>
     <?php $captcha=gen_password(5);?>
-    <img src="<?php echo TOTALPATH;?>captcha.php?code=<?php echo $captcha?>" class="fleft"/>
-    <input type="text" name="jpg_captcha" class="form-control required <?php echo $classe['jpg_captcha']?>"  id="jpg_captcha" value=""  ><input type="hidden" name="captcha" value="<?php echo md5(strtoupper($captcha));?>">
+    <img style="margin-bottom: 10px" src="<?php echo TOTALPATH;?>captcha.php?code=<?php echo $captcha?>" class="fleft"/><br><br>
+    <input type="text" name="jpg_captcha" style="margin-top: 15px;" class="form-control required <?php echo $classe['jpg_captcha']?>"  id="jpg_captcha" value=""  ><input type="hidden" name="captcha" value="<?php echo md5(strtoupper($captcha));?>">
 </div>
 <div class="col_full">
     <input type="checkbox" name="privacy" value="1" class="required" checked="checked" style="margin-right: 20px;" /> <label><?php echo LETTO;?>*</label>

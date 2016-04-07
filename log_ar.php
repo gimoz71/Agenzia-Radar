@@ -1,7 +1,10 @@
 <?php include('config.php');
-$titolo=TITOLO_BASE_INDEX;
-$descrizione=DESCRIZIONE_INDEX;
-$keywords=KEY_INDEX;
+include(CLASSPATH.'interfaccia.class.php');
+$int=new interfaccia(array());
+$titolo=TITOLO_BASE_DOVE;
+$keywords=KEY_DOVE;
+$descrizione=DESCRIZIONE_DOVE;
+$menu['dove']='class="selezionato"';
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="<?=LANHTML?>">
@@ -10,7 +13,6 @@ $keywords=KEY_INDEX;
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.gmap.js"></script>
 
-  
 
 </head>
 
@@ -25,10 +27,10 @@ $keywords=KEY_INDEX;
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?php echo CONTATTI;?></h1>
+                <h1><?=TITOLO_DOVE?></h1>
                 <ol class="breadcrumb">
                     <li><a href="<?=TOTALPATH?>">Home</a></li>
-                    <li class="active"><?=ucfirst(CONTATTACI)?></li>
+                    <li class="active"><?=ucfirst(TITOLO_DOVE)?></li>
                 </ol>
             </div>
 
@@ -42,30 +44,37 @@ $keywords=KEY_INDEX;
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded tjustify" style="padding: 20px;">
-                            <div class="col_two_fifth nobottommargin">
-<!--                                <h4><?php echo CONTATTI;?></h4>-->
-                                <img src="http://www.agenziaradar.it/images/foto_agenzia2.jpg" alt="interno agenzia Radar" class="thumbnail">
-                                <?php echo CONTENUTOCONTATTI;?> 
+                            <div class="col_full nomargin">
+                                <h3>Area riservata</h3>
+                                 <?php echo $int->genera_messaggi();
+                            ?>
+					<form action="<?=FUNCTIONPATH?>login.php" method="post">
+					<table>
+					<tr>
+					<th>Username</th>
+					<td><input type="text" name="username" /></td>
+					</tr>
+					<tr>
+					<th>Password</th>
+					<td><input type="password" name="passwd" /></td>
+					</tr>
+					<tr>
+					<th colspan="2"><input type="submit" name="login" value="Login" /></th>
+					</tr>
+					</table>				
+				</form>
+                            
                             </div>
-                            <div class="col_three_fifth col_last nobottommargin">
-                                
-                                <div class="fancy-title title-left title-dotted-border">
-                                    <h3><?php echo CONTATTACI;?></h3>
-                                </div>
-                                <?php 
-                                $url=LANFOLDER.'contatti.php';
-                                include(INCLUDEPATH.'richiesta.php');
-                                ?>	
-                            </div>
+                            
                         </div>
                     </div>
 				</div>
-                <?php 
-                    include INCLUDEPATH.'blog.php';
-                ?>
+				
 			</div>
 
 		</section><!-- #content end -->
 <?php include(INCLUDEPATH.'footer.php');?>
 </body>
 </html>
+
+

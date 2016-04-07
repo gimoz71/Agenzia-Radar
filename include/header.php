@@ -1,6 +1,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Gianluca Monti - BeatriceWeb" />
-
+    <meta name="google-site-verification" content="1OiURY0PNmrI6P1-J9ImtjRJidCxaqJtfqdHpwe5CGM" />
+	<link rel="alternate" href="<?=LANFOLDER?>" hreflang="<?=$_SESSION['lan']?>" />
     <!-- Stylesheets
     ============================================= -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic|Kaushan+Script" rel="stylesheet" type="text/css" />
@@ -25,6 +26,7 @@
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/plugins.js"></script>
     <script type="text/javascript" src="<?php echo TOTALPATH;?>js/canvas.slider.fade.js"></script>
+	<!--Start Cookie Script--> <script type="text/javascript" charset="UTF-8" src="<?php echo TOTALPATH;?>js/1335016e4f0ddef83395e7c642b53863.js"></script> <!--End Cookie Script-->
 <!--
     <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/colorbox.css" type="text/css" />
      <link rel="stylesheet" href="<?php echo TOTALPATH;?>css/bb.css" type="text/css" />
@@ -59,7 +61,7 @@
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-11711303-11']);
+  _gaq.push(['_setAccount', 'UA-75936141-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {

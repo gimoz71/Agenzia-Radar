@@ -6,32 +6,39 @@
 
         <div id="oc-posts" class="owl-carousel posts-carousel">
 <?php 
-            $rss = new BncRSS('https://immobiliarecasaweb.wordpress.com/feed/');
-            if($rss->Error) {die('Error :' . $rss->Error);}
-            while($rss->fetch())
-            {
-            ?>
+				$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+				@include_once $root."/blog/wp-load.php";
+    			
+    			setlocale(LC_ALL,'it_IT');
+    			$recent_posts = wp_get_recent_posts(array('numberposts' => '4','post_status' => 'publish'));
+    			foreach( $recent_posts as $recent ){
+    			   //var_dump($recent);
+    			    $postLink=get_permalink($recent["ID"]);
+					$recent['post_content']=strip_shortcodes($recent['post_content']);
+					?>
             <div class="oc-item">
                 <div class="ipost clearfix">
                     <div class="entry-image">
-                        <div class="fslider" data-arrows="false" data-lightbox="gallery">
+                        <div class="fslider" data-arrows="false">
                             <div class="flexslider">
                                 <div class="slider-wrap">
-                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
-                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder2.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder2.jpg" alt="Standard Post with Gallery"></a></div>
-                                    <div class="slide"><a href="<?php echo IMAGESPATH?>custom/placeholder1.jpg" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo IMAGESPATH?>custom/placeholder1.jpg" alt="Standard Post with Gallery"></a></div>
+                                    <div class="slide">
+										<a href="<?=$postLink?>" title="<?=$recent["post_title"]?>">
+											<img class="image_fade" src="<?=get_the_post_thumbnail( $recent['ID'],'medium')?>
+										</a>
+									</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="entry-title">
-                        <h3><a href="<?=$rss->Item['link']?>"><?=$rss->Item['title']?></a></h3>
+                        <h3><a href="<?=$postLink?>"><?=$recent["post_title"]?></a></h3>
                     </div>
                     <ul class="entry-meta clearfix">
-                        <li><i class="icon-calendar3"></i><?=$rss->Item['date']?></li>
+                        <li><i class="icon-calendar3"></i><?=date_format(date_create($recent["post_date"]),"d F Y");?></li>
                     </ul>
                     <div class="entry-content">
-                        <p><?=$rss->Item['description']?></p>
+                        <p><?php echo trunc_text($recent['post_content'],30,$postLink);?></p>
                     </div>
                 </div>
             </div>

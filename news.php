@@ -4,11 +4,13 @@ if(isset($_GET['cerca']) || isset($_GET['pag']))
 {
 	$get=$_GET;
 }
-$titolo=IMMO.' '.elencoLocalita().' Agenzia Immobiliare Radar';
-$descrizione=IMMO.' '.elencoLocalita();
+$titolo='News ed eventi a castiglioncello  ';
+$descrizione= 'Residence, immobili in vendita, affitti estivi, le tue vacanze a castiglioncello e in toscana ';
 $keywords=elencoLocalita().elencoTipi($_SESSION['lan']);
-$menu['immobili']='class="selezionato"';
 ?>
+
+
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -26,10 +28,10 @@ $menu['immobili']='class="selezionato"';
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><?=AFFITTO?></h1>
+                <h1>News</h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active"><?=AFFITTO?>></li>
+                    <li class="active">News</li>
                 </ol>
             </div>
 
@@ -42,9 +44,9 @@ $menu['immobili']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded" style="padding: 20px;">
-                                                       
-                            <?php 
-                                $box->elencoImmobili('affitti',$_SESSION['lan'],$get);
+							
+                            
+                            <?php $box->elencoNews('news',$_SESSION['lan'],$get); 
                             ?>
                            
                         </div>

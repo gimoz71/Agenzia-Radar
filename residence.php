@@ -24,6 +24,7 @@ $(function() {
   $( "#from" ).datepicker({
 	  numberOfMonths: 1,
       showButtonPanel: false,
+	  minDate: 0,
       dateFormat: 'dd-mm-yy',
 		monthNames: [
 				'<?php echo GENNAIO ?>',
@@ -97,7 +98,7 @@ $(function() {
                             <nav class="navbar navbar-default" role="navigation">
                                 <div class="container-fluid">
                                     <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                                             <span class="sr-only">Toggle navigation</span>
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
@@ -105,7 +106,7 @@ $(function() {
                                         </button>
                                         <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
                                     </div>
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                          <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">
                                             <div class="form-group">
                                                 <select name="posti" id="register-form-category" class="form-control required">
@@ -126,7 +127,17 @@ $(function() {
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>
+										 <form action="<?=TOTALPATH?>residence.php" method="get" class="navbar-form navbar-left" role="search">
+                                            <div class="form-group">
+												
+                                                <input type="text" id="rif" name="rif" value="" class="form-control required" placeholder="Rif." />
+                                            </div>
+                                            <button type="submit" name="cercaRif" class="btn btn-primary"><?php echo CERCA;?></button>
+                                        </form>
                                     </div>
+									
+									
+                                   
                                 </div>
                             </nav>
 

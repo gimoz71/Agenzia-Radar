@@ -12,6 +12,6 @@ define('IMAGE_BIG_WIDTH', 800);
 define('IMAGE_BIG_HEIGHT', 600);
 define('IMAGE_MEDIE_WIDTH', 570);
 define('IMAGE_MEDIE_HEIGHT', 360);
-define('IMAGE_THBN_WIDTH', 150);
-define('IMAGE_THBN_HEIGHT', 114);
+define('IMAGE_THBN_WIDTH', 200);
+define('IMAGE_THBN_HEIGHT', 134);
 ?>

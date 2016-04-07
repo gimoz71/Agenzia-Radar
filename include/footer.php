@@ -48,6 +48,7 @@
                             <ul>
                                 <li><a href="<?=LANFOLDER?>residence_castiglioncello_casa_vacanze_residences_toscana.php"> <?php echo RESIDENCESULMARE_FOOTER;?></a></li>
                                 <li><a href="<?=LANFOLDER?>landing1.php" title="Residence Castiglioncello">Residence Castiglioncello</a></li>
+								<li><a href="<?=LANFOLDER?>news.php"> News</a></li>
                             </ul>
                         </div>
 
@@ -91,7 +92,7 @@
         <div class="container clearfix">
 
             <div class="col_half">
-                Copyrights &copy; <?=date('Y')?> - Tutti i diritti riservati Agenzia Radar Srl.
+                Copyrights &copy; <?=date('Y')?> - Tutti i diritti riservati Agenzia Radar Srl - <a href="https://www.beatriceweb.it" title="Siti e applicazioni web dinamiche e accessibili" style="color: #ffffff">BW</a>
             </div>
 
             <div class="col_half col_last tright">

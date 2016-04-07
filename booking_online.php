@@ -79,10 +79,10 @@ $(function() {
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Immobili in vendita</h1>
+                <h1><?=RESIDENCE?></h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Immobili</li>
+                    <li><a href="<?=LANFOLDER?>index.php">Home</a></li>
+                    <li class="active"><?=RESIDENCE?>></li>
                 </ol>
             </div>
 
@@ -124,7 +124,17 @@ $(function() {
                                             </div>
                                             <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
                                         </form>
+										<form action="<?=TOTALPATH?>residence.php" method="get" class="navbar-form navbar-left" role="search">
+                                            <div class="form-group">
+												
+                                                <input type="text" id="rif" name="rif" value="" class="form-control required" placeholder="Rif." />
+                                            </div>
+                                            <button type="submit" name="cercaRif" class="btn btn-primary"><?php echo CERCA;?></button>
+                                        </form>
                                     </div>
+									
+									
+										
                                 </div>
                             </nav>
 

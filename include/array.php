@@ -294,6 +294,11 @@ $immobili=array(
       label=>'Distanza mare (m)',
       tipo=>'text'
     ),
+	array(
+      nome=>'IPE',
+      label=>'I.P.E.',
+      tipo=>'text'
+  ),
     array(
       nome=>'home',
       label=>'Home',
@@ -550,6 +555,11 @@ $immobili=array(
       nome=>'testo_settembre',
       label=>'Testo Settembre',
       tipo=>'textarea'
+    ),
+    array(
+        nome=>'altro',
+        label=>'Altro',
+        tipo=>'checkbox'
     ),
     array(
       nome=>'testo_altro',

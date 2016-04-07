@@ -18,6 +18,7 @@ $(function() {
   $( "#from" ).datepicker({
 	  numberOfMonths: 1,
       showButtonPanel: false,
+	 minDate: 0,
       dateFormat: 'dd-mm-yy',
 		monthNames: [
 				'<?php echo GENNAIO ?>',
@@ -38,6 +39,7 @@ $(function() {
   });
   $( "#to" ).datepicker({
 	  numberOfMonths: 1,
+	  minDate: 0,
       showButtonPanel: false,
       dateFormat: 'dd-mm-yy',
 		monthNames: [

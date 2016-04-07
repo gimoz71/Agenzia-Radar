@@ -1,6 +1,6 @@
 <?php
 session_start();
-$email='info@beatriceweb.it';
+$email='info@agenziaradar.it';
 
 $contatti=array(    
     array(
@@ -9,9 +9,20 @@ $contatti=array(
       'tipo'=>'text'
     ),
 	
+    array(
+      'nome'=>'cognome',
+      'label'=>'Cognome',
+      'tipo'=>'text'
+    ), 
+	
      array(
       'nome'=>'telefono',
       'label'=>'Telefono',
+      'tipo'=>'text'
+    ),
+    array(
+      'nome'=>'cellulare',
+      'label'=>'Cellulare',
       'tipo'=>'text'
     ),
     
@@ -20,6 +31,16 @@ $contatti=array(
       'label'=>'E-mail',
       'tipo'=>'text'
     ),
+    array(
+      'nome'=>'stato',
+      'label'=>'Stato',
+      'tipo'=>'text'
+    ),
+    array(
+      'nome'=>'citta',
+      'label'=>'Citta',
+      'tipo'=>'text'
+  ),
     
      array(
       'nome'=>'note',
@@ -60,11 +81,11 @@ $contatti=array(
 		//print $query;
 		if(invioRichiesta($_POST,$contatti,$email,$msg))
 		{
-			$esiste=mysql_query("select * from users where email_address='".$_POST['email']."'");
+			/*$esiste=mysql_query("select * from users where email_address='".$_POST['email']."'");
 			if(mysql_num_rows($esiste)==0)
 			{
 				mysql_query("insert into users (group_id,signup_date,firstname,lastname,email_address) values (2,".time().",'".$_POST['nome']."','".$_POST['cognome']."','".$_POST['email']."')")or die(mysql_error());
-			}
+			}*/
 			echo('<p class="successo"><img src="'.IMAGESPATH.'/check.png" width="29" height="29" /> Richiesta inviata con successo</p>');
 			unset($_POST);
 		}
