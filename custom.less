@@ -134,15 +134,16 @@ a {
 }
 
 
-#primary-menu ul li {
+#primary-menu  ul > li {
     border-right: solid 1px rgba(255,255,255,.25);
     &:last-child {
         border: none;
     }
-    a {
+    > a {
         padding: 0 10px;
     }
 }
+
 .img-half {
     width: 50%;
 }
@@ -299,9 +300,18 @@ a {
 
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 992px) {
     .entry-c {
         margin-left: 0;
     }
-
+    #primary-menu ul li {
+        border-right: none;
+        a {
+            text-align: center;
+            padding: 0 10px;
+            i {
+                display: none;
+            }
+        }
+    }
 }
