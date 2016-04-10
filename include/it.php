@@ -46,11 +46,13 @@ define('PROPOSTE','IMMOBILI IN VENDITA');
 define('VACANZE','AFFITTO CASE VACANZE');
 define('RESIDENCE','AFFITTI VACANZE SETTIMANALI');
 define('DINTORNI','I DINTORNI');
-define('INFORMAZIONI','DOVE SIAMO');               
+define('INFORMAZIONI','DOVE SIAMO'); 
+define('INFORMAZIONI2','INFORMAZIONI'); 
+define('VENDITA2','VENDITA');
 define('CONTATTI','CONTATTI');          
 define('LINK','METEO WEBCAM');    
 define('LANHTML','it-IT');
-define('AFFITTOESTESO','Affitti residenziali/commerciali');
+define('AFFITTOESTESO','AFFITTI RESIDENZIALI/COMMMERCIALI');
 define('ALTREOFFERTE','ALTRE OFFERTE');
 
 /*Menu FOOTER*/
@@ -169,7 +171,18 @@ define('CONTENUTO_INDEX','
 Benvenuti sul sito Agenziaradar.it, qui troverete un ampia offerta di proposte immobiliari sia d\'<a href="'.LANFOLDER.'immobili.php?contratto=affitto&amp;cerca=Cerca">affitto</a> che di <a href="'.LANFOLDER.'immobili.php?contratto=vendita&amp;cerca=Cerca">vendita</a>. Il menu sulla sinistra ti permetterà di navigare attraverso le sezioni del nostro sito. </p>                   
                 	<p>Se ricercate idee per le vostre vacanze sulla parte destra di ogni pagina potrete accedere direttamente alla nostra sezione dei <a href="'.LANFOLDER.'residence.php" title=" real estate appartamenti case vacanze residence castiglioncello" >residence</a>. Disponiamo infatti di numerose strutture pronte a soddisfare tutte le vostre necessità.
 ');
-
+define('PRENOTAVACANZA','Prenota la tua vacanza');
+define('IMMOBILIVENDITA','Immobili in vendita');
+define('RICERCAONLINE','Ricerca online');
+define('DETTAGLI2','Dettagli');
+define('ALTREPROPOSTE','Altre proposte');
+define('ULTIMEBLOG','Ultime dal blog');
+define('RICERCAAVANZATA','Ricerca avanzata');
+define('ORDINAPREZZO','Ordina per prezzo');
+define('CARATTARISTICHE','Caratteristiche');
+define('PRENOTAORA','Prenota ora');
+define('DETTAGLIO2','Dettaglio');
+define('CHIAMA','CHIAMA ORA');
 
 /*DOVE SIAMO */
 

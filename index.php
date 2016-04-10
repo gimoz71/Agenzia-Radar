@@ -126,18 +126,18 @@ $(function() {
                    <div class="container clearfix nopadding">
                         <div class="coll_full custom-col-padding notoppadding nobottompadding">
                             <form action="<?=LANFOLDER?>immobili.php" class="nomargin">
-                                <button class="button button-blue button-3d btn-block button-rounded nomargin">Immobili in vendita</button>
+                                <button class="button button-blue button-3d btn-block button-rounded nomargin"><?=IMMOBILIVENDITA?></button>
                             </form>  
                             <div class="divider" style="margin: 10px 0"></div>
                             <form action="<?=LANFOLDER?>residence.php" class="nomargin">
-                                <button class="button button-blue button-3d btn-block button-rounded nomargin">Vacanze Estate 2016</button>
+                                <button class="button button-blue button-3d btn-block button-rounded nomargin"><?=PRENOTAVACANZA?> <?php echo ESTATE?> <?php echo indicaAnno();?></button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
                             <form action="<?=LANFOLDER?>offerte.php" class="nomargin">
                                 <button class="button button-blue button-3d btn-block button-rounded nomargin"><?=ALTREOFFERTE?></i></button>
                             </form>
                             <div class="divider" style="margin: 10px 0"></div>
-                            <a href="tel:+390586752596"><button class="button button-blue button-3d btn-block button-rounded nomargin"><i class="icon-call"></i> Chiama ora </button></a>
+                            <a href="tel:+390586752596"><button class="button button-blue button-3d btn-block button-rounded nomargin"><i class="icon-call"></i> <?=CHIAMA?> </button></a>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ $(function() {
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded sell-lighter">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
-                                <h4 class="sell" style="background: transparent"><i class="icon-home2"></i> Immobili in vendita</h4>
+                                <h4 class="sell" style="background: transparent"><i class="icon-home2"></i> <?=IMMOBILIVENDITA?> </h4>
                             </div>
 
                             <div class="divider divider-border divider-darker divider-center nomargin">
@@ -199,7 +199,7 @@ $(function() {
                                     $box->immobiliHome('immobili', $_SESSION['lan']);
                                 ?>
                                 <form action="<?=LANFOLDER?>immobili.php" class="nomargin" method="GET">
-                                    <button class="button button-blue  button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
+                                    <button class="button button-blue  button-rounded btn-block button-small nomargin"><?=ALTREPROPOSTE?> <i class="icon-arrow-right2"></i></button>
                                 </form>
                                 <div class="clear"></div>
                             </div>
@@ -208,7 +208,7 @@ $(function() {
                     <div class="col_one_third">
                         <div class="panel panel-default divcenter rounded summer-lighter" style="background-image: url('<?=TOTALPATH?>images/custom/beach.png'); background-repeat: no-repeat; background-position: top center; background-size: contain;">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
-                                <h4 class="dark" style="background: transparent">Prenota la tua vacanza <?php echo ESTATE?> <?php echo indicaAnno();?></h4>
+                                <h4 class="dark" style="background: transparent"><?=PRENOTAVACANZA?> <?php echo ESTATE?> <?php echo indicaAnno();?></h4>
                             </div>
                             <div class="divider divider-border divider-center nomargin">
                                 <i class="icon-arrow-down2"></i>
@@ -244,7 +244,7 @@ $(function() {
                                             </div>
                                              <div class="line" style="margin: 42px 0 41px 0"></div>
                                             <div class="text-lg-right text-md-right text-sm-right  text-xs-center">
-                                                <button class="button btn-block button-amber button-small button-rounded nomargin" rel="2" id="next" name="dati" value="next">Ricerca online <i class="icon-arrow-right2"></i></button>
+                                                <button class="button btn-block button-amber button-small button-rounded nomargin" rel="2" id="next" name="dati" value="next"><?=RICERCAONLINE?> <i class="icon-arrow-right2"></i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -253,7 +253,7 @@ $(function() {
                                     $box->immobiliHome('vacanze', $_SESSION['lan']);
                                 ?>
 								<form action="<?=LANFOLDER?>residence.php" method="GET">
-                                <button class="button button-amber button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
+                                <button class="button button-amber button-rounded btn-block button-small nomargin"><?=ALTREPROPOSTE?> <i class="icon-arrow-right2"></i></button>
 							</form>
                                 <div class="clear"></div>
                             </div>
@@ -262,7 +262,7 @@ $(function() {
                     <div class="col_one_third col_last">
                         <div class="panel panel-default divcenter rounded sell-lighter">
                             <div class="fancy-title center nomargin" style="padding: 10px 15px;" data-height-lg="40" data-height-md="65" data-height-sm="65" data-height-xs="auto" data-height-xxs="auto">
-                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> Altre Offerte</h4>
+                                <h4 class="sell" style="background: transparent"><i class="icon-line2-tag"></i> <?=ALTREPROPOSTE?></h4>
                             </div>
 
                             <div class="divider divider-border divider-darker divider-center nomargin">
@@ -273,7 +273,7 @@ $(function() {
                                     $box->immobiliHome('last_minute', $_SESSION['lan']);
                                 ?>
 								<form action="<?=LANFOLDER?>offerte.php" method="GET">
-                                <button class="button button-blue button-rounded btn-block button-small nomargin">Altre proposte <i class="icon-arrow-right2"></i></button>
+                                <button class="button button-blue button-rounded btn-block button-small nomargin"><?=ALTREPROPOSTE?> <i class="icon-arrow-right2"></i></button>
 							</form>
                                 <div class="clear"></div>
                             </div>

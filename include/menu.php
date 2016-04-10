@@ -37,11 +37,11 @@ if($_SESSION['lan']!='it')
                             </li>
                             <li><a href="#"  onclick="void(0);"><div>CASTIGLIONCELLO<i class="icon-chevron-down"></i></div></a>
                                   <ul>
-                                    <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>Informazioni</i></div></a>
+                                    <li><a href="<?=LANFOLDER?>castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?=INFORMAZIONI2?></i></div></a>
                                     <li><a href="<?=LANFOLDER?>intorno_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div><?php echo DINTORNI;?></div></a></li>
                                  </ul>   
                              </li>  
-                            <li><a href="<?=LANFOLDER?>immobili.php"><div>Vendita</div></a></li>
+                            <li><a href="<?=LANFOLDER?>immobili.php"><div><?=VENDITA2?></div></a></li>
                             <li><a href="#"  onclick="void(0);"><div><?php echo AFFITTO;?><i class="icon-chevron-down"></i></div></a>
                                 <ul>
                                     <li><a href="<?=LANFOLDER?>affitti.php"><div><?php echo AFFITTOESTESO;?></div></a></li>
@@ -50,7 +50,7 @@ if($_SESSION['lan']!='it')
 									<li><a href="<?=LANFOLDER?>offerte.php"><div><?php echo ALTREOFFERTE;?></div></a></li>
                                 </ul>
                             <li><a href="<?=LANFOLDER?>webcam_meteo_castiglioncello_immobiliare_casa_vacanze_residence_toscana.php"><div>WEBCAM</div></a></li>
-                            <li><a href="<?=TOTALPATHREMOTE?>blog/"><div>Blog</div></a></li>
+                            <li><a href="<?=TOTALPATHREMOTE?>blog/"><div>BLOG</div></a></li>
                             <li><a href="<?php echo LANFOLDER?>contatti.php"><div><?php echo CONTATTI;?></div></a></li>
                         </ul>
                     </div>

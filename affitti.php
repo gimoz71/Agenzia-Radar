@@ -29,7 +29,7 @@ $menu['immobili']='class="selezionato"';
                 <h1><?=AFFITTO?></h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active"><?=AFFITTO?>></li>
+                    <li class="active"><?=AFFITTO?></li>
                 </ol>
             </div>
 

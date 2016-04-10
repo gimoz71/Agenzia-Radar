@@ -27,10 +27,10 @@ $stringaGet=generaGet($_GET);
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Immobili in vendita</h1>
+                <h1><?=IMMOBILIVENDITA?></h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Immobili</li>
+                    <li class="active"><?=IMMOBILIVENDITA?></li>
                 </ol>
             </div>
 
@@ -52,7 +52,7 @@ $stringaGet=generaGet($_GET);
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
+                                        <span class="navbar-brand"><strong><?=RICERCAAVANZATA?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                         <form action="<?=TOTALPATH?>immobili.php" method="get" class="navbar-form navbar-left" role="search">

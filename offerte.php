@@ -29,7 +29,7 @@ $menu['immobili']='class="selezionato"';
                 <h1><?=ALTREOFFERTE?></h1>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active"><?=ALTREOFFERTE?>></li>
+                    <li class="active"><?=ucfirst(ALTREOFFERTE)?></li>
                 </ol>
             </div>
 
@@ -42,8 +42,6 @@ $menu['immobili']='class="selezionato"';
                 <div class="container clearfix nobottommargin nopadding">
                     <div class="panel panel-default divcenter rounded">
                         <div class="panel-body rounded" style="padding: 20px;">
-                            
-                           
                             <?php 
                                 $box->elencoImmobili('last_minute',$_SESSION['lan'],$get);
                             ?>

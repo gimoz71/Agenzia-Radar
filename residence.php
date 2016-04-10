@@ -104,7 +104,7 @@ $(function() {
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <span class="navbar-brand"><strong>Ricerca avanzata</strong></span>
+                                        <span class="navbar-brand"><strong><?=RICERCAAVANZATA?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                          <form action="<?=TOTALPATH?>booking_online.php" method="get" class="navbar-form navbar-left" role="search">

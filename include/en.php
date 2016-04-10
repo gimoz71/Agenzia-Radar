@@ -46,12 +46,14 @@ define('PROPOSTE','REAL ESTATE PROPERTIES FOR SALE');
 define('VACANZE','VACATION HOMES FOR RENT');
 define('RESIDENCE','WEEKLY VACATION RENTAL');
 define('DINTORNI','THE SURROUNDINGS');
-define('INFORMAZIONI','LOCATION');               
+define('INFORMAZIONI','LOCATION'); 
+define('INFORMAZIONI2','INFORMATIONS'); 
+define('VENDITA2','FOR SALE');
 define('CONTATTI','CONTACTS');          
 define('LINK','WEATHER WEBCAM');    
 define('LANHTML','en-US');
-define('AFFITTOESTESO','Affitti residenziali e commerciali');
-define('ALTREOFFERTE','ALTRE OFFERTE');
+define('AFFITTOESTESO','Residential and commercial properties for rent');
+define('ALTREOFFERTE','OTHER OFFERS');
 
 /*Menu FOOTER*/
 
@@ -172,7 +174,18 @@ Welcome to the Radar Agency\'s homepage! Here you\'ll find our wide range of att
 <br>
 If you are looking for a place to spend your vacation, look on the right side of each page, where you can have easy access to our <a href="'.LANFOLDER.'residence.php">residence section</a>.  In fact, we have numerous structures that can satisfy your every need.
 ');
-
+define('PRENOTAVACANZA','Book your holiday');
+define('IMMOBILIVENDITA','Properties  for sale');
+define('RICERCAONLINE','Online search');
+define('DETTAGLI2','Details');
+define('ALTREPROPOSTE','Other offers');
+define('ULTIMEBLOG','News from our blog');
+define('RICERCAAVANZATA','Advanced search');
+define('ORDINAPREZZO','Sort by price');
+define('CARATTARISTICHE','Features');
+define('PRENOTAORA','Book now');
+define('DETTAGLIO2','Detail');
+define('CHIAMA','CONTACT US');
 
 /*DOVE SIAMO */
 
@@ -197,7 +210,7 @@ Those who prefer to travel by train can take a train to the train station town t
   Castiglioncello is located in a central position, within reach of the privileged Etruscan Coast and of the most beautiful Tuscan art cities, where one can start discovering the beauties of this land.
 <p>&nbsp;</p>
 <p><strong>By car:  </strong>freeway SS1 Castiglioncello exit  <br>
-  <strong>By train:</strong> Rosignano Marittimo Station<br>
+  <strong>By train:</strong> Castiglioncello Station<br>
   <strong>Address:</strong> Via Aurelia N&deg; 548<br>
 <strong>Contact:</strong> +39.0586.752596</p><br>
 
@@ -232,7 +245,12 @@ The Radar agency of Giorgio Costagli also deals with the sale, purchase and leas
 
 We look forward to meeting you in our office, which is also open on Saturdays and Sundays and where we can show you our deals.<br>
 <p>&nbsp;</p>
-<p><strong>Giorgio Costagli </strong></p>');
+<p><strong>Giorgio Costagli </strong></p>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'Servizi_immobiliare_casa_vacanze_residence_toscana.php" class=" button button-rounded button-light nomargin" title="I servizi offerti dall\'agenzia immobiliare Radar">Services ></a>
+</div>
+');
 
 
 
@@ -471,7 +489,23 @@ The real estate agency Radar, owned by Giorgio Costagli, Via Aurelia, 548 – IT
 The website www.agenziaradar.it  and any other associated website are owned by the real estate agency Radar, owned by Giorgio Costagli. Graphics, pictures and texts contained in the website are protected under copyright law and cannot be reproduced in any format nor be used for any purpose without permission from the owner.
 
   ');
-  
+/* WEBCAM */
+
+define('TITOLO_BASE_WEBCAM',' Webcam Weather Castiglioncello');
+
+define('DESCRIZIONE_WEBCAM','Webcam Weather Castiglioncello');
+
+define('KEY_WEBCAM','WEBCAM , residences, appartments, villa, ville, Castiglioncello, vacanze, affitti estivi castiglioncello, estate, mare, bilocale, monolocale, trilocale, consulenza gratuita, stime, casa, posto barca, costa degli etruschi,Toscana, casa vacanze, casa al mare, villa al mare, residence sul mare, posti barca, costa degli etruschi, Livorno, Rosignano Marittimo');
+
+define('TITOLO_WEBCAM','WEBCAM CASTIGLIONCELLO METEO');    
+
+define('CONTENUTOWEBCAM','
+
+
+	');
+
+
+
 define('DAL','From');
 define('AL','To');
 

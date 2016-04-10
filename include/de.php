@@ -46,12 +46,14 @@ define('PROPOSTE','IMMOBILIEN ZUM VERKAUF');
 define('VACANZE','VERMIETUNG FERIENHÄUSER');
 define('RESIDENCE','FERIENHAUS FÜR WÖCHENTLICHE VERMIETUNGEN');
 define('DINTORNI','DIE UMGEBUNGEN');
-define('INFORMAZIONI','WO SIND WIR');               
+define('INFORMAZIONI','WO SIND WIR');
+define('INFORMAZIONI2','INFORMATIONEN'); 
+define('VENDITA2','Immobilien zum Verkauf');
 define('CONTATTI','KONTAKTE');          
 define('LINK','WETTER WEBCAM');    
 define('LANHTML','de-DE');
-define('AFFITTOESTESO','Affitti residenziali e commerciali');
-define('ALTREOFFERTE','ALTRE OFFERTE');
+define('AFFITTOESTESO','Wohn- und Gewerbeimmobilien zur Miete');
+define('ALTREOFFERTE','Andere Angebote');
 
 /*Menu FOOTER*/
 
@@ -173,7 +175,17 @@ define('CONTENUTO_INDEX','
 Hier finden Sie eine sehr breite Palette von attraktiven Immobilienangeboten im <a href="'.LANFOLDER.'immobili.php?contratto=affitto&amp;cerca=Cerca">Bereich Verkauf</a> und <a href="'.LANFOLDER.'immobili.php?contratto=vendita&cerca=Cerca">Vermietung</a>. Klicken Sie im linken Menü auf die von Ihnen gewünschten Services und entdecken Sie unsere Angebote!
   Sind Sie auf der Suche nach neuen Ideen für Ihren Urlaub! Hier, auf der rechten Spalte jeder Seite, haben Sie die Möglichkeit, direkt zum Informationsbereich der <a href="'.LANFOLDER.'residence.php">Ferienwohnungen zugreifen zu können</a>. Wir verfügen über eine Vielzahl von Ferienwohnungen, die nur darauf warten, all Ihre Bedürfnisse zufrieden zu stellen.
 ');
-
+define('PRENOTAVACANZA','Buchen Sie Ihren Urlaub');
+define('IMMOBILIVENDITA','Immobilien zum Verkauf');
+define('RICERCAONLINE','Online-Suche');
+define('DETTAGLI2','Details');
+define('ALTREPROPOSTE','weitere Unterkünften');
+define('ULTIMEBLOG','News aus dem Blog');
+define('RICERCAAVANZATA','erweiterte Suche');
+define('ORDINAPREZZO','sortiert nach Preis');
+define('CARATTARISTICHE','Eigenschaften');
+define('PRENOTAORA','Jetzt buchen');
+define('DETTAGLIO2','Detail');
 
 /*DOVE SIAMO */
 
@@ -201,7 +213,7 @@ Castiglioncello liegt in einer sehr zentralen Position für jene die noch andere
 <br>
 </p>
 <p><strong>Mit dem Auto:</strong> SS1 Schnellstraße – Ausfahrt Castiglioncello</p>
-<p> <strong>Mit dem Zug:</strong> Rosignano Marittimo Bahnhof  </p>
+<p> <strong>Mit dem Zug:</strong> Castiglioncello Bahnhof  </p>
 <p><strong>Adresse:</strong> 548, Via Aurelia - IT 57012 Castiglioncello (LI)  </p>
 <p><strong>Kontakt:</strong> +39.0586.752596</p>
 
@@ -235,7 +247,12 @@ Unsere Immobilienagentur verfügt über ein spezielles Fachwissen, bezogen auf F
 <p>Die Agentur Radar von Giorgio Costagli ist auch im Verkauf, Kauf und Miete von Anlegeplätzen für Boote, Parkplätzen, Autogaragen oder Garagen in Marina Cala de´ Medici di Rosignano Marittimo, einem Touristenhafen, der im Bezirk von Livorno, zwischen Castiglioncello und Rosignano Solvay liegt, zuständig. Die Boot-Anlegeplätze sind mit allen Dienstleistungen im Hafen ausgestattet.<br>
 Wir würden uns sehr darüber freuen, Sie in unserem Immobilienbüro, das auch am Samstag und am Sonntag geöffnet ist, begrüßen und um Ihnen all unsere Angebote vorstellen zu dürfen..</p>
 <p>&nbsp;</p>
-<p><strong>Giorgio Costagli </strong></p>');
+<p><strong>Giorgio Costagli </strong></p>
+<div class="line"></div>
+<div class="center">
+<a href="'.LANFOLDER.'Servizi_immobiliare_casa_vacanze_residence_toscana.php" class=" button button-rounded button-light nomargin" title="I servizi offerti dall\'agenzia immobiliare Radar">DIENSTLEISTUNGEN ></a>
+</div>
+');
 
 
 
@@ -451,9 +468,9 @@ Die Internetseite www.agenziaradar.it und jene damit verbundene Links gehören d
   
 /* WEBCAM */
 
-define('TITOLO_BASE_WEBCAM',' WEBCAM E METEO case per la vacanza in toscana - affitti estivi castiglioncello');
+define('TITOLO_BASE_WEBCAM','Webcam Wetter Castiglioncello');
 
-define('DESCRIZIONE_WEBCAM','Residence case vacanza sul mare con piscina in toscana a Castiglioncello nella costa degli etruschi, affitti estivi castiglioncello');
+define('DESCRIZIONE_WEBCAM','Webcam Wetter Castiglioncello');
 
 define('KEY_WEBCAM','WEBCAM , residences, appartamenti, villa, ville, Castiglioncello, vacanze, affitti estivi castiglioncello, estate, mare, bilocale, monolocale, trilocale, consulenza gratuita, stime, casa, posto barca, costa degli etruschi,Toscana, casa vacanze, casa al mare, villa al mare, residence sul mare, posti barca, costa degli etruschi, Livorno, Rosignano Marittimo');
 

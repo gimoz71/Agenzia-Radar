@@ -1,7 +1,7 @@
 <div class="section nomargin notoppadding clearfix"  data-class-xxs="hidden" data-class-xs="hidden" data-class-sm="nothidden" data-class-md="nothidden" data-class-lg="nothidden">
     <div class="container clearfix">
         <div class="fancy-title title-center title-dotted-border topmargin">
-            <h3>Ultime dal Blog</h3>
+            <h3><?=ULTIMEBLOG?></h3>
         </div>
 
         <div id="oc-posts" class="owl-carousel posts-carousel">
@@ -53,7 +53,7 @@
         <div class="divider divider-center "><i class="icon-chevron-down"></i></div>
         <div class="col_full center nomargin text-lg-right text-md-right text-sm-right  text-xs-center">
             <form action="http://www.agenziaradar.it/blog">
-            <button class="button button-blue button-rounded nomargin" rel="2" id="next" name="dati" value="next">Vai al blog <i class=""></i></button>
+            <button class="button button-blue button-rounded nomargin" rel="2" id="next" name="dati" value="next">Blog <i class=""></i></button>
             </form>
         </div>
     </div>

@@ -131,7 +131,7 @@ class box{
                         <h3><?php if($immo['prezzo']>0 && $immo['prezzo_visibile']==1){ echo '&euro; '.number_format($immo['prezzo'],0,',','.');}?></h3>
                     </div>
                     <form action="<?php echo $url;?>" class="nomargin">
-                    <button class="button button-blue btn-block button-mini button-rounded nomargin">dettagli <i class="icon-chevron-right"></i></button>
+                    <button class="button button-blue btn-block button-mini button-rounded nomargin"><?=DETTAGLI2?> <i class="icon-chevron-right"></i></button>
                     </form>
                 </div>
             </div>	
@@ -557,7 +557,7 @@ class box{
             			        print '</pre>';*/
 								if($ricercaCasaVacanza)
 								{?><div class="entry clearfix">
-									<a href="#caseVacanza" class="">Vedi anche le nostre offerte per le case vacanza ></a>
+									<a href="#caseVacanza" class=""><?=VEDIOFFERTECASE?> ></a>
                             </div>
 									
 									<?php
@@ -649,7 +649,7 @@ class box{
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                        <span class="navbar-brand"><strong>Ricerca avanzata case vacanza</strong></span>
+                                        <span class="navbar-brand"><strong><?=RICERCAAVANZATA?> <?=KEY_CASE1?></strong></span>
                                     </div>
                                     <div class="collapse navbar-collapse" id="bs-navbar-collapse-2">
                                          <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
@@ -1304,7 +1304,7 @@ function elencoNews($tipo,$lan,$getor=false)
 			    	?>
 			    	
 			    	<div style="margin-top: 25px;">
-                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="button center button-blue button-rounded nomargin iframe" data-lightbox="iframe" > Prenota la tua vacanza</a>
+                <a href="<?php echo LANFOLDER;?>form.php?idim=<?php echo $im['id_immobili'];?>" title="<?php echo RICHIEDI;?>" class="button center button-blue button-rounded nomargin iframe" data-lightbox="iframe" > <?=PRENOTAORA?></a>
                 </div>
                 
 			    	<?php 
@@ -1312,14 +1312,14 @@ function elencoNews($tipo,$lan,$getor=false)
 			    elseif($tipo=='residence' && $im['id_residence']>0 ) 
 			    {?>
 			    <div  class="center">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" data-lightbox="iframe" title="<?php echo PRENOTA;?>" class="button center button-amber button-rounded iframe">Prenota ora</a>
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBookingR.aspx?CR=110519F4FF1&CdR=<?php echo $im['id_immobili'];?>&PrimoGiorno=si&categoria=01" data-lightbox="iframe" title="<?php echo PRENOTA;?>" class="button center button-amber button-rounded iframe"><?=PRENOTAORA?></a>
                 </div>
 			    	<?php 
 			    }
 			    elseif($tipo=='residence' && $im['id_residence']==0)
 			    {?>
 			    <div class="center">
-                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>"  data-lightbox="iframe" class="button center button-amber button-rounded iframe" >Prenota ora</a>
+                <a href="https://www.bookingeasy.it/pubblica/booking/booking2/frmBooking2.aspx?CR=110519F4FF1&CdG=<?php echo $im['id_immobili'];?>&categoria=01" title="<?php echo PRENOTA;?>"  data-lightbox="iframe" class="button center button-amber button-rounded iframe" ><?=PRENOTAORA?></a>
                 </div>
 			    	<?php 
 			    }
@@ -1346,7 +1346,7 @@ function elencoNews($tipo,$lan,$getor=false)
                     <div class="panel panel-default">
                         <div class="panel-heading clearfix">
                             <h4 class="nomargin fleft"><a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )" ><?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )</a></h4>
-                            <a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )" class="button button-rounded button-mini nomargin fright" data-class-lg="not-hidden" data-class-md="hidden" data-class-sm="hidden" data-class-xs="hidden" data-class-xxs="hidden">dettaglio <i class="icon-chevron-right"></i></a></div>
+                            <a href="<?php echo $this->costruisciPath('residence',$app, $lan);?>" title="<?php echo $app['nome_tipo_'.$lan];?> <?php echo stripslashes($app['nome_immobile_'.$lan]);?> (<?php echo $app['n_vani'].' '.POSTI_LETTO;?> )" class="button button-rounded button-mini nomargin fright" data-class-lg="not-hidden" data-class-md="hidden" data-class-sm="hidden" data-class-xs="hidden" data-class-xxs="hidden"><?=DETTAGLIO2?> <i class="icon-chevron-right"></i></a></div>
                         <div class="panel-body"><?=str_replace('</p>', '<br>', str_replace('<p>', '',stripslashes($app['descrizione_'.$lan])))?></div>
                     </div>
 				   <?php 
@@ -1407,7 +1407,7 @@ function elencoNews($tipo,$lan,$getor=false)
 					$per=explode('_',$_GET['periodo']);
 					?>
 					<div class="fancy-title title-left ">
-                    <h3>Prezzo soggiorno:  <span class="label label-warning" style="color: #ffffff;">€ <?php echo $_GET['prezzo'];?></span></h3>
+                    <h3><?=PREZZO?>:  <span class="label label-warning" style="color: #ffffff;">€ <?php echo $_GET['prezzo'];?></span></h3>
 					<p>dal <?=$per[1]?> al <?=$per[0]?></p>
                 	</div>
 				<div>
@@ -1418,7 +1418,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				{
 			    ?>		   
 			    <div class="fancy-title title-left title-dotted-border">
-                    <h3>Caratteristiche <?php visRiferimento($im['rif']);?></h3>
+                    <h3><?=CARATTERISTICHE?> <?php visRiferimento($im['rif']);?></h3>
                 </div>
 			   <table class="table table-striped">
         <tbody>
