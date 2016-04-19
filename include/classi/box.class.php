@@ -393,6 +393,7 @@ class box{
     function elencoBookingOnline($post, $lan,$getor=false)
     {
         $ricercaCasaVacanza = false;
+		$stopRicerca=false;
 		$_POST = ($post) ? $post : $_POST;
     	$query="select * from immobili i,localita l, tipi t where (offerta=1 or residence=1 or id_residence>0) and pubblicato=1";
     	$query.=' and t.id_tipi=i.id_tipi and l.id_localita=i.id_localita ';
@@ -408,301 +409,313 @@ class box{
   		}
   		$da = strtotime($_POST['DateFrom']);
   		$a = strtotime($_POST['DateTo']);
-  		if(($a - $da) >= 1209600)
+		$differenza = $a - $da;
+		//print $differenza;
+  		if($differenza >= 1209600)
   		{
   		    $ricercaCasaVacanza=true;
-  		}    
-  		$_POST['UserCode']='110519F4FF1';
-		$_POST['SCode']='2B9';
-		$_POST['Function']='Resources';
-		$_POST['Version']='1.6';
-		$get='?';
-		foreach ($_POST as $k=>$v)
-		{
-			$get.=$k.'='.$v.'&';
-		}
-		
-		$get.='Restrictions=S';
-		
-		
-		//print $url;
-		
-		$RCode='RCode=';
-		if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
-		{
-		    //Controllo la disponibilità per il periodo indicato
-			$_POST['Function']='RADAR';
+  		}
+        if($differenza >= 1900800)
+  		{
+  		    $stopRicerca=true;
+  		}		
+		//var_dump($ricercaCasaVacanza);
+		//var_dump($stopRicerca);
+		/*if(!$stopRicerca)
+		{*/	
+	  		$_POST['UserCode']='110519F4FF1';
+			$_POST['SCode']='2B9';
+			$_POST['Function']='Resources';
+			$_POST['Version']='1.6';
 			$get='?';
 			foreach ($_POST as $k=>$v)
 			{
 				$get.=$k.'='.$v.'&';
 			}
-			$RCode=trim($RCode,'|').'&';
-			$new_get=$get.'&Restrictions=S';
-			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
 			
-			$xml_disponibili=simplexml_load_file($url);
+			$get.='Restrictions=S';
 			
-	 		$RCode='RCode=';
-	 		if($xml_disponibili->Resource)
-	 		{
-	 		    foreach($xml_disponibili->Resource as $dis)
-				{
-				    
-				   $attr=$dis[0]->attributes();
-				   
-				   $RCode.=$attr['Code'].'|';
-				}
-				//Cerco i prezzi
-			 	$_POST['Function']='Estimates';
-    			$get='?';
-    			foreach ($_POST as $k=>$v)
-    			{
-    				$get.=$k.'='.$v.'&';
-    			}
-    			$RCode=trim($RCode,'|');
-    			$new_get=$get.'&'.$RCode;
-    			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
-				//print $url;
-    			$xml_prezzi=simplexml_load_file($url);
-    			if($xml_prezzi->Resource)
-    		    {
-    		        $RCode='RCode=';
-    		        $elencoImmobili=array();
-    				foreach ($xml_prezzi->Resource as $cd)
-        			{   
-        			    $attr=$cd[0]->attributes();
-        			   
-        				if(trim($attr['Code'])!='' && $cd->Treatment->Price !='')
-        				{
-        				    $prezzo = intval($cd->Treatment->Price);
-        				    $codice = (string)$attr['Code'];
-        				    $elencoImmobili[$codice] = $prezzo;
-        					$RCode.=$attr['Code'].'|';
-        					
-        				}		
-        			}
-    			    if(count($elencoImmobili)>0)
-    			    {    
-            			//Cerco i dettagli dell'immobile
-            			$_POST['Function']='resourceDetails';
-            			$_POST['Fields']='codice,codicerisorsa,nomerisorsa';
-            			$get='?';
-            			foreach ($_POST as $k=>$v)
-            			{
-            			    $get.=$k.'='.$v.'&';
-            			}
-            			$RCode=trim($RCode,'|');
-            			$new_get=$get.'&'.$RCode.'&Restrictions=S';
-            			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&');
-            			//print $url;
-            			$xml_elenco=simplexml_load_file($url);
-        			
-        			
-        			    $codi=' and (';
-        			    
-        			    foreach ($xml_elenco->Resource as $cd)
-        			    {
-        			        if(trim($cd->codice)!='')
-        			        {
-        			            $codi.=' id_immobili=\''.$cd->codice.'\' or';
-        			            $c=(string)$cd->codicerisorsa;
-        			            $d=(string) $cd->codice;
-        			            $codici[$c]=$d;
-        			        }
-        			    }
-    			
-    			        $codi=trim($codi,'or').') ';
-    		  
-            			if($codi!=' and ()')
-            			{
-                		    if($_POST['posti']!='')
-        					{
-        					    $posti=$_POST['posti']+2;
-        						$codi.= ' and i.n_vani>='.$_POST['posti'].' and i.n_vani<='.$posti; 
-        						if($get!='')
-        						{
-        							$get.='&amp;';
-        						}
-        						$get.='posti='.$_POST['posti'];
-        					}
-    		  
-            		  		$ordine=" order by i.n_vani asc, home desc ,ordine asc";
-            				$query=$query.$codi;
-            				$totImm=mysql_query($query);
-            				$tot=mysql_num_rows($totImm);
-            				$query=$query.' '.$ordine;
-            				//print $query;
-            				$immobili=mysql_query($query)or die(mysql_error().$query);
-            				if(@mysql_num_rows($immobili)==0)
-            				{
-            					print '<div class="item_large"> '.NOIMMO.'</div>';
-            				}
-            				else
-            				{
-            				    print ' <div id="posts" class="small-thumbs">';
-            					if($lan=='de')
-            			    	{
-            			    		$classeDe=' dettagli_alt';
-            			    	}
-            			    	$immobiliEle=array();
-            			        while($immob=mysql_fetch_assoc($immobili))
-            			        {
-            			            $immobiliEle[$immob['id_immobili']]=$immob; 
-            			        }    
-            			        
-            			        asort($elencoImmobili);
-            			        /*print '<pre>';
-            			        var_dump($immobiliEle);
-            			        print '</pre>';*/
-								if($ricercaCasaVacanza)
-								{?><div class="entry clearfix">
-									<a href="#caseVacanza" class=""><?=VEDIOFFERTECASE?> ></a>
-                            </div>
-									
-									<?php
-								}	
-            			        foreach ($elencoImmobili as $value=>$key)
-            			        {    
-            			            if(isset($immobiliEle[$codici[$value]]))
-            			            {    
-            			            $immo=$immobiliEle[$codici[$value]];
-            			            $url=$this->costruisciPath($cosa, $immo,$lan);
-									$url.='?prezzo='.$elencoImmobili[$value].'&periodo='.$partenza.'_'.$arrivo;
-									
-            			           	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
-            			        	if($cosa=='casa_vacanza')
-            			        	{
-            			        		$titolo =$titolo.' ('.$immo['n_vani'].' '.POSTI_LETTO.')';
-            			        	}
-            			        	if($immo['residence']==1)
-            			        	{
-            			        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
-            			        	}
-									
-            			        	?>
-                			        	<div class="entry clearfix">
-                                <div class="entry-image">
-                                    <a href="<?php echo $url;?>" title="<?php echo $titolo;?>" >
-										<span class="prezzo-float label label-success"><?php echo '€'.$elencoImmobili[$value];?><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span>
-										<img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
-									</a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h2><a href="<?php echo $url;?>"><?php echo $titolo;?></a> </h2>
-                                        <h4><?php visRiferimento($immo['rif']);?> </h4>
-                                    </div>
-                                    <div class="entry-content">
-                                        <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
-                                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-           		        	<?php
-            			            }
-            			        }
-            			   }
-            	       }
-        			}
-        			if($ricercaCasaVacanza)
-        			{
-        			    $_POST['DateFrom']!='' && $_POST['DateTo']!='';
-        			    $da=explode('-',$arrivo);
-        			    $a=explode('-',$partenza);
-        			    $periodo=$da[1];
-        			     
-        			    $periodi=array(
-        			        '05'=>'maggio',
-        			        '06'=>'giugno',
-        			        '07'=>'luglio',
-        			        '08'=>'agosto',
-        			        '09'=>'settembre',
-        			        '01'=>'altro',
-        			        '02'=>'altro',
-        			        '03'=>'altro',
-        			        '04'=>'altro',
-        			        '10'=>'altro',
-        			        '11'=>'altro',
-        			        '12'=>'altro',
-        			    );
-        			    if($da[1]!=$a[1])
-        			    {
-        			        if($da[0]>20)
-        			        {
-        			            $periodo=$a[1];
-        			        }
-        			    }
-        			     
-        			    $ric['periodo'] = $periodi[$periodo];
-        			    $ric['posti'] = $_GET['posti'];
-        			    ?>
-			     	<div class="fancy-title title-left title-dotted-border">
-            <h3 id="caseVacanza">Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
-            </div>
-			     	<nav class="navbar navbar-default" role="navigation">
-                                <div class="container-fluid">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-2">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <span class="navbar-brand"><strong><?=RICERCAAVANZATA?> <?=KEY_CASE1?></strong></span>
-                                    </div>
-                                    <div class="collapse navbar-collapse" id="bs-navbar-collapse-2">
-                                         <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
-                                            <div class="form-group">
-												<input name="rif" placeholder="Rif" class="form-control required" size="8"/>
-                                                <select name="posti" id="register-form-category" class="form-control required">
-                                                    <option value=""><?=POSTI_LETTO?></option>
-                                                     <?php
-                                            		for ($i=1;$i<=10;$i++)
-                                            		{
-                                            		?>
-                                                         <option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>><?=$i?></option>
-                                                   <?php
-                                            		}
-                                            		?>
-                                                </select>
-                                               <select name="periodo" class="form-control required">
-                                                    <option value=""> <?php echo PERIODO?> </option>
-                                                    <option value="maggio" <?php if($periodo=='05') {echo ' selected="selected"';}?>> <?php echo MAGGIO?></option>
-                                                    <option value="giugno" <?php if($periodo=='06') {echo ' selected="selected"';}?>> <?php echo GIUGNO?></option>
-                                                    <option value="luglio" <?php if($periodo=='07') {echo ' selected="selected"';}?>> <?php echo LUGLIO?></option>
-                                                    <option value="agosto" <?php if($periodo=='08') {echo ' selected="selected"';}?>> <?php echo AGOSTO?></option>
-                                                    <option value="settembre" <?php if($periodo=='09') {echo ' selected="selected"';}?>><?php echo SETTEMBRE?></option>
-                                                    <option value="altro" <?php if($periodi[$periodo]=='altro') {echo ' selected="selected"';}?>> <?php echo ALTRO_PERIODO?></option>
-                                                  </select>
-                                            </div>
-                                            <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </nav>
-			     	   <?php  
-					   $this->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$ric);	
-				   }
-			     	   
-			     	?>
-			     	</div>
-					<?php
-					
-			     	
-			     }
+			
+			//print $url;
+			
+			$RCode='RCode=';
+			if($_POST['DateFrom']!='' && $_POST['DateTo']!='')
+			{
+			    if(!$stopRicerca)
+			    {    
+    			    //Controllo la disponibilità per il periodo indicato
+    				$_POST['Function']='RADAR';
+    				$get='?';
+    				foreach ($_POST as $k=>$v)
+    				{
+    					$get.=$k.'='.$v.'&';
+    				}
+    				$RCode=trim($RCode,'|').'&';
+    				$new_get=$get.'&Restrictions=S';
+    				$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
+    				
+    				$xml_disponibili=simplexml_load_file($url);
+    				
+    		 		$RCode='RCode=';
+    		 		if($xml_disponibili->Resource)
+    		 		{
+    		 		    foreach($xml_disponibili->Resource as $dis)
+    					{
+    					    
+    					   $attr=$dis[0]->attributes();
+    					   
+    					   $RCode.=$attr['Code'].'|';
+    					}
+    					//Cerco i prezzi
+    				 	$_POST['Function']='Estimates';
+    	    			$get='?';
+    	    			foreach ($_POST as $k=>$v)
+    	    			{
+    	    				$get.=$k.'='.$v.'&';
+    	    			}
+    	    			$RCode=trim($RCode,'|');
+    	    			$new_get=$get.'&'.$RCode;
+    	    			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&'); 
+    					//print $url;
+    	    			$xml_prezzi=simplexml_load_file($url);
+    	    			if($xml_prezzi->Resource)
+    	    		    {
+    	    		        $RCode='RCode=';
+    	    		        $elencoImmobili=array();
+    	    				foreach ($xml_prezzi->Resource as $cd)
+    	        			{   
+    	        			    $attr=$cd[0]->attributes();
+    	        			   
+    	        				if(trim($attr['Code'])!='' && $cd->Treatment->Price !='')
+    	        				{
+    	        				    $prezzo = intval($cd->Treatment->Price);
+    	        				    $codice = (string)$attr['Code'];
+    	        				    $elencoImmobili[$codice] = $prezzo;
+    	        					$RCode.=$attr['Code'].'|';
+    	        					
+    	        				}		
+    	        			}
+    	    			    if(count($elencoImmobili)>0)
+    	    			    {    
+    	            			//Cerco i dettagli dell'immobile
+    	            			$_POST['Function']='resourceDetails';
+    	            			$_POST['Fields']='codice,codicerisorsa,nomerisorsa';
+    	            			$get='?';
+    	            			foreach ($_POST as $k=>$v)
+    	            			{
+    	            			    $get.=$k.'='.$v.'&';
+    	            			}
+    	            			$RCode=trim($RCode,'|');
+    	            			$new_get=$get.'&'.$RCode.'&Restrictions=S';
+    	            			$url=trim('http://www.bookingeasy.it/pubblica/XML/resources.aspx'.$new_get,'&');
+    	            			//print $url;
+    	            			$xml_elenco=simplexml_load_file($url);
+    	        			
+    	        			
+    	        			    $codi=' and (';
+    	        			    
+    	        			    foreach ($xml_elenco->Resource as $cd)
+    	        			    {
+    	        			        if(trim($cd->codice)!='')
+    	        			        {
+    	        			            $codi.=' id_immobili=\''.$cd->codice.'\' or';
+    	        			            $c=(string)$cd->codicerisorsa;
+    	        			            $d=(string) $cd->codice;
+    	        			            $codici[$c]=$d;
+    	        			        }
+    	        			    }
+    	    			
+    	    			        $codi=trim($codi,'or').') ';
+    	    		  
+    	            			if($codi!=' and ()')
+    	            			{
+    	                		    if($_POST['posti']!='')
+    	        					{
+    	        					    $posti=$_POST['posti']+2;
+    	        						$codi.= ' and i.n_vani>='.$_POST['posti'].' and i.n_vani<='.$posti; 
+    	        						if($get!='')
+    	        						{
+    	        							$get.='&amp;';
+    	        						}
+    	        						$get.='posti='.$_POST['posti'];
+    	        					}
+    	    		                //$codi.=' and pubblicato=1';
+    	            		  		$ordine=" order by i.n_vani asc, home desc ,ordine asc";
+    	            				$query=$query.$codi;
+    	            				$totImm=mysql_query($query);
+    	            				$tot=mysql_num_rows($totImm);
+    	            				$query=$query.' '.$ordine;
+    	            				//print $query;
+    	            				$immobili=mysql_query($query)or die(mysql_error().$query);
+    	            				if(@mysql_num_rows($immobili)==0)
+    	            				{
+    	            					print '<div class="item_large"> '.NOIMMO.'</div>';
+    	            				}
+    	            				else
+    	            				{
+    	            				    print ' <div id="posts" class="small-thumbs">';
+    	            					if($lan=='de')
+    	            			    	{
+    	            			    		$classeDe=' dettagli_alt';
+    	            			    	}
+    	            			    	$immobiliEle=array();
+    	            			        while($immob=mysql_fetch_assoc($immobili))
+    	            			        {
+    	            			            $immobiliEle[$immob['id_immobili']]=$immob; 
+    	            			        }    
+    	            			        
+    	            			        asort($elencoImmobili);
+    	            			        /*print '<pre>';
+    	            			        var_dump($immobiliEle);
+    	            			        print '</pre>';*/
+    									if($ricercaCasaVacanza)
+    									{?><div class="entry clearfix">
+    										<a href="#caseVacanza" class=""><?=VEDIOFFERTECASE?> ></a>
+    	                            </div>
+    										
+    										<?php
+    									}	
+    	            			        foreach ($elencoImmobili as $value=>$key)
+    	            			        {    
+    	            			            if(isset($immobiliEle[$codici[$value]]))
+    	            			            {    
+    	            			            $immo=$immobiliEle[$codici[$value]];
+    	            			            $url=$this->costruisciPath($cosa, $immo,$lan);
+    										$url.='?prezzo='.$elencoImmobili[$value].'&periodo='.$partenza.'_'.$arrivo;
+    										
+    	            			           	$titolo=stripslashes($immo['localita']).' '.ucfirst($$immo['contratto']).' '.stripslashes(strtolower($immo['nome_tipo_'.$lan])).' '.stripslashes($immo['nome_immobile_'.$lan]);
+    	            			        	if($cosa=='casa_vacanza')
+    	            			        	{
+    	            			        		$titolo =$titolo.' ('.$immo['n_vani'].' '.POSTI_LETTO.')';
+    	            			        	}
+    	            			        	if($immo['residence']==1)
+    	            			        	{
+    	            			        		$titolo=stripslashes($immo['localita']).' '.stripslashes($immo['nome_immobile_'.$lan]);
+    	            			        	}
+    										
+    	            			        	?>
+    	                			        	<div class="entry clearfix">
+    	                                <div class="entry-image">
+    	                                    <a href="<?php echo $url;?>" title="<?php echo $titolo;?>" >
+    											<span class="prezzo-float label label-success"><?php echo '€'.$elencoImmobili[$value];?><?php echo visPrezzo($immo['prezzo'], $immo['prezzo_visibile'],$immo['descrizione_prezzo'], $this->desPrezzo);?></span>
+    											<img class="image_fade thumbnail" src="<?php echo REMOTEIMAGESPATH;?>medie/<?php echo $immo['foto_g_immobile'];?>" alt="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>">
+    										</a>
+    	                                </div>
+    	                                <div class="entry-c">
+    	                                    <div class="entry-title">
+    	                                        <h2><a href="<?php echo $url;?>"><?php echo $titolo;?></a> </h2>
+    	                                        <h4><?php visRiferimento($immo['rif']);?> </h4>
+    	                                    </div>
+    	                                    <div class="entry-content">
+    	                                        <p style="margin-bottom: 2px;"><?php echo trunc_text(strip_tags(stripslashes($immo['descrizione_'.$lan])),60,$url);?></p>
+    	                                        <a href="<?php echo $url;?>" title="<?php echo stripslashes($immo['nome_immobile_'.$lan])?>" class="button button-blue button-small button-rounded nomargin"><?php echo DETTAGLI;?> <i class="icon-chevron-right"></i></a>
+    	                                    </div>
+    	                                </div>
+    	                            </div>
+    	           		        	<?php
+    	            			            }
+    	            			        }
+    	            				 }  
+    	            			   }
+    	            	       }
+    	        			}
+    					?>
+    			     	</div>
+    					<?php
+    			     }
 			    }
 				else
 				{
 					print '<div class="item_large"> '.NOIMMO.'</div>';
-				}	 
+				}	
+				 
 		    }
 			else
 			{
 				print '<div class="item_large"> '.NOIMMO.'</div>';
 			}
 			
-    }
+			if($ricercaCasaVacanza)
+			{
+			    $_POST['DateFrom']!='' && $_POST['DateTo']!='';
+			    $da=explode('-',$arrivo);
+			    $a=explode('-',$partenza);
+			    $periodo=$da[1];
+			
+			    $periodi=array(
+			        '05'=>'maggio',
+			        '06'=>'giugno',
+			        '07'=>'luglio',
+			        '08'=>'agosto',
+			        '09'=>'settembre',
+			        '01'=>'altro',
+			        '02'=>'altro',
+			        '03'=>'altro',
+			        '04'=>'altro',
+			        '10'=>'altro',
+			        '11'=>'altro',
+			        '12'=>'altro',
+			    );
+			    if($da[1]!=$a[1])
+			    {
+			        if($da[0]>20)
+			        {
+			            $periodo=$a[1];
+			        }
+			    }
+			
+			    $ric['periodo'] = $periodi[$periodo];
+			    $ric['posti'] = $_GET['posti'];
+			    ?>
+		     	<div class="fancy-title title-left title-dotted-border">
+        <h3 id="caseVacanza">Per periodi più lunghi ricerca anche tra le nostre case vacanza</h3>
+        </div>
+		     	<nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-2">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <span class="navbar-brand"><strong><?=RICERCAAVANZATA?> <?=KEY_CASE1?></strong></span>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-navbar-collapse-2">
+                                     <form action="<?=TOTALPATH?>case-vacanze.php" method="get" class="navbar-form navbar-left" role="search">
+                                        <div class="form-group">
+											<input name="rif" placeholder="Rif" class="form-control required" size="8"/>
+                                            <select name="posti" id="register-form-category" class="form-control required">
+                                                <option value=""><?=POSTI_LETTO?></option>
+                                                 <?php
+                                        		for ($i=1;$i<=10;$i++)
+                                        		{
+                                        		?>
+                                                     <option value="<?=$i?>" <?php if(isset($_GET['posti']) && $_GET['posti']!='' && $_GET['posti']==$i) echo ' selected="selected" ';?>><?=$i?></option>
+                                               <?php
+                                        		}
+                                        		?>
+                                            </select>
+                                           <select name="periodo" class="form-control required">
+                                                <option value=""> <?php echo PERIODO?> </option>
+                                                <option value="maggio" <?php if($periodo=='05') {echo ' selected="selected"';}?>> <?php echo MAGGIO?></option>
+                                                <option value="giugno" <?php if($periodo=='06') {echo ' selected="selected"';}?>> <?php echo GIUGNO?></option>
+                                                <option value="luglio" <?php if($periodo=='07') {echo ' selected="selected"';}?>> <?php echo LUGLIO?></option>
+                                                <option value="agosto" <?php if($periodo=='08') {echo ' selected="selected"';}?>> <?php echo AGOSTO?></option>
+                                                <option value="settembre" <?php if($periodo=='09') {echo ' selected="selected"';}?>><?php echo SETTEMBRE?></option>
+                                                <option value="altro" <?php if($periodi[$periodo]=='altro') {echo ' selected="selected"';}?>> <?php echo ALTRO_PERIODO?></option>
+                                              </select>
+                                        </div>
+                                        <button type="submit" name="cerca" class="btn btn-primary"><?php echo CERCA;?></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
+			     	   <?php  
+					   $this->elencoImmobiliVacanze('case_vacanza',$_SESSION['lan'],$ric);	
+				        }
+			     	
+	 }
     
     function elencoImmobiliVacanze($tipo,$lan,$getor=false)
     {
@@ -1332,7 +1345,7 @@ function elencoNews($tipo,$lan,$getor=false)
 				<?php 
 			    if($tipo=='residence' && $im['id_residence']==0)
 			    {
-			    	$appartamenti=mysql_query("select * from immobili i, tipi t where i.id_tipi=t.id_tipi and id_residence=".$im['id_immobili'].' order by ordine');
+			    	$appartamenti=mysql_query("select * from immobili i, tipi t where i.id_tipi=t.id_tipi and id_residence=".$im['id_immobili'].' and pubblicato=1 order by ordine');
 				?>
 				
 					<div class="fancy-title title-left title-dotted-border">
